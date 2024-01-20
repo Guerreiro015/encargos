@@ -82,3 +82,12 @@ body{
     width: 400px;
     height: 500px;
 }
+
+.data{
+
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    gap: 10px;
+
+}
