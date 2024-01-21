@@ -1,5 +1,33 @@
 dias_avos = 0
+alert='deseja receber avisos deste site'
 function calcularEncargos() {
+
+  data = (document.getElementById("text1")).value;
+  data2 = (document.getElementById("text2")).value;
+  
+  dia1 = Number(data.slice(8, 10))            
+  mes1 = Number(data.slice(5, 7))            
+  ano1 = Number(data.slice(0, 4))
+ 
+  
+  
+  dia2 = Number(data2.slice(8, 10))            
+  mes2 = Number(data2.slice(5, 7))            
+  ano2 = Number(data2.slice(0, 4))
+
+  avos_anual=ano2-ano1
+  avos_anual=avos_anual*3
+
+  valor_avo_prop=1676.89/30*avos_anual
+  
+
+  document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2
+  document.getElementById("avosAnual").innerHTML = "Avos Proporcional Anual: " + avos_anual
+  document.getElementById("valoravosAnual").innerHTML = "Valor Proporcional Anual: " + valor_avo_prop.toFixed(2)
+
+
+
+
   let val1 = parseFloat(document.getElementById("valor1").value)
   let val2 = parseFloat(document.getElementById("valor2").value)
   let val3 = parseFloat(document.getElementById("valor3").value)
@@ -79,19 +107,3 @@ function calcularEncargos() {
   
 }
 
-function MOSTRAR() {
-  data = (document.getElementById("text1")).value;
-  data2 = (document.getElementById("text2")).value;
-  
-  dia1 = Number(data.slice(8, 10))            
-  mes1 = Number(data.slice(5, 7))            
-  ano1 = Number(data.slice(0, 4))
- 
-  
-  
-  dia2 = Number(data2.slice(8, 10))            
-  mes2 = Number(data2.slice(5, 7))            
-  ano2 = Number(data2.slice(0, 4))
- 
-
-}
