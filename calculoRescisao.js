@@ -22,8 +22,8 @@ function calcularEncargos() {
   
 
   document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2
-  document.getElementById("avosAnual").innerHTML = "Avos Proporcional Anual: " + avos_anual
-  document.getElementById("valoravosAnual").innerHTML = "Valor Proporcional Anual: " + valor_avo_prop.toFixed(2)
+  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual
+  document.getElementById("valoravisoProjetado").innerHTML = "Valor Aviso Projetado: " + valor_avo_prop.toFixed(2)
 
 
 
