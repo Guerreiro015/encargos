@@ -4,7 +4,7 @@ body{
     display: flex;  
     justify-content: space-around;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     font-size: 15px;
     color: blue;
     
@@ -99,6 +99,10 @@ body{
     gap: 10px;
     padding: 3px;
 
+}
+
+h3{
+    color: chocolate;
 }
 
 
