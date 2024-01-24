@@ -63,10 +63,12 @@ body{
     margin-top: 10px;
     width: 200px;
     background-color: rgb(27, 228, 151);
-    border-radius: 10px;
+    border-radius: 15px;
     border-color: rgb(233, 237, 240);
     color: beige;
     font-size: 25px;
+    font-weight: bolder;
+    align-items: center;
     
 }
 
@@ -109,6 +111,20 @@ body{
     align-items: center;
     column-gap: 30px;
     padding-top: 10px;
+}
+.tipoBalao{
+    height: 30px;
+    font-size: 20px;
+    color: rgb(10, 164, 113);
+    display: flex;
+    align-items: center;
+    
+}
+
+.foto{
+
+    display: flex;
+    flex-direction: column;
 }
 
 

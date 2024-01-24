@@ -25,8 +25,10 @@
 </head>
 
 <body>
-
+<div class="foto">
   <img class="imagem" src="/Tabela-INSS-e-Salario-Familia-2024.png" alt="tabela inss">
+  <img class="imagem" src="/tabela_ir_2023-2024.png" alt="tabela irrf">
+</div>
 
 
   <div class="formulario2">
@@ -40,14 +42,14 @@
 
     <div class="tipo">
       <h4>Tipo de Rescisão</h4>
-      <select name="tipo" id="tipo">
+      <select class="tipoBalao" name="tipo" id="tipo">
         <option value="Sem Justa causa">Sem Justa causa</option>
         <option value="Justa causa">Justa causa</option>
         <option value="Pedido de Demissão">Pedido de Demissão</option>
         <option value="Fim de Contrato">Fim de Contrato</option>
       </select>
-      <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
     </div>
+    <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
     <div class="formulario3">
       <div class="formulario4">
         <h2>Proventos</h2>
@@ -105,8 +107,7 @@
 
   </div>
 
-  <img class="imagem" src="/tabela_ir_2023-2024.png" alt="tabela irrf">
-
+ 
 </body>
 
 <footer class="rodape">
