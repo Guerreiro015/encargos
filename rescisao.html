@@ -27,7 +27,7 @@
 <body>
 
   <img class="imagem" src="/Tabela-INSS-e-Salario-Familia-2024.png" alt="tabela inss">
-  
+
   <div class="formulario2">
     <h1>Cálculos de RESCISÕES</h1>
     <div class="data">
@@ -38,13 +38,21 @@
     </div>
 
     <div class="tipo">
-      <h4>Tipo de Rescisão</h4>
-      <select class="tipoBalao" name="tipo" id="tipo">
-        <option value="Sem Justa causa">Sem Justa causa</option>
-        <option value="Justa causa">Justa causa</option>
-        <option value="Pedido de Demissão">Pedido de Demissão</option>
-        <option value="Fim de Contrato">Fim de Contrato</option>
-      </select>
+      
+        <h4>Tipo de Rescisão</h4>
+        <select class="tipoBalao" name="tipo" id="tipo">
+          <option value="Sem Justa causa">Sem Justa causa</option>
+          <option value="Justa causa">Justa causa</option>
+          <option value="Pedido de Demissão">Pedido de Demissão</option>
+          <option value="Fim de Contrato">Fim de Contrato</option>
+        </select>
+        
+        <fieldset class="tipocheck">
+        <label for="ferias_vencidas">Férias Vencidas</label>
+        <input  type="checkbox" id="ferias_vencidas" name="ferias_vencidas">
+        </fieldset>
+
+
     </div>
     <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
     <div class="formulario3">
