@@ -4,6 +4,16 @@ function calcularEncargos() {
 
   data = (document.getElementById("text1")).value;
   data2 = (document.getElementById("text2")).value;
+  tipo_rescisao = document.getElementById("ferias_vencidas")
+
+  vencidas = ""
+  if (tipo_rescisao.checked) {
+    vencidas = "SIM"
+  }
+
+  else {
+    vencidas = "NÃO"
+  }
 
   dia1 = Number(data.slice(8, 10))
   mes1 = Number(data.slice(5, 7))
@@ -22,8 +32,9 @@ function calcularEncargos() {
 
 
   document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2
-  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual  + " dias"
+  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias"
   document.getElementById("valoravisoProjetado").innerHTML = "Valor Aviso Projetado: " + valor_avo_prop.toFixed(2)
+  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + vencidas
 
 
 
@@ -36,6 +47,7 @@ function calcularEncargos() {
   let faltas = parseFloat(document.getElementById("faltas").value)
   let pensao = parseFloat(document.getElementById("pensao").value)
   let depir = parseFloat(document.getElementById("depir").value)
+
 
   let valordepir = depir * 189.59
 

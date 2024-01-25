@@ -98,6 +98,45 @@
     <option value="opcao-3">Opção 3</option>
   </select>
 
+  <form>
+    <label for="sexo">Escolha seu sexo:</label><br>
+    <input type="radio" id="sexo" name="sexo" value="masculino">
+    <label for="sexo">Masculino</label><br>
+    <input type="radio" id="sexo" name="sexo" value="feminino">
+    <label for="sexo">Feminino</label><br>
+    <input type="radio" id="sexo" name="sexo" value="outro">
+    <label for="sexo">Outro</label><br>
+  </form>
+
+  <form>
+    <label for="frutas">Escolha suas frutas favoritas:</label><br>
+    <input type="checkbox" id="frutas" name="frutas" value="banana">
+    <label for="frutas">Banana</label><br>
+    <input type="checkbox" id="frutas" name="frutas" value="laranja">
+    <label for="frutas">Laranja</label><br>
+    <input type="checkbox" id="frutas" name="frutas" value="maçã">
+    <label for="frutas">Maçã</label><br>
+  </form>
+
+  <form onsubmit="return validateForm()">
+    <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
+    <label for="checkbox">Eu concordo com os termos e condições.</label>
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
+  
+  <script>
+  function validateForm() {
+    var checkbox = document.getElementById('checkbox');
+    if (checkbox.checked) {
+      return true;
+    } else {
+      alert('Por favor, selecione o checkbox.');
+      return false;
+    }
+  }
+  </script>
+
 </body>
 
 </html>
