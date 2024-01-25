@@ -1,5 +1,5 @@
 body{
-    margin-top: 30px;
+    margin-top: 60px;
     background-color: rgb(169, 199, 241);
     display: flex;  
     justify-content: space-around;
@@ -11,8 +11,7 @@ body{
 }
 
 .formulario{
-    width: 500px;
-    height: 700px;
+   
     background-color: bisque;
     display: flex; 
     flex-direction: column;
@@ -22,15 +21,24 @@ body{
 }
 
 .formulario2{
-    width: 800px;
-    height: 500px;
+    width: 90vw;
+    height: 50vw;
     background-color: bisque;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    
+    column-gap: 5cqw;
+    align-items:flex-start;
 }
+
+.form1{
+display: flex;
+flex-direction: column;
+align-items: center;
+row-gap: 40px;
+width: 20vw;
+
+}
+
+
 
 .formulario3{   
     display: flex; 
@@ -81,15 +89,22 @@ body{
 
 .imagem{
 
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 600px;
+}
+.imagem2{
+
+    width: 600px;
+    height: 700px;
 }
 
 .data{
     color: rgb(128, 8, 48);
     display: flex;
-    font-size: 25px;
-    gap: 50px;
+    flex-direction: column;
+    font-size: 15px;
+    gap: 5px;
+    
     
 }
 
@@ -105,11 +120,12 @@ body{
 
 .tipo{
     height: 60px;
-    font-size: 25px;
+    font-size: 20px;
     color: chocolate;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    column-gap: 30px;
+    gap: 30px;
     padding-top: 10px;
 }
 .tipoBalao{
@@ -131,6 +147,3 @@ body{
     height: 20px;
     width: 30px;
 }
-
-
-

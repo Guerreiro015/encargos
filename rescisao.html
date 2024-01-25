@@ -16,45 +16,44 @@
 
   <header class="cabecalho">
     <a class="cabecalho_texto" href="/main.html"> Cálculo de Férias</a>
-    <a class="cabecalho_texto" href="/main.html"> Cálculo de Rescisão</a>
+    <a class="cabecalho_texto" href="/tabela.html"> Tabelas</a>
     <a class="cabecalho_texto" href="/tests.html"> Cálculo de Salário</a>
     <a class="cabecalho_texto" href="/main.html"> Cálculo de Férias</a>
   </header>
-
-
 </head>
 
 <body>
-
-  <img class="imagem" src="/Tabela-INSS-e-Salario-Familia-2024.png" alt="tabela inss">
-
   <div class="formulario2">
-    <h1>Cálculos de RESCISÕES</h1>
-    <div class="data">
-      <label for="text1">Data Admissão</label>
-      <input type="date" name="text1" id="text1">
-      <label for="text2">Data Demissão</label>
-      <input type="date" name="text2" id="text2">
-    </div>
+    <div class="form1">
+      <h1>Parametros da Rescisão</h1>
+      <div class="data">
+        <label for="text1">Data Admissão</label>
+        <input class="tipoBalao" type="date" name="text1" id="text1">
+        <label for="text2">Data Demissão</label>
+        <input class="tipoBalao" type="date" name="text2" id="text2">
+      </div>
 
-    <div class="tipo">
-      
-        <h4>Tipo de Rescisão</h4>
-        <select class="tipoBalao" name="tipo" id="tipo">
-          <option value="Sem Justa causa">Sem Justa causa</option>
-          <option value="Justa causa">Justa causa</option>
-          <option value="Pedido de Demissão">Pedido de Demissão</option>
-          <option value="Fim de Contrato">Fim de Contrato</option>
-        </select>
-        
-        <fieldset class="tipocheck">
-        <input class="tipocheckBalao" type="checkbox" id="ferias_vencidas" name="ferias_vencidas">
-        <label for="ferias_vencidas">Férias Vencidas</label>
+      <div class="tipo">
+        <fieldset>
+          <legend>Tipo de Rescisão</legend>
+          <select class="tipoBalao" name="tipo_rescisao" id="tipo_rescisao">
+            <option value="Sem Justa causa">Sem Justa causa</option>
+            <option value="Justa causa">Justa causa</option>
+            <option value="Pedido de Demissão">Pedido de Demissão</option>
+            <option value="Fim de Contrato">Fim de Contrato</option>
+          </select>
         </fieldset>
 
+        <fieldset class="tipocheck">
+          <input class="tipocheckBalao" type="checkbox" id="ferias_vencidas" name="ferias_vencidas">
+          <label for="ferias_vencidas">Férias Vencidas</label>
+        </fieldset>
+
+        <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
+      </div>
 
     </div>
-    <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
+
     <div class="formulario3">
       <div class="formulario4">
         <h2>Proventos</h2>
@@ -71,7 +70,7 @@
       </div>
 
       <div class="formulario4">
-        <h2>Deduções</h2>
+        <h2>Descontos</h2>
         <label class="preencher" for="faltas">Faltas - R$: - (Dedução de INSS)</label>
         <input class="preencher" type="text" id="faltas" nome="faltas" value="0">
         <label class="preencher" for="pensao">Pensao - R$:- (Dedução de IRRF)</label>
@@ -83,29 +82,22 @@
     </div>
 
 
-    <h2>DIAS</h2>
     <div class="data">
+      <h2>DIAS</h2>
       <p id='diasRes'></p>
       <p id='avisoProjetado'></p>
-      
-    </div>
-    <div class="data">
-      <p id='valoravisoProjetado'></p>
       <p id='tipo'></p>
       <p id='feriasVencidas'></p>
+      <!-- <p id='valoravisoProjetado'></p> -->
     </div>
 
 
-    <h2>VALORES</h2>
     <div class="data">
+      <h2>VALORES</h2>
       <p id='inss_base'></p>
       <p id='inss_valor'></p>
-    </div>
-    <div class="data">
       <p id='irrf_base'></p>
       <p id='irrf_valor'></p>
-    </div>
-    <div class="data">
       <p id='fgts_total'></p>
     </div>
 
@@ -115,7 +107,7 @@
 
   </div>
 
-  <img class="imagem" src="/tabela_ir_2023-2024.png" alt="tabela irrf">
+
 
 </body>
 

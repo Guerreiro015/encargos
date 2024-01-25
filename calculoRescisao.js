@@ -4,10 +4,11 @@ function calcularEncargos() {
 
   data = (document.getElementById("text1")).value;
   data2 = (document.getElementById("text2")).value;
-  tipo_rescisao = document.getElementById("ferias_vencidas")
+  tipo_rescisao = document.getElementById("tipo_rescisao")
+  feria_vencida = document.getElementById("ferias_vencidas")
 
   vencidas = ""
-  if (tipo_rescisao.checked) {
+  if (feria_vencida.checked) {
     vencidas = "SIM"
   }
 
@@ -33,8 +34,9 @@ function calcularEncargos() {
 
   document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2
   document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias"
-  document.getElementById("valoravisoProjetado").innerHTML = "Valor Aviso Projetado: " + valor_avo_prop.toFixed(2)
+  document.getElementById("tipo").innerHTML = "Tipo de Rescisão: " + tipo_rescisao
   document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + vencidas
+  document.getElementById("valoravisoProjetado").innerHTML = "Valor Aviso Projetado: " + valor_avo_prop.toFixed(2)
 
 
 
