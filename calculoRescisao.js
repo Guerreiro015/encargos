@@ -4,8 +4,11 @@ function calcularEncargos() {
 
   data = (document.getElementById("text1")).value;
   data2 = (document.getElementById("text2")).value;
-  tipo_rescisao = document.getElementById("tipo_rescisao")
-  feria_vencida = document.getElementById("ferias_vencidas")
+  feria_vencida = document.getElementById("ferias_vencidas");
+
+  t_rescisao = document.querySelector("#tipo_rescisao");
+  texto_rescisao = t_rescisao.value
+
 
   vencidas = ""
   if (feria_vencida.checked) {
@@ -32,11 +35,11 @@ function calcularEncargos() {
   valor_avo_prop = 1676.89 / 30 * avos_anual
 
 
-  document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2
-  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias"
-  document.getElementById("tipo").innerHTML = "Tipo de Rescisão: " + tipo_rescisao
+  document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2;
+  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
+  document.getElementById("tipo").innerHTML = "Rescisão: " + texto_rescisao;
   document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + vencidas
-  document.getElementById("valoravisoProjetado").innerHTML = "Valor Aviso Projetado: " + valor_avo_prop.toFixed(2)
+  document.getElementById("valoravisoProjetado").innerHTML = "Valor Aviso Projetado: " + valor_avo_prop.toFixed(2);
 
 
 
