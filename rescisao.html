@@ -44,9 +44,21 @@
           </select>
         </fieldset>
 
-        <fieldset class="tipocheck">
+        <!-- <fieldset class="tipocheck">
           <input class="tipocheckBalao" type="checkbox" id="ferias_vencidas" name="ferias_vencidas">
           <label for="ferias_vencidas">Férias Vencidas</label>
+        </fieldset> -->
+        <fieldset>
+          <legend>Férias Vencidas</legend>
+          <form>
+            <label for="sexo"></label><br>
+            <input type="radio" id="sim" name="sexo" value="sim">
+            <label for="sexo">Sim</label><br>
+            <input type="radio" id="não" name="sexo" value="não">
+            <label for="sexo">Não</label><br>            
+          </form>
+          
+
         </fieldset>
 
         <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
