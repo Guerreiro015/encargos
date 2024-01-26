@@ -48,18 +48,29 @@
           <input class="tipocheckBalao" type="checkbox" id="ferias_vencidas" name="ferias_vencidas">
           <label for="ferias_vencidas">Férias Vencidas</label>
         </fieldset> -->
-        <fieldset>
-          <legend>Férias Vencidas</legend>
-          <form>
-            <label for="sexo"></label><br>
-            <input type="radio" id="sim" name="sexo" value="sim">
-            <label for="sexo">Sim</label><br>
-            <input type="radio" id="não" name="sexo" value="não">
-            <label for="sexo">Não</label><br>            
-          </form>
-          
 
-        </fieldset>
+        <label>
+          <input type="radio" name="resposta" value="sim"> Sim
+        </label>
+        <label>
+          <input type="radio" name="resposta" value="nao"> Não
+        </label>
+
+        
+        <script>
+          const simRadio = document.querySelector('input[value="sim"]');
+          const naoRadio = document.querySelector('input[value="nao"]');
+
+          simRadio.addEventListener('change', () => {
+            console.log('Sim foi selecionado');
+          });
+
+          naoRadio.addEventListener('change', () => {
+            console.log('Não foi selecionado');
+          });
+
+        </script>
+
 
         <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
       </div>
