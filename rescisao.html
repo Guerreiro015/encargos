@@ -49,29 +49,18 @@
           <label for="ferias_vencidas">Férias Vencidas</label>
         </fieldset> -->
 
-        <label>
-          <input type="radio" name="resposta" value="sim"> Sim
-        </label>
-        <label>
-          <input type="radio" name="resposta" value="nao"> Não
-        </label>
 
+
+        <fieldset>
+          <legend>Férias Vencidas</legend>
+          <label for="sim" id="ferias">Sim</label>
+            <input type="radio" name="ferias" value="SIM">
+         
+            <label for="nao">Não</label>
+            <input type="radio" name="ferias" value="NAO">           
+
+        </fieldset>
         
-        <script>
-          const simRadio = document.querySelector('input[value="sim"]');
-          const naoRadio = document.querySelector('input[value="nao"]');
-
-          simRadio.addEventListener('change', () => {
-            console.log('Sim foi selecionado');
-          });
-
-          naoRadio.addEventListener('change', () => {
-            console.log('Não foi selecionado');
-          });
-
-        </script>
-
-
         <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
       </div>
 

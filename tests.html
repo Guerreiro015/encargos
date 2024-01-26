@@ -27,116 +27,26 @@
 
 <body class="divisa">
 
-    <h1>Somando datas em HTML</h1>
-
-    <div class="data">        
-        <label for="text1">DATA 1</label>
-        <input type="date" name="text1" id="text1">
-        <label for="text2">DATA2</label>
-        <input type="date" name="text2" id="text2">
-        <button onclick="MOSTRAR()">MOSTRAR</button>
-
-    </div>
-    <p id="id_data1"></p>
-    <p id="id_dia1"></p>
-    <p id="id_mes1"></p>
-    <p id="id_ano1"></p>
-    
-    <p id="id_data2"></p>
-    <p id="id_dia2"></p>
-    <p id="id_mes2"></p>
-    <p id="id_ano2"></p>
-<div  class="scip">
-    <script>
-        function MOSTRAR() {
-            data = (document.getElementById("text1")).value;
-            data2 = (document.getElementById("text2")).value;
-            
-            dia1 = Number(data.slice(8, 10))            
-            mes1 = Number(data.slice(5, 7))            
-            ano1 = Number(data.slice(0, 4))
-           
-            
-            
-            dia2 = Number(data2.slice(8, 10))            
-            mes2 = Number(data2.slice(5, 7))            
-            ano2 = Number(data2.slice(0, 4))
-           
-
-            document.getElementById("id_data1").innerHTML = "Data1: " + dia1 + "/" + mes1 + "/" + ano1
-
-            document.getElementById("id_dia1").innerHTML = "Dia1 : " + dia1
-            document.getElementById("id_mes1").innerHTML = "Mês1 : " + mes1
-            document.getElementById("id_ano1").innerHTML = "Ano1: " + ano1
-            
-            document.getElementById("id_data2").innerHTML = "Data2: " + dia2 + "/" + mes2 + "/" + ano2
-
-        }
-    </script>
-</div>
-
-<fieldset>
-    <legend>Choose your monster's features:</legend>
-  
-    <div>
-      <input type="checkbox" id="scales" name="scales" checked />
-      <label for="scales">Scales</label>
-    </div>
-  
-    <div>
-      <input type="checkbox" id="horns" name="horns" />
-      <label for="horns">Horns</label>
-    </div>
-  </fieldset>
-
-  <input type="checkbox" id="caixa-de-selecao" name="caixa-de-selecao" value="valor-da-caixa-de-selecao">
-<label for="caixa-de-selecao">Texto da caixa de seleção</label>
-
-<select id="lista-de-selecao" name="lista-de-selecao">
-    <option value="opcao-1">Opção 1</option>
-    <option value="opcao-2">Opção 2</option>
-    <option value="opcao-3">Opção 3</option>
-  </select>
-
-  <form>
-    <label for="sexo">Escolha seu sexo:</label><br>
-    <input type="radio" id="sexo" name="sexo" value="masculino">
-    <label for="sexo">Masculino</label><br>
-    <input type="radio" id="sexo" name="sexo" value="feminino">
-    <label for="sexo">Feminino</label><br>
-    <input type="radio" id="sexo" name="sexo" value="outro">
-    <label for="sexo">Outro</label><br>
-  </form>
-
-  <form>
-    <label for="frutas">Escolha suas frutas favoritas:</label><br>
-    <input type="checkbox" id="frutas" name="frutas" value="banana">
-    <label for="frutas">Banana</label><br>
-    <input type="checkbox" id="frutas" name="frutas" value="laranja">
-    <label for="frutas">Laranja</label><br>
-    <input type="checkbox" id="frutas" name="frutas" value="maçã">
-    <label for="frutas">Maçã</label><br>
-  </form>
-
-  <form onsubmit="return validateForm()">
-    <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
-    <label for="checkbox">Eu concordo com os termos e condições.</label>
-    <br>
-    <button type="submit">Enviar</button>
+  <form id="form">
+    <h3>1. Qual tag deve ser usada para representar o "cabeçalho" de um documento?</h3>
+    <ul>
+      <li><input type="radio" name="q1" value="a">head</li>
+      <li><input type="radio" name="q1" value="b">header</li>
+      <li><input type="radio" name="q1" value="c">heading</li>
+      <li><input type="radio" name="q1" value="d">main</li>
+    </ul>
+    <button id="btn-salvar" type="submit">Enviar</button>
   </form>
   
   <script>
-  function validateForm() {
-    var checkbox = document.getElementById('checkbox');
-    if (checkbox.checked) {
-      return true;
-    } else {
-      alert('Por favor, selecione o checkbox.');
-      return false;
-    }
-  }
+    var form = document.querySelector('#form');
+    var botao = document.querySelector('#btn-salvar');
+  
+    botao.addEventListener('click', function(event) {
+      event.preventDefault();
+      console.log(form.q1.value);
+    });
   </script>
-
 </body>
 
 </html>
