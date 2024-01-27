@@ -15,10 +15,10 @@
   <link href="/cabecalho.css" rel="stylesheet">
 
   <header class="cabecalho">
-    <a class="cabecalho_texto" href="/main.html"> Cálculo de Férias</a>
+    <a class="cabecalho_texto" href="/ferias.html"> Cálculo de Férias</a>
     <a class="cabecalho_texto" href="/tabela.html"> Tabelas</a>
     <a class="cabecalho_texto" href="/tests.html"> Cálculo de Salário</a>
-    <a class="cabecalho_texto" href="/main.html"> Cálculo de Férias</a>
+    <a class="cabecalho_texto" href="/encargos.html"> Cálculo de Encargos</a>
   </header>
 </head>
 
@@ -44,23 +44,19 @@
           </select>
         </fieldset>
 
-        <!-- <fieldset class="tipocheck">
-          <input class="tipocheckBalao" type="checkbox" id="ferias_vencidas" name="ferias_vencidas">
-          <label for="ferias_vencidas">Férias Vencidas</label>
-        </fieldset> -->
-
-
-
+        
         <fieldset>
           <legend>Férias Vencidas</legend>
-          <label for="sim" id="ferias">Sim</label>
-            <input type="radio" name="ferias" value="SIM">
-         
-            <label for="nao">Não</label>
-            <input type="radio" name="ferias" value="NAO">           
-
+          <div class="adicional">
+            <input class="tipocheck" type="radio" name="ferias" value="SIM">
+            <label class="tipocheck" for="sim" id="ferias">Sim</label>
+          </div>
+          <div class="adicional">
+            <input class="tipocheck" type="radio" name="ferias" value="NAO">
+            <label class="tipocheck" for="nao">Não</label>
+          </div>
         </fieldset>
-        
+
         <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
       </div>
 
@@ -71,14 +67,27 @@
       <div class="bases">
         <label class="tipoBalao" for="Valor1">Salário R$:</label>
         <input class="tipoBalao" type="text" id="valor1" nome="valor1" value="0">
-        <label class="tipoBalao" for="valor2">Adic. Insalubridade R$:</label>
-        <input class="tipoBalao" type="text" id="valor2" nome="valor2" value="0">
-        <label class="tipoBalao" for="valor3">Adic. Periculosidade R$:</label>
-        <input class="tipoBalao" type="text" id="valor3" nome="valor3" value="0">
         <label class="tipoBalao" for="valor4">Adic. Noturno R$:</label>
         <input class="tipoBalao" type="text" id="valor4" nome="valor4" value="0">
         <label class="tipoBalao" for="valor5">Horas Extras R$:</label>
         <input class="tipoBalao" type="text" id="valor5" nome="valor5" value="0">
+
+        <fieldset>
+
+          <legend>Adicionais</legend>
+          <div class="adicional">
+            <input class="tipocheck" type="radio" name="adicional" value="Insalubridade">
+            <label class="tipocheck" for="Insalubridade" id="adicional">Insalubridade</label>
+          </div>
+          <div class="adicional">
+            <input class="tipocheck" type="radio" name="adicional" value="Periculodidade">
+            <label class="tipocheck" for="Periculodidade" id="adicional">Periculosidade</label>
+          </div>
+          <div class="adicional">
+            <input class="tipocheck" type="radio" name="adicional" value="Nao_Recebe">
+            <label class="tipocheck" for="Nao_recebe" id="adicional">Não_Recebe</label>
+          </div>
+        </fieldset>
       </div>
     </div>
 
@@ -99,7 +108,8 @@
       <div class="bases">
         <p id='diasRes'></p>
         <p id='avisoProjetado'></p>
-        <p id='tipo'></p>
+        <p id='tipo_adicional'></p>
+        <p id='tipo_rescisao'></p>
         <p id='feriasVencidas'></p>
       </div>
     </div>

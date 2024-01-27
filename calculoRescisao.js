@@ -4,8 +4,12 @@ function calcularEncargos() {
 
   data = (document.getElementById("text1")).value;
   data2 = (document.getElementById("text2")).value;
+  
   feria_vencida = document.querySelector('input[name="ferias"]:checked').value;
   valor=feria_vencida
+
+  adicionais = document.querySelector('input[name="adicional"]:checked').value;
+  valor_adicionais=adicionais
 
   t_rescisao = document.querySelector("#tipo_rescisao");
   texto_rescisao = t_rescisao.value
@@ -28,7 +32,8 @@ function calcularEncargos() {
 
   document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2;
   document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
-  document.getElementById("tipo").innerHTML = "Rescisão: " + texto_rescisao;
+  document.getElementById("tipo_adicional").innerHTML = "Adicionais: " + valor_adicionais
+  document.getElementById("tipo_rescisao").innerHTML = "Rescisão: " + texto_rescisao;
   document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + valor
   
 

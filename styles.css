@@ -111,8 +111,18 @@ width: 20vw;
 
 .tipocheck{
     height: 20px;
+    width: 50px;
     padding-top: 2px;
+    font-size: 20px;
+    
+}
+
+.adicional{
+    width: 200px;
+    display: flex;
     align-items: center;
+    padding: 5px;
+    
 }
 
 .tipocheckBalao{
