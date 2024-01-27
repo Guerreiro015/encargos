@@ -37,7 +37,7 @@
         <fieldset>
           <legend>Tipo de Rescisão</legend>
           <select class="tipoBalao" name="tipo_rescisao" id="tipo_rescisao">
-            <option value="Sem Justa causa">Sem Justa causa</option>
+            <option value="Sem Justa causa" >Sem Justa causa</option>
             <option value="Justa causa">Justa causa</option>
             <option value="Pedido de Demissão">Pedido de Demissão</option>
             <option value="Fim de Contrato">Fim de Contrato</option>
@@ -52,7 +52,7 @@
             <label class="tipocheck" for="sim" id="ferias">Sim</label>
           </div>
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="ferias" value="NAO">
+            <input class="tipocheck" type="radio" name="ferias" value="NAO" checked>
             <label class="tipocheck" for="nao">Não</label>
           </div>
         </fieldset>
@@ -65,12 +65,12 @@
     <div class="form_titulo">
       <h1>Proventos</h1>
       <div class="bases">
-        <label class="tipoBalao" for="Valor1">Salário R$:</label>
-        <input class="tipoBalao" type="text" id="valor1" nome="valor1" value="0">
-        <label class="tipoBalao" for="valor4">Adic. Noturno R$:</label>
-        <input class="tipoBalao" type="text" id="valor4" nome="valor4" value="0">
-        <label class="tipoBalao" for="valor5">Horas Extras R$:</label>
-        <input class="tipoBalao" type="text" id="valor5" nome="valor5" value="0">
+        <label class="tipoBalao" for="val_sal">Salário R$:</label>
+        <input class="tipoBalao" type="text" id="val_sal" nome="val_sal" value="0">
+        <label class="tipoBalao" for="val_not">Adic. Noturno R$:</label>
+        <input class="tipoBalao" type="text" id="val_not" nome="val_not" value="0">
+        <label class="tipoBalao" for="val_he">Horas Extras R$:</label>
+        <input class="tipoBalao" type="text" id="val_he" nome="val_he" value="0">
 
         <fieldset>
 
@@ -84,7 +84,7 @@
             <label class="tipocheck" for="Periculodidade" id="adicional">Periculosidade</label>
           </div>
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="adicional" value="Nao_Recebe">
+            <input class="tipocheck" type="radio" name="adicional" value="Nao_Recebe" checked>
             <label class="tipocheck" for="Nao_recebe" id="adicional">Não_Recebe</label>
           </div>
         </fieldset>
@@ -109,7 +109,7 @@
         <p id='diasRes'></p>
         <p id='avisoProjetado'></p>
         <p id='tipo_adicional'></p>
-        <p id='tipo_rescisao'></p>
+        <p id='rescisao'></p>
         <p id='feriasVencidas'></p>
       </div>
     </div>
@@ -122,7 +122,7 @@
         <p id='inss_valor'></p>
         <p id='irrf_base'></p>
         <p id='irrf_valor'></p>
-        <p id='fgts_total'></p>
+       
       </div>
     </div>
 

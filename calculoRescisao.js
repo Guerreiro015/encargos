@@ -4,6 +4,9 @@ function calcularEncargos() {
 
   data = (document.getElementById("text1")).value;
   data2 = (document.getElementById("text2")).value;
+
+  t_rescisao = document.querySelector("#tipo_rescisao");
+  texto_rescisao = t_rescisao.value
   
   feria_vencida = document.querySelector('input[name="ferias"]:checked').value;
   valor=feria_vencida
@@ -11,8 +14,6 @@ function calcularEncargos() {
   adicionais = document.querySelector('input[name="adicional"]:checked').value;
   valor_adicionais=adicionais
 
-  t_rescisao = document.querySelector("#tipo_rescisao");
-  texto_rescisao = t_rescisao.value
 
   dia1 = Number(data.slice(8, 10))
   mes1 = Number(data.slice(5, 7))
@@ -33,18 +34,16 @@ function calcularEncargos() {
   document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2;
   document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
   document.getElementById("tipo_adicional").innerHTML = "Adicionais: " + valor_adicionais
-  document.getElementById("tipo_rescisao").innerHTML = "Rescisão: " + texto_rescisao;
+  document.getElementById("rescisao").innerHTML = "Rescisão: " + texto_rescisao;
   document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + valor
   
 
 
 
-
-  let val1 = parseFloat(document.getElementById("valor1").value)
-  let val2 = parseFloat(document.getElementById("valor2").value)
-  let val3 = parseFloat(document.getElementById("valor3").value)
-  let val4 = parseFloat(document.getElementById("valor4").value)
-  let val5 = parseFloat(document.getElementById("valor5").value)
+  let valSal = parseFloat(document.getElementById("val_sal").value)
+  let valNot = parseFloat(document.getElementById("val_not").value)
+  let valHe = parseFloat(document.getElementById("val_he").value)
+  
   let faltas = parseFloat(document.getElementById("faltas").value)
   let pensao = parseFloat(document.getElementById("pensao").value)
   let depir = parseFloat(document.getElementById("depir").value)
@@ -52,7 +51,7 @@ function calcularEncargos() {
 
   let valordepir = depir * 189.59
 
-  let proventos = val1 + val2 + val3 + val4 + val5
+  let proventos = valSal + valNot + valHe
 
   baseInss = proventos - faltas
 
