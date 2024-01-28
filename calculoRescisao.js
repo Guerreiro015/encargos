@@ -2,8 +2,10 @@ dias_avos = 0
 alert = 'deseja receber avisos deste site'
 function calcularEncargos() {
 
-  data = (document.getElementById("text1")).value;
+  data1 = (document.getElementById("text1")).value;
   data2 = (document.getElementById("text2")).value;
+  var meses_prop = data2.diff(data1, 'months');
+  var quant_meses = moment.duration(diff).asMonths;
 
   t_rescisao = document.querySelector("#tipo_rescisao");
   tipo_de_rescisao = t_rescisao.value;
@@ -14,7 +16,7 @@ function calcularEncargos() {
   adicionais = document.querySelector('input[name="adicional"]:checked').value;
   adicional_recebido = adicionais
 
-  adc = ['Insalubridade_Min_10%', 'Insalubridade_Med_20%', 'Insalubridade_Max_40%', 'Nao_Recebe'];
+  adc = ['Insal._Min_10%', 'Insal._Med_20%', 'Insal._Max_40%', 'Nao_Recebe'];
   percentual = [0.1, 0.2, 0.4, 0.0];
 
   salario_minimo = 1412.00
@@ -22,9 +24,9 @@ function calcularEncargos() {
 
   
 
-  dia1 = Number(data.slice(8, 10))
-  mes1 = Number(data.slice(5, 7))
-  ano1 = Number(data.slice(0, 4))
+  dia1 = Number(data1.slice(8, 10))
+  mes1 = Number(data1.slice(5, 7))
+  ano1 = Number(data1.slice(0, 4))
 
 
 
@@ -52,8 +54,27 @@ function calcularEncargos() {
 
   let valordepir = depir * 189.59
 
+  for (i = 0; i <= adc.length; i++) {
+    if (adicional_recebido == adc[i]) {
+      valor_do_adicional = salario_minimo * percentual[i]
+      break
+    }
+    else {
+      valor_do_adicional = valSal * 0.3
+    }
+  }
+
   let proventos = valSal + valNot + valHe + valor_do_adicional
-  let valDia = proventos / 30
+  let salCalculo=valSal+valor_do_adicional
+  let valDia = salCalculo / 30
+
+
+  if(feria_vencida=="SIM"){
+    valor_ferias_vencidas=salCalculo
+  }
+  else{
+    valor_ferias_vencidas=0
+  }
 
   baseInss = proventos - faltas
 
@@ -112,23 +133,16 @@ function calcularEncargos() {
   }
 
 
-  for (i = 0; i <= adc.length; i++) {
-    if (adicional_recebido == adc[i]) {
-      valor_do_adicional = salario_minimo * percentual[i]
-      break
-    }
-    else {
-      valor_do_adicional = valSal * 0.3
-    }
-  }
+  
 
-  document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2;
-  document.getElementById("valorDia").innerHTML = "Valor Diario : " + valDia.toFixed(2);
-  document.getElementById("valorAdc").innerHTML = "Valor Adicional: " + valor_do_adicional.toFixed(2);
+  document.getElementById("diasRes").innerHTML = "Dias p/ Cálculos : " + dia2;
+  document.getElementById("tipo_adicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
+  document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo: " + salCalculo.toFixed(2);
+  document.getElementById("valorDia").innerHTML = "Valor Diario : R$: " + valDia.toFixed(2);
   document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
-  document.getElementById("tipo_adicional").innerHTML = "Adicionais: " + adicional_recebido
   document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + feria_vencida;
+  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: R: " + valor_ferias_vencidas.toFixed(2);
+  document.getElementById("feriasProp").innerHTML = "Férias Proporconais: R: " + meses_prop
 
   document.getElementById("inss_base").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
   document.getElementById("inss_valor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);
