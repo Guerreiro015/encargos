@@ -14,21 +14,13 @@ function calcularEncargos() {
   adicionais = document.querySelector('input[name="adicional"]:checked').value;
   adicional_recebido = adicionais
 
-  adc = ['insalubridade_min_10%', 'insalubridade_med_20%', 'insalubridade_max_40%', 'Nao_Recebe'];
+  adc = ['Insalubridade_Min_10%', 'Insalubridade_Med_20%', 'Insalubridade_Max_40%', 'Nao_Recebe'];
   percentual = [0.1, 0.2, 0.4, 0.0];
 
   salario_minimo = 1412.00
   valor_do_adicional = 0
 
-  for (i = 0; i < adc.length; i++) {
-    if (adicional_recebido == adc[i]) {
-      valor_do_adicional = salario_minimo * percentual[i]
-      break
-    }
-    else {
-      valor_do_adicional = valSal * .3
-    }
-  }
+  
 
   dia1 = Number(data.slice(8, 10))
   mes1 = Number(data.slice(5, 7))
@@ -119,9 +111,20 @@ function calcularEncargos() {
     IR = (baseIR * 27.5 / 100) - 884.96
   }
 
+
+  for (i = 0; i <= adc.length; i++) {
+    if (adicional_recebido == adc[i]) {
+      valor_do_adicional = salario_minimo * percentual[i]
+      break
+    }
+    else {
+      valor_do_adicional = valSal * 0.3
+    }
+  }
+
   document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2;
-  document.getElementById("valorDia").innerHTML = "Valor Diario : " + valDia;
-  document.getElementById("valorAdc").innerHTML = "Valor Adicional: " + valor_do_adicional;
+  document.getElementById("valorDia").innerHTML = "Valor Diario : " + valDia.toFixed(2);
+  document.getElementById("valorAdc").innerHTML = "Valor Adicional: " + valor_do_adicional.toFixed(2);
   document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
   document.getElementById("tipo_adicional").innerHTML = "Adicionais: " + adicional_recebido
   document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
