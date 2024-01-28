@@ -6,14 +6,29 @@ function calcularEncargos() {
   data2 = (document.getElementById("text2")).value;
 
   t_rescisao = document.querySelector("#tipo_rescisao");
-  texto_rescisao = t_rescisao.value
-  
-  feria_vencida = document.querySelector('input[name="ferias"]:checked').value;
-  valor=feria_vencida
+  tipo_de_rescisao = t_rescisao.value;
+
+  tem_feria_vencida = document.querySelector('input[name="ferias"]:checked').value;
+  feria_vencida = tem_feria_vencida;
 
   adicionais = document.querySelector('input[name="adicional"]:checked').value;
-  valor_adicionais=adicionais
+  adicional_recebido = adicionais
 
+  adc = ['insalubridade_min_10%', 'insalubridade_med_20%', 'insalubridade_max_40%', 'Nao_Recebe'];
+  percentual = [0.1, 0.2, 0.4, 0.0];
+
+  salario_minimo = 1412.00
+  valor_do_adicional = 0
+
+  for (i = 0; i < adc.length; i++) {
+    if (adicional_recebido == adc[i]) {
+      valor_do_adicional = salario_minimo * percentual[i]
+      break
+    }
+    else {
+      valor_do_adicional = valSal * .3
+    }
+  }
 
   dia1 = Number(data.slice(8, 10))
   mes1 = Number(data.slice(5, 7))
@@ -28,33 +43,25 @@ function calcularEncargos() {
   avos_anual = ano2 - ano1
   avos_anual = avos_anual * 3
 
-  
-
-  valor_avo_prop = 1676.89 / 30 * avos_anual
 
 
-  document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2;
-  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
-  document.getElementById("tipo_adicional").innerHTML = "Adicionais: " + valor_adicionais
-  document.getElementById("rescisao").innerHTML = "Rescisão: " + texto_rescisao;
-  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + valor
-  
-
+  valor_avo_prop = 1676.89 / 30 * avos_anual  
 
 
   let valSal = parseFloat(document.getElementById("val_sal").value)
   let valNot = parseFloat(document.getElementById("val_not").value)
   let valHe = parseFloat(document.getElementById("val_he").value)
-  
+
   let faltas = parseFloat(document.getElementById("faltas").value)
   let pensao = parseFloat(document.getElementById("pensao").value)
   let depir = parseFloat(document.getElementById("depir").value)
 
 
-  
+
   let valordepir = depir * 189.59
 
-  let proventos = valSal + valNot + valHe
+  let proventos = valSal + valNot + valHe + valor_do_adicional
+  let valDia = proventos / 30
 
   baseInss = proventos - faltas
 
@@ -112,7 +119,13 @@ function calcularEncargos() {
     IR = (baseIR * 27.5 / 100) - 884.96
   }
 
-
+  document.getElementById("diasRes").innerHTML = "Dias de Rescisões : " + dia2;
+  document.getElementById("valorDia").innerHTML = "Valor Diario : " + valDia;
+  document.getElementById("valorAdc").innerHTML = "Valor Adicional: " + valor_do_adicional;
+  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
+  document.getElementById("tipo_adicional").innerHTML = "Adicionais: " + adicional_recebido
+  document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
+  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: " + feria_vencida;
 
   document.getElementById("inss_base").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
   document.getElementById("inss_valor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);

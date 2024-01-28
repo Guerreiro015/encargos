@@ -48,11 +48,11 @@
         <fieldset>
           <legend class="bases">Férias Vencidas</legend>
           <div class="adicional">
-            <input class="check" type="radio" name="ferias" value="SIM">
-            <label class="check" for="sim" id="ferias">Sim</label>
+            <input class="check" type="radio" name="ferias" value="SIM" id="sim">
+            <label class="check" for="sim" >Sim</label>
           </div>
           <div class="adicional">
-            <input class="check" type="radio" name="ferias" value="NAO" checked>
+            <input class="check" type="radio" name="ferias" id="nao" value="NAO" checked>
             <label class="check" for="nao">Não</label>
           </div>
         </fieldset>
@@ -115,9 +115,11 @@
     </div>
 
     <div class="form_titulo">
-      <h1>Dias</h1>
+      <h1>BASES</h1>
       <div class="dias">
         <p id='diasRes'></p>
+        <p id='valorDia'></p>
+        <p id='ValorAdc'></p>
         <p id='avisoProjetado'></p>
         <p id='tipo_adicional'></p>
         <p id='rescisao'></p>
