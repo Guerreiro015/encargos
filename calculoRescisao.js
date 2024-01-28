@@ -52,6 +52,17 @@ function calcularEncargos() {
     }
   }
 
+  if (dia2 >= 15) {
+    decimo = mes2
+  }
+  else {
+    decimo = mes2 - 1
+  }
+
+  if(decimo<=0){
+    decimo=0
+  }
+
 
   let valSal = parseFloat(document.getElementById("val_sal").value)
   let valNot = parseFloat(document.getElementById("val_not").value)
@@ -79,6 +90,7 @@ function calcularEncargos() {
   let salCalculo = valSal + valor_do_adicional
   let valDia = salCalculo / 30
   let valor_meses_prop = (salCalculo / 12) * meses_prop
+  let valor_decimo = (salCalculo / 12) * decimo
 
 
   if (feria_vencida == "SIM") {
@@ -147,15 +159,17 @@ function calcularEncargos() {
 
 
 
+  document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
   document.getElementById("diasRes").innerHTML = "Dias p/ Cálculos....: " + dia2;
   document.getElementById("tipo_adicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
   document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
   document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
   document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado......: " + avos_anual + " dias";
-  document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
   document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas..: R$: " + valor_ferias_vencidas.toFixed(2);
   document.getElementById("feriasProp").innerHTML = "Férias Propor. ...:__" + meses_prop + "__Avos"
   document.getElementById("valorFeriasProp").innerHTML = "Férias Propor. ...R$: " + valor_meses_prop.toFixed(2)
+  document.getElementById("avoDecimo").innerHTML = "13º Propor. ...:__" + decimo + "__Avos"
+  document.getElementById("valorDecimo").innerHTML = "13º Propor. ...: R$: " + valor_decimo.toFixed(2)
 
   document.getElementById("inss_base").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
   document.getElementById("inss_valor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);
