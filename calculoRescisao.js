@@ -28,6 +28,8 @@ function calcularEncargos() {
   avos_anual = ano2 - ano1
   avos_anual = avos_anual * 3
 
+  
+
   valor_avo_prop = 1676.89 / 30 * avos_anual
 
 
@@ -49,6 +51,7 @@ function calcularEncargos() {
   let depir = parseFloat(document.getElementById("depir").value)
 
 
+  
   let valordepir = depir * 189.59
 
   let proventos = valSal + valNot + valHe

@@ -28,15 +28,15 @@
       <h1>Parametros</h1>
       <div class="bases">
         <label for="text1">Data Admissão</label>
-        <input class="tipoBalao" type="date" name="text1" id="text1">
+        <input class="Balao_texto" type="date" name="text1" id="text1">
         <label for="text2">Data Demissão</label>
-        <input class="tipoBalao" type="date" name="text2" id="text2">
+        <input class="Balao_texto" type="date" name="text2" id="text2">
       </div>
 
       <div class="tipo">
         <fieldset>
-          <legend>Tipo de Rescisão</legend>
-          <select class="tipoBalao" name="tipo_rescisao" id="tipo_rescisao">
+          <legend class="bases">Tipo de Rescisão</legend>
+          <select class="Balao_texto" name="tipo_rescisao" id="tipo_rescisao">
             <option value="Sem Justa causa" >Sem Justa causa</option>
             <option value="Justa causa">Justa causa</option>
             <option value="Pedido de Demissão">Pedido de Demissão</option>
@@ -46,14 +46,14 @@
 
         
         <fieldset>
-          <legend>Férias Vencidas</legend>
+          <legend class="bases">Férias Vencidas</legend>
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="ferias" value="SIM">
-            <label class="tipocheck" for="sim" id="ferias">Sim</label>
+            <input class="check" type="radio" name="ferias" value="SIM">
+            <label class="check" for="sim" id="ferias">Sim</label>
           </div>
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="ferias" value="NAO" checked>
-            <label class="tipocheck" for="nao">Não</label>
+            <input class="check" type="radio" name="ferias" value="NAO" checked>
+            <label class="check" for="nao">Não</label>
           </div>
         </fieldset>
 
@@ -64,39 +64,39 @@
 
     <div class="form_titulo">
       <h1>Proventos</h1>
-      <div class="bases">
-        <label class="tipoBalao" for="val_sal">Salário R$:</label>
-        <input class="tipoBalao" type="text" id="val_sal" nome="val_sal" value="0">
-        <label class="tipoBalao" for="val_not">Adic. Noturno R$:</label>
-        <input class="tipoBalao" type="text" id="val_not" nome="val_not" value="0">
-        <label class="tipoBalao" for="val_he">Horas Extras R$:</label>
-        <input class="tipoBalao" type="text" id="val_he" nome="val_he" value="0">
+      <div class="proventos">
+        <label class="proventos" for="val_sal">Salário R$:</label>
+        <input class="proventos_texto" type="text" id="val_sal" nome="val_sal" value="0">
+        <label class="proventos" for="val_not">Adic. Noturno R$:</label>
+        <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="0">
+        <label class="proventos" for="val_he">Horas Extras R$:</label>
+        <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="0">
+        
+        <br>
 
         <fieldset>
-
           <legend>Adicionais</legend>
-
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
-            <label class="tipocheck" for="Periculodidade" >Periculosidade</label>
+            <input class="check" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
+            <label class="check_text" for="Periculodidade" >Periculosidade</label>
           </div>
 
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="adicional" value="Insalubridade_Min_10%" id="Insalubridade_Min_10%">
-            <label class="tipocheck" for="Insalubridade_Min_10%" >Insalubridade_Min_10%</label>
+            <input class="check" type="radio" name="adicional" value="Insalubridade_Min_10%" id="Insalubridade_Min_10%">
+            <label class="check" for="Insalubridade_Min_10%" >Insalubridade_Min_10%</label>
           </div>
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="adicional" value="Insalubridade_Med_20%"  id="Insalubridade_Med_20%">
-            <label class="tipocheck" for="Insalubridade_Med_20%">Insalubridade_Med_20%</label>
+            <input class="check" type="radio" name="adicional" value="Insalubridade_Med_20%"  id="Insalubridade_Med_20%">
+            <label class="check" for="Insalubridade_Med_20%">Insalubridade_Med_20%</label>
           </div>
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="adicional" value="Insalubridade_Max_40%" id="Insalubridade_Max_40%">
-            <label class="tipocheck" for="Insalubridade_Max_40%">Insalubridade_Max_40%</label>
+            <input class="check" type="radio" name="adicional" value="Insalubridade_Max_40%" id="Insalubridade_Max_40%">
+            <label class="check" for="Insalubridade_Max_40%">Insalubridade_Max_40%</label>
           </div>
 
           <div class="adicional">
-            <input class="tipocheck" type="radio" name="adicional" value="Nao_Recebe" id="Nao_Recebe" checked>
-            <label class="tipocheck" for="Nao_Recebe" >Não_Recebe</label>
+            <input class="check" type="radio" name="adicional" value="Nao_Recebe" id="Nao_Recebe" checked>
+            <label class="check" for="Nao_Recebe" >Não_Recebe</label>
           </div>
         </fieldset>
       </div>
@@ -104,19 +104,19 @@
 
     <div class="form_titulo">
       <h1>Descontos</h1>
-      <div class="bases">
-        <label class="tipoBalao" for="faltas">Faltas</label>
-        <input class="tipoBalao" type="text" id="faltas" nome="faltas" value="0">
-        <label class="tipoBalao" for="pensao">Pensao</label>
-        <input class="tipoBalao" type="text" id="pensao" nome="pensao" value="0">
-        <label class="tipoBalao" for="depir">Quant. Dep. de IR</label>
-        <input class="tipoBalao" type="text" id="depir" nome="depir" value="0">
+      <div class="proventos">
+        <label class="proventos" for="faltas">Faltas</label>
+        <input class="proventos_texto" type="text" id="faltas" nome="faltas" value="0">
+        <label class="proventos" for="pensao">Pensao</label>
+        <input class="proventos_texto" type="text" id="pensao" nome="pensao" value="0">
+        <label class="proventos" for="depir">Quant. Dep. de IR</label>
+        <input class="proventos_texto" type="text" id="depir" nome="depir" value="0">
       </div>
     </div>
 
     <div class="form_titulo">
       <h1>Dias</h1>
-      <div class="bases">
+      <div class="dias">
         <p id='diasRes'></p>
         <p id='avisoProjetado'></p>
         <p id='tipo_adicional'></p>
@@ -128,7 +128,7 @@
 
     <div class="form_titulo">
       <h1>Valores</h1>
-      <div class="bases">
+      <div class="dias">
         <p id='inss_base'></p>
         <p id='inss_valor'></p>
         <p id='irrf_base'></p>
