@@ -1,38 +1,52 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
-  <title>Cálculo de Rescisão Trabalhista</title>
+  <title>
+    Get first and last date of current month
+  </title>
 </head>
 
-<body>
-  <script>
-    function datas(){
-    // Este exemplo mostra como calcular a diferença
-// de meses entre duas datas
- 
-const MILLISECOND:Number = 1;
-const SECOND:Number = MILLISECOND * 1000;
-const MINUTE:Number = SECOND * 60;
-const HOUR:Number = MINUTE * 60;
-const DAY:Number = HOUR * 24;
- 
-var data1:Date = new Date(2006, 5, 20);
-var data2:Date = new Date(2006, 3, 20);
- 
-// diferença em milisegundos entre as duas datas
-var milis:Number = Math.abs(data1.getTime() - 
-  data2.getTime());
- 
-// diferença em meses e dias
-var meses:int = Math.floor(milis / DAY / 30);
-var dias:int = Math.floor(milis / DAY) % 30;
- 
-Alert.show("A diferença entre as duas datas é " +
-  meses + " meses e " + dias + " dias");
-  }
+<body style="text-align:center;">
 
-  datas()
+  <div class="bases">
+    <label for="text1">Data Admissão</label>
+    <input class="Balao_texto" type="datetime-local" name="text1" id="text1">    
+  </div>
+
+  <h1 style="color:green;">
+    RESULTADOS
+  </h1>
+
+  <p id="GFG_UP" style="font-size: 15px; font-weight: bold;">
+  </p>
+
+  <button onclick="GFG_Fun()">    click here  </button>
+
+  <p id="GFG_DOWN" style="color:green; font-size: 20px; font-weight: bold;">
+  </p>
+
+  <script>
+
+    data1 = (document.getElementById("text1")).value;
+    
+    ano=new Date(data1)
+    var up = document.getElementById('GFG_UP');
+
+    up.innerHTML = "Click on button to get the first "
+      + "and last day of current month";
+
+    var down = document.getElementById('GFG_DOWN');
+
+    function GFG_Fun() {
+      var date = new Date()
+
+      var firstDay =  new Date(date.getFullYear(), date.getMonth(), 1);
+
+      var lastDay =   new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+      down.innerHTML = "First day = " + firstDay
+    }
   </script>
 </body>
 

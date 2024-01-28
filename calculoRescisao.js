@@ -4,8 +4,6 @@ function calcularEncargos() {
 
   data1 = (document.getElementById("text1")).value;
   data2 = (document.getElementById("text2")).value;
-  var meses_prop = data2.diff(data1, 'months');
-  var quant_meses = moment.duration(diff).asMonths;
 
   t_rescisao = document.querySelector("#tipo_rescisao");
   tipo_de_rescisao = t_rescisao.value;
@@ -22,7 +20,7 @@ function calcularEncargos() {
   salario_minimo = 1412.00
   valor_do_adicional = 0
 
-  
+
 
   dia1 = Number(data1.slice(8, 10))
   mes1 = Number(data1.slice(5, 7))
@@ -36,10 +34,23 @@ function calcularEncargos() {
 
   avos_anual = ano2 - ano1
   avos_anual = avos_anual * 3
+  ano_anterior = 12 - mes1
 
+  if (mes1 == mes2) {
+    meses_prop = 0
+  }
 
+  else {
 
-  valor_avo_prop = 1676.89 / 30 * avos_anual  
+    if (mes2 < mes1) {
+
+      meses_prop = mes2 + ano_anterior
+
+    }
+    else {
+      meses_prop = mes2
+    }
+  }
 
 
   let valSal = parseFloat(document.getElementById("val_sal").value)
@@ -65,15 +76,16 @@ function calcularEncargos() {
   }
 
   let proventos = valSal + valNot + valHe + valor_do_adicional
-  let salCalculo=valSal+valor_do_adicional
+  let salCalculo = valSal + valor_do_adicional
   let valDia = salCalculo / 30
+  let valor_meses_prop = (salCalculo / 12) * meses_prop
 
 
-  if(feria_vencida=="SIM"){
-    valor_ferias_vencidas=salCalculo
+  if (feria_vencida == "SIM") {
+    valor_ferias_vencidas = salCalculo
   }
-  else{
-    valor_ferias_vencidas=0
+  else {
+    valor_ferias_vencidas = 0
   }
 
   baseInss = proventos - faltas
@@ -133,16 +145,17 @@ function calcularEncargos() {
   }
 
 
-  
 
-  document.getElementById("diasRes").innerHTML = "Dias p/ Cálculos : " + dia2;
+
+  document.getElementById("diasRes").innerHTML = "Dias p/ Cálculos....: " + dia2;
   document.getElementById("tipo_adicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
-  document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo: " + salCalculo.toFixed(2);
-  document.getElementById("valorDia").innerHTML = "Valor Diario : R$: " + valDia.toFixed(2);
-  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado: " + avos_anual + " dias";
+  document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
+  document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
+  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado......: " + avos_anual + " dias";
   document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas: R: " + valor_ferias_vencidas.toFixed(2);
-  document.getElementById("feriasProp").innerHTML = "Férias Proporconais: R: " + meses_prop
+  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas..: R$: " + valor_ferias_vencidas.toFixed(2);
+  document.getElementById("feriasProp").innerHTML = "Férias Propor. ...:__" + meses_prop + "__Avos"
+  document.getElementById("valorFeriasProp").innerHTML = "Férias Propor. ...R$: " + valor_meses_prop.toFixed(2)
 
   document.getElementById("inss_base").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
   document.getElementById("inss_valor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);
