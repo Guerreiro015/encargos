@@ -21,21 +21,21 @@ function calcularEncargos() {
   valor_do_adicional = 0
 
 
-
   dia1 = Number(data1.slice(8, 10))
   mes1 = Number(data1.slice(5, 7))
   ano1 = Number(data1.slice(0, 4))
-
 
 
   dia2 = Number(data2.slice(8, 10))
   mes2 = Number(data2.slice(5, 7))
   ano2 = Number(data2.slice(0, 4))
 
-  avos_anual = ano2 - ano1
-  avos_anual = avos_anual * 3
+
+
+
   ano_anterior = 12 - mes1
 
+  // Cálculo dos avos das férias proporcinais
   if (mes1 == mes2) {
     meses_prop = 0
   }
@@ -59,10 +59,27 @@ function calcularEncargos() {
     decimo = mes2 - 1
   }
 
-  if(decimo<=0){
-    decimo=0
+  if (decimo <= 0) {
+    decimo = 0
   }
 
+
+  // Cálculo dos avos do aviso pojetado
+  avos_avisoProjetado = ano2 - ano1
+
+  if (mes2 < mes1)
+   {    avos_avisoProjetado -= 1  }
+ 
+  if (ano2 > ano1 && mês2 == mes1 && dia2 < dia1)
+  { avos_avisoProjetado -= 1 }
+  
+
+  if (avos_avisoProjetado <= 0)
+   { avos_avisoProjetado = 0 }
+
+  avos_avisoProjetado = avos_avisoProjetado * 3
+
+  //-------------------------------------------
 
   let valSal = parseFloat(document.getElementById("val_sal").value)
   let valNot = parseFloat(document.getElementById("val_not").value)
@@ -164,7 +181,7 @@ function calcularEncargos() {
   document.getElementById("tipo_adicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
   document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
   document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
-  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado......: " + avos_anual + " dias";
+  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado......: " + avos_avisoProjetado + " dias";
   document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas..: R$: " + valor_ferias_vencidas.toFixed(2);
   document.getElementById("feriasProp").innerHTML = "Férias Propor. ...:__" + meses_prop + "__Avos"
   document.getElementById("valorFeriasProp").innerHTML = "Férias Propor. ...R$: " + valor_meses_prop.toFixed(2)
