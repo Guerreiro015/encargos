@@ -35,22 +35,27 @@ function calcularEncargos() {
 
   ano_anterior = 12 - mes1
 
+
   // Cálculo dos avos das férias proporcinais
-  if (mes1 == mes2) {
-    meses_prop = 0
-  }
-
+  if (ano2 == ano1 && dia2 >= dia1) { meses_prop = mes2 - mes1 }
   else {
-
-    if (mes2 < mes1) {
-
-      meses_prop = mes2 + ano_anterior
-
-    }
+    if (ano2 == ano1 && dia2 < dia1) { meses_prop = mes2 - mes1 - 1 }
     else {
-      meses_prop = mes2
+      if (mes1 == mes2) { meses_prop = 0 }
+      else {
+        if (mes2 > mes1 && mes2 < mes1 && dia2 >= dia1) { meses_prop = mes2 + ano_anterior }
+        else {
+          if (mes2 > mes1 && mes2 > mes1 && dia2 >= dia1) { meses_prop = mes2 - mes1 }
+          else {
+            meses_prop = mes1 - mes2
+          }
+        }
+      }
     }
   }
+
+
+  // Cálculo dos avos das Decimo Terceiro proporcinais 13º
 
   if (dia2 >= 15) {
     decimo = mes2
@@ -67,15 +72,12 @@ function calcularEncargos() {
   // Cálculo dos avos do aviso pojetado
   avos_avisoProjetado = ano2 - ano1
 
-  if (mes2 < mes1)
-   {    avos_avisoProjetado -= 1  }
- 
-  if (ano2 > ano1 && mês2 == mes1 && dia2 < dia1)
-  { avos_avisoProjetado -= 1 }
-  
+  if (mes2 < mes1) { avos_avisoProjetado -= 1 }
 
-  if (avos_avisoProjetado <= 0)
-   { avos_avisoProjetado = 0 }
+  if (ano2 > ano1 && mes2 == mes1 && dia2 < dia1) { avos_avisoProjetado -= 1 }
+
+
+  if (avos_avisoProjetado <= 0) { avos_avisoProjetado = 0 }
 
   avos_avisoProjetado = avos_avisoProjetado * 3
 
