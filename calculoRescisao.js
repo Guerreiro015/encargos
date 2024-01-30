@@ -105,12 +105,12 @@ function calcularEncargos() {
   let valHe = parseFloat(document.getElementById("val_he").value)
 
   let faltas = parseFloat(document.getElementById("faltas").value)
-  let pensao = parseFloat(document.getElementById("pensao").value)
-  let depir = parseFloat(document.getElementById("depir").value)
+  let valor_pensao = parseFloat(document.getElementById("pensao").value)
+  let dep_ir = parseFloat(document.getElementById("depir").value)
 
 
 
-  let valordepir = depir * 189.59
+  let valordepir = dep_ir * 189.59
 
   for (i = 0; i <= adc.length; i++) {
     if (adicional_recebido == adc[i]) {
@@ -159,7 +159,7 @@ function calcularEncargos() {
   }
 
 
-  deducao = valorInss + pensao + valordepir
+  deducao = valorInss + valor_pensao + valordepir
 
   if (deducao <= 528) {
     deducao = 528
