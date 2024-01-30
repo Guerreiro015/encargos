@@ -37,168 +37,180 @@ function calcularEncargos() {
 
 
   // Cálculo dos avos das férias proporcinais
-  if (ano2 == ano1 && dia2 >= dia1) { meses_prop = mes2 - mes1 }
+  if (ano1 < ano2 && mes1 == mes2 && dia1 <= dia2) { meses_prop = 0 }
   else {
-    if (ano2 == ano1 && dia2 < dia1) { meses_prop = mes2 - mes1 - 1 }
+    if (ano1 < ano2 && mes1 == mes2 && dia1 > dia2) { meses_prop = 11 }
     else {
-      if (mes1 == mes2) { meses_prop = 0 }
+
+      if (ano1 < ano2 && mes1 < mes2 && dia1 <= dia2) { meses_prop = mes2 - mes1 }
       else {
-        if (mes2 > mes1 && mes2 < mes1 && dia2 >= dia1) { meses_prop = mes2 + ano_anterior }
+        if (ano1 < ano2 && mes1 < mes2 && dia1 > dia2) { meses_prop = mes2 - mes1 - 1 }
         else {
-          if (mes2 > mes1 && mes2 > mes1 && dia2 >= dia1) { meses_prop = mes2 - mes1 }
+
+          if (ano1 < ano2 && mes1 > mes2 && dia1 <= dia2) { meses_prop = (12 - mes1) + mes2 }
           else {
+            if (ano1 < ano2 && mes1 > mes2 && dia1 > dia2) { meses_prop = (12 - mes2) + mes1 - 1 }
+            else {
 
-            if (mes2 > mes1 && mes2 > mes1 && dia2 < dia1) { meses_prop = mes1 - mes2 }
-            else{
-              meses_prop='erro'
+
+              if (ano1 == ano2 && mes1 < mes2 && dia1 <= dia2) { meses_prop = mes2 - mes1 }
+              else {
+                if (ano1 == ano2 && mes1 < mes2 && dia1 > dia2) { meses_prop = mes2 - mes1 - 1 }
+                else {
+
+                  if (ano1 == ano2 && mes1 > mes2) { meses_prop = 0 }
+                  else {
+
+                  }
+
+                }
+              }
             }
-
           }
         }
       }
     }
   }
 
+  // Cálculo dos avos das Decimo Terceiro proporcinais 13º
 
-// Cálculo dos avos das Decimo Terceiro proporcinais 13º
-
-if (dia2 >= 15) {
-  decimo = mes2
-}
-else {
-  decimo = mes2 - 1
-}
-
-if (decimo <= 0) {
-  decimo = 0
-}
-
-
-// Cálculo dos avos do aviso pojetado
-avos_avisoProjetado = ano2 - ano1
-
-if (mes2 < mes1) { avos_avisoProjetado -= 1 }
-
-if (ano2 > ano1 && mes2 == mes1 && dia2 < dia1) { avos_avisoProjetado -= 1 }
-
-
-if (avos_avisoProjetado <= 0) { avos_avisoProjetado = 0 }
-
-avos_avisoProjetado = avos_avisoProjetado * 3
-
-//-------------------------------------------
-
-let valSal = parseFloat(document.getElementById("val_sal").value)
-let valNot = parseFloat(document.getElementById("val_not").value)
-let valHe = parseFloat(document.getElementById("val_he").value)
-
-let faltas = parseFloat(document.getElementById("faltas").value)
-let pensao = parseFloat(document.getElementById("pensao").value)
-let depir = parseFloat(document.getElementById("depir").value)
-
-
-
-let valordepir = depir * 189.59
-
-for (i = 0; i <= adc.length; i++) {
-  if (adicional_recebido == adc[i]) {
-    valor_do_adicional = salario_minimo * percentual[i]
-    break
+  if (dia2 >= 15) {
+    decimo = mes2
   }
   else {
-    valor_do_adicional = valSal * 0.3
+    decimo = mes2 - 1
   }
-}
 
-let proventos = valSal + valNot + valHe + valor_do_adicional
-let salCalculo = valSal + valor_do_adicional
-let valDia = salCalculo / 30
-let valor_meses_prop = (salCalculo / 12) * meses_prop
-let valor_decimo = (salCalculo / 12) * decimo
+  if (decimo <= 0) {
+    decimo = 0
+  }
 
 
-if (feria_vencida == "SIM") {
-  valor_ferias_vencidas = salCalculo
-}
-else {
-  valor_ferias_vencidas = 0
-}
+  // Cálculo dos avos do aviso pojetado
+  avos_avisoProjetado = ano2 - ano1
 
-baseInss = proventos - faltas
+  if (mes2 < mes1) { avos_avisoProjetado -= 1 }
 
-if (baseInss < 1412) {
-  valorInss = baseInss * 7.5 / 100
-
-}
-else if (baseInss < 2666.68) {
-  valorInss = (baseInss * 9 / 100) - 21.18
-}
-
-else if (baseInss < 4000.03) {
-  valorInss = (baseInss * 12 / 100) - 101.18
-}
-
-else if (baseInss < 7786.02) {
-  valorInss = (baseInss * 14 / 100) - 181.18
-}
-
-else if (baseInss > 7786.02) {
-  valorInss = 908.85
-}
+  if (ano2 > ano1 && mes2 == mes1 && dia2 < dia1) { avos_avisoProjetado -= 1 }
 
 
-deducao = valorInss + pensao + valordepir
+  if (avos_avisoProjetado <= 0) { avos_avisoProjetado = 0 }
 
-if (deducao <= 528) {
-  deducao = 528
-}
+  avos_avisoProjetado = avos_avisoProjetado * 3
 
-baseIR = baseInss - deducao
+  //-------------------------------------------
 
+  let valSal = parseFloat(document.getElementById("val_sal").value)
+  let valNot = parseFloat(document.getElementById("val_not").value)
+  let valHe = parseFloat(document.getElementById("val_he").value)
 
-if (baseIR < 0) {
-  baseIR = 0
-}
-
-if (baseIR < 2112) {
-  IR = 0
-
-}
-else if (baseIR < 2826.66) {
-  IR = (baseIR * 7.5 / 100) - 158.4
-}
-
-else if (baseIR < 3751.06) {
-  IR = (baseIR * 15 / 100) - 370.40
-}
-
-else if (baseIR < 4664.69) {
-  IR = (baseIR * 22.5 / 100) - 651.73
-}
-
-else if (baseIR > 4664.68) {
-  IR = (baseIR * 27.5 / 100) - 884.96
-}
+  let faltas = parseFloat(document.getElementById("faltas").value)
+  let pensao = parseFloat(document.getElementById("pensao").value)
+  let depir = parseFloat(document.getElementById("depir").value)
 
 
 
+  let valordepir = depir * 189.59
 
-document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-document.getElementById("diasRes").innerHTML = "Dias p/ Cálculos....: " + dia2;
-document.getElementById("tipo_adicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
-document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
-document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
-document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado......: " + avos_avisoProjetado + " dias";
-document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas..: R$: " + valor_ferias_vencidas.toFixed(2);
-document.getElementById("feriasProp").innerHTML = "Férias Propor. ...:__" + meses_prop + "__Avos"
-document.getElementById("valorFeriasProp").innerHTML = "Férias Propor. ...R$: " + valor_meses_prop.toFixed(2)
-document.getElementById("avoDecimo").innerHTML = "13º Propor. ...:__" + decimo + "__Avos"
-document.getElementById("valorDecimo").innerHTML = "13º Propor. ...: R$: " + valor_decimo.toFixed(2)
+  for (i = 0; i <= adc.length; i++) {
+    if (adicional_recebido == adc[i]) {
+      valor_do_adicional = salario_minimo * percentual[i]
+      break
+    }
+    else {
+      valor_do_adicional = valSal * 0.3
+    }
+  }
 
-document.getElementById("inss_base").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
-document.getElementById("inss_valor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);
-document.getElementById("irrf_base").innerHTML = 'BASE do IR      R$: ' + baseIR.toFixed(2);
-document.getElementById("irrf_valor").innerHTML = 'Valor do IR      R$: ' + IR.toFixed(2);
+  let proventos = valSal + valNot + valHe + valor_do_adicional
+  let salCalculo = valSal + valor_do_adicional
+  let valDia = salCalculo / 30
+  let valor_meses_prop = (salCalculo / 12) * meses_prop
+  let valor_decimo = (salCalculo / 12) * decimo
+
+
+  if (feria_vencida == "SIM") {
+    valor_ferias_vencidas = salCalculo
+  }
+  else {
+    valor_ferias_vencidas = 0
+  }
+
+  baseInss = proventos - faltas
+
+  if (baseInss < 1412) {
+    valorInss = baseInss * 7.5 / 100
+
+  }
+  else if (baseInss < 2666.68) {
+    valorInss = (baseInss * 9 / 100) - 21.18
+  }
+
+  else if (baseInss < 4000.03) {
+    valorInss = (baseInss * 12 / 100) - 101.18
+  }
+
+  else if (baseInss < 7786.02) {
+    valorInss = (baseInss * 14 / 100) - 181.18
+  }
+
+  else if (baseInss > 7786.02) {
+    valorInss = 908.85
+  }
+
+
+  deducao = valorInss + pensao + valordepir
+
+  if (deducao <= 528) {
+    deducao = 528
+  }
+
+  baseIR = baseInss - deducao
+
+
+  if (baseIR < 0) {
+    baseIR = 0
+  }
+
+  if (baseIR < 2112) {
+    IR = 0
+
+  }
+  else if (baseIR < 2826.66) {
+    IR = (baseIR * 7.5 / 100) - 158.4
+  }
+
+  else if (baseIR < 3751.06) {
+    IR = (baseIR * 15 / 100) - 370.40
+  }
+
+  else if (baseIR < 4664.69) {
+    IR = (baseIR * 22.5 / 100) - 651.73
+  }
+
+  else if (baseIR > 4664.68) {
+    IR = (baseIR * 27.5 / 100) - 884.96
+  }
+
+
+
+
+  document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
+  document.getElementById("diasRes").innerHTML = "Dias p/ Cálculos....: " + dia2;
+  document.getElementById("tipo_adicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
+  document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
+  document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
+  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado......: " + avos_avisoProjetado + " dias";
+  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas..: R$: " + valor_ferias_vencidas.toFixed(2);
+  document.getElementById("feriasProp").innerHTML = "Férias Propor. ...:__" + meses_prop + "__Avos"
+  document.getElementById("valorFeriasProp").innerHTML = "Férias Propor. ...R$: " + valor_meses_prop.toFixed(2)
+  document.getElementById("avoDecimo").innerHTML = "13º Propor. ...:__" + decimo + "__Avos"
+  document.getElementById("valorDecimo").innerHTML = "13º Propor. ...: R$: " + valor_decimo.toFixed(2)
+
+  document.getElementById("inss_base").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
+  document.getElementById("inss_valor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);
+  document.getElementById("irrf_base").innerHTML = 'BASE do IR      R$: ' + baseIR.toFixed(2);
+  document.getElementById("irrf_valor").innerHTML = 'Valor do IR      R$: ' + IR.toFixed(2);
 
 
 }
