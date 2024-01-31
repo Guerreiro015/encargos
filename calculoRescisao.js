@@ -49,7 +49,7 @@ function calcularEncargos() {
 
           if (ano1 < ano2 && mes1 > mes2 && dia1 <= dia2) { meses_prop = (12 - mes1) + mes2 }
           else {
-            if (ano1 < ano2 && mes1 > mes2 && dia1 > dia2) { meses_prop = (12 - mes2) + mes1 - 1 }
+            if (ano1 < ano2 && mes1 > mes2 && dia1 > dia2) { meses_prop = (12 - mes1) + mes2 - 1 }
             else {
 
 
