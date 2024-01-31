@@ -1,59 +1,15 @@
-<!DOCTYPE HTML>
-<html>
 
-<head>
-  <title>
-    Get first and last date of current month
-  </title>
-</head>
 
-<body style="text-align:center;">
-
-  <div class="bases">
-    <label for="text1">Data Admissão</label>
-    <input class="Balao_texto" type="datetime-local" name="text1" id="text1">    
-  </div>
-
-  <h1 style="color:green;">
-    RESULTADOS
-  </h1>
-
-  <p id="GFG_UP" style="font-size: 15px; font-weight: bold;">
-  </p>
-
-  <button onclick="GFG_Fun()">    click here  </button>
-
-  <p id="GFG_DOWN" style="color:green; font-size: 20px; font-weight: bold;">
-  </p>
-
-  <script>
-
-    data1 = (document.getElementById("text1")).value;
-    
-    ano=new Date(data1)
-    var up = document.getElementById('GFG_UP');
-
-    up.innerHTML = "Click on button to get the first "
-      + "and last day of current month";
-
-    var down = document.getElementById('GFG_DOWN');
-
-    function GFG_Fun() {
-      var date = new Date()
-
-      var firstDay =  new Date(date.getFullYear(), date.getMonth(), 1);
-
-      var lastDay =   new Date(date.getFullYear(), date.getMonth() + 1, 0);
-
-      down.innerHTML = "First day = " + firstDay
-    }
-  </script>
-</body>
-
-</html>
-
+ 
+<label class="proventos" for="atrasos">Atrasos</label>
+<input class="proventos_texto" type="text" id="atrasos" nome="atrasos" value="0">
+<label class="proventos" for="convenio_medico">Convênio Médico</label>
+<input class="proventos_texto" type="text" id="convenio_medico" nome="convenio_medico" value="0">
+<label class="proventos" for="convenio_odonto">Convênio Odontológico</label>
+<input class="proventos_texto" type="text" id="convenio_odonto" nome="convenio_odonto" value="0">
+<label class="proventos" for="sindicato">Contr. Sindicais</label>
+<input class="proventos_texto" type="text" id="sindicato" nome="sindicato" value="0">
+<label class="proventos" for="vt_não_utilizado">VT Não Utilizado</label>
+<input class="proventos_texto" type="text" id="vt_não_utilizado" nome="vt_não_utilizado" value="0">
 <label class="proventos" for="va_não_utilizado">VA/VR Não Utilizado</label>
-        <input class="proventos_texto" type="text" id="va_não_utilizado" nome="va_não_utilizado" value="0">
-
-        <label class="proventos" for="depir">Quant. Dep. de IR</label>
-        <input class="proventos_texto" type="text" id="depir" nome="depir" value="0">
+<input class="proventos_texto" type="text" id="va_não_utilizado" nome="va_não_utilizado" value="0">

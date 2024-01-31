@@ -24,8 +24,8 @@
 
 <body>
   <div class="formulario">
+    <h1>Parametros</h1>
     <div class="form_titulo">
-      <h1>Parametros</h1>
       <div class="bases">
         <label for="text1">Data Admissão</label>
         <input class="Balao_texto" type="date" name="text1" id="text1">
@@ -37,33 +37,34 @@
         <fieldset>
           <legend class="bases">Tipo de Rescisão</legend>
           <select class="Balao_texto" name="tipo_rescisao" id="tipo_rescisao">
-            <option value="Sem Justa causa" >Sem Justa causa</option>
+            <option value="Sem Justa causa">Sem Justa causa</option>
             <option value="Justa causa">Justa causa</option>
             <option value="Pedido de Demissão">Pedido de Demissão</option>
             <option value="Fim de Contrato">Fim de Contrato</option>
           </select>
         </fieldset>
+      </div>
 
-        
+      <div class="tipo">
         <fieldset>
           <legend class="bases">Férias Vencidas</legend>
           <div class="adicional">
             <input class="check" type="radio" name="ferias" value="SIM" id="sim">
-            <label class="check" for="sim" >Sim</label>
+            <label class="check" for="sim">Sim</label>
           </div>
           <div class="adicional">
-            <input class="check" type="radio" name="ferias"  value="NAO" id="nao"checked>
+            <input class="check" type="radio" name="ferias" value="NAO" id="nao" checked>
             <label class="check" for="nao">Não</label>
           </div>
         </fieldset>
+       
 
-        <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
       </div>
 
     </div>
 
+    <h1>Rendimentos</h1>
     <div class="form_titulo">
-      <h1>Rendimentos</h1>
       <div class="proventos">
         <label class="proventos" for="val_sal">Salário R$:</label>
         <input class="proventos_texto" type="text" id="val_sal" nome="val_sal" value="0">
@@ -71,22 +72,22 @@
         <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="0">
         <label class="proventos" for="val_he">Horas Extras R$:</label>
         <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="0">
-        
-        <br>
 
+      </div>
+      <div>
         <fieldset>
           <legend>Adicionais</legend>
           <div class="adicional">
             <input class="check" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
-            <label class="check_text" for="Periculodidade" >Periculosidade</label>
+            <label class="check_text" for="Periculodidade">Periculosidade</label>
           </div>
 
           <div class="adicional">
             <input class="check" type="radio" name="adicional" value="Insal._Min_10%" id="Insalubridade_Min_10%">
-            <label class="check" for="Insalubridade_Min_10%" >Insalubridade_Min_10%</label>
+            <label class="check" for="Insalubridade_Min_10%">Insalubridade_Min_10%</label>
           </div>
           <div class="adicional">
-            <input class="check" type="radio" name="adicional" value="Insal._Med_20%"  id="Insalubridade_Med_20%">
+            <input class="check" type="radio" name="adicional" value="Insal._Med_20%" id="Insalubridade_Med_20%">
             <label class="check" for="Insalubridade_Med_20%">Insalubridade_Med_20%</label>
           </div>
           <div class="adicional">
@@ -96,14 +97,14 @@
 
           <div class="adicional">
             <input class="check" type="radio" name="adicional" value="Nao_Recebe" id="Nao_Recebe" checked>
-            <label class="check" for="Nao_Recebe" >Não_Recebe</label>
+            <label class="check" for="Nao_Recebe">Não_Recebe</label>
           </div>
         </fieldset>
       </div>
     </div>
 
+    <h1>Descontos</h1>
     <div class="form_titulo">
-      <h1>Descontos</h1>
       <div class="proventos">
         <label class="proventos" for="faltas">Faltas</label>
         <input class="proventos_texto" type="text" id="faltas" nome="faltas" value="0">
@@ -115,6 +116,9 @@
         <input class="proventos_texto" type="text" id="convenio_odonto" nome="convenio_odonto" value="0">
         <label class="proventos" for="sindicato">Contr. Sindicais</label>
         <input class="proventos_texto" type="text" id="sindicato" nome="sindicato" value="0">
+        
+      </div>
+      <div class="proventos">
         <label class="proventos" for="vt_não_utilizado">VT Não Utilizado</label>
         <input class="proventos_texto" type="text" id="vt_não_utilizado" nome="vt_não_utilizado" value="0">
         <label class="proventos" for="va_não_utilizado">VA/VR Não Utilizado</label>
@@ -123,19 +127,29 @@
         <input class="proventos_texto" type="text" id="depir" nome="depir" value="0">
         <label class="proventos" for="pensao">Valor das Pensões</label>
         <input class="proventos_texto" type="text" id="pensao" nome="pensao" value="0">
-        
       </div>
+
+
     </div>
 
+    <div>
+      <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
+    </div>
+
+    <h1>BASES</h1>
     <div class="form_titulo">
-      <h1>BASES</h1>
       <div class="dias">
         <p id='rescisao'></p>
         <p id='diasRes'></p>
-        <p id='tipo_adicional'></p>
+        <p id='tipoAdicional'></p>
+        <p id='avisoProjetado'></p>
         <p id='baseCalculo'></p>
         <p id='valorDia'></p>
-        <p id='avisoProjetado'></p>
+        
+      </div>
+
+      <div class="dias">
+        
         <p id='feriasVencidas'></p>
         <p id='feriasProp'></p>
         <p id='valorFeriasProp'></p>
@@ -145,14 +159,14 @@
     </div>
 
 
+    <h1>Valores</h1>
     <div class="form_titulo">
-      <h1>Valores</h1>
       <div class="dias">
-        <p id='inss_base'></p>
-        <p id='inss_valor'></p>
-        <p id='irrf_base'></p>
-        <p id='irrf_valor'></p>
-       
+        <p id='inssBase'></p>
+        <p id='inssValor'></p>
+        <p id='irrfBase'></p>
+        <p id='irrfValor'></p>
+
       </div>
     </div>
 
