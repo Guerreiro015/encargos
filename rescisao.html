@@ -26,16 +26,19 @@
   <div class="formulario">
     <h1>PARÂMETROS</h1>
     <div class="form_titulo">
-      <div class="bases">
+      <div class="parametros">
+        <fieldset>
+          <legend>Admissão/Demissão</legend>
         <label for="text1">Data Admissão</label>
         <input class="Balao_texto" type="date" name="text1" id="text1">
         <label for="text2">Data Demissão</label>
         <input class="Balao_texto" type="date" name="text2" id="text2">
+      </fieldset>
       </div>
 
-      <div class="tipo">
+      <div class="parametros">
         <fieldset>
-          <legend class="bases">Tipo de Rescisão</legend>
+          <legend class="parametros">Tipo de Rescisão</legend>
           <select class="Balao_texto" name="tipo_rescisao" id="tipo_rescisao">
             <option value="Sem Justa causa">Sem Justa causa</option>
             <option value="Justa causa">Justa causa</option>
@@ -43,11 +46,15 @@
             <option value="Fim de Contrato">Fim de Contrato</option>
           </select>
         </fieldset>
+        <fieldset class="base_pensao">
+          <label class="proventos" for="pensao">Desconto de Pensão %</label>
+          <input class="base_pensao_balao" type="number" id="pensao" nome="pensao" value="0">         
+        </fieldset>
       </div>
 
-      <div class="tipo">
+      <div class="parametros">
         <fieldset>
-          <legend class="bases">Férias Vencidas</legend>
+          <legend class="parametros">Férias Vencidas</legend>
           <div class="adicional">
             <input class="check" type="radio" name="ferias" value="SIM" id="sim">
             <label class="check" for="sim">Sim</label>
@@ -57,139 +64,141 @@
             <label class="check" for="nao">Não</label>
           </div>
         </fieldset>
-
+        <fieldset class="base_pensao">          
+          <label class="proventos" for="depir">Quant. Dep. de IR</label>
+          <input class="base_pensao_balao" type="number" id="depir" nome="depir" value="0">
+        </fieldset>
 
       </div>
 
     </div>
 
     <div class="entradas">
-      <div class="form_titulo">
-        <div class="proventos">
-          <h1>PROVENTOS</h1>
-          <label class="proventos" for="val_sal">Salário R$:</label>
-          <input class="proventos_texto" type="text" id="val_sal" nome="val_sal" value="0">
-          <label class="proventos" for="val_not">Adic. Noturno R$:</label>
-          <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="0">
-          <label class="proventos" for="val_he">Horas Extras R$:</label>
-          <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="0">
+      <fieldset class="entradas">
+        <legend class="parametros">ENTRADAS</legend>
+        <div class="form_titulo">
+          <div class="proventos">
+            <h1>PROVENTOS</h1>
+            <label class="proventos" for="val_sal">Salário R$:</label>
+            <input class="proventos_texto" type="text" id="val_sal" nome="val_sal" value="0">
+            <label class="proventos" for="val_not">Adic. Noturno R$:</label>
+            <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="0">
+            <label class="proventos" for="val_he">Horas Extras R$:</label>
+            <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="0">
 
 
-          <fieldset>
-            <legend>Adicionais</legend>
-            <div class="adicional">
-              <input class="check" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
-              <label class="check_text" for="Periculodidade">Periculosidade</label>
-            </div>
+            <fieldset>
+              <legend>Adicionais</legend>
+              <div class="adicional">
+                <input class="check" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
+                <label class="check_text" for="Periculodidade">Periculosidade</label>
+              </div>
 
-            <div class="adicional">
-              <input class="check" type="radio" name="adicional" value="Insal._Min_10%" id="Insalubridade_Min_10%">
-              <label class="check" for="Insalubridade_Min_10%">Insalubridade_Min_10%</label>
-            </div>
-            <div class="adicional">
-              <input class="check" type="radio" name="adicional" value="Insal._Med_20%" id="Insalubridade_Med_20%">
-              <label class="check" for="Insalubridade_Med_20%">Insalubridade_Med_20%</label>
-            </div>
-            <div class="adicional">
-              <input class="check" type="radio" name="adicional" value="Insal._Max_40%" id="Insalubridade_Max_40%">
-              <label class="check" for="Insalubridade_Max_40%">Insalubridade_Max_40%</label>
-            </div>
+              <div class="adicional">
+                <input class="check" type="radio" name="adicional" value="Insal._Min_10%" id="Insalubridade_Min_10%">
+                <label class="check" for="Insalubridade_Min_10%">Insalubridade_Min_10%</label>
+              </div>
+              <div class="adicional">
+                <input class="check" type="radio" name="adicional" value="Insal._Med_20%" id="Insalubridade_Med_20%">
+                <label class="check" for="Insalubridade_Med_20%">Insalubridade_Med_20%</label>
+              </div>
+              <div class="adicional">
+                <input class="check" type="radio" name="adicional" value="Insal._Max_40%" id="Insalubridade_Max_40%">
+                <label class="check" for="Insalubridade_Max_40%">Insalubridade_Max_40%</label>
+              </div>
 
-            <div class="adicional">
-              <input class="check" type="radio" name="adicional" value="Nao_Recebe" id="Nao_Recebe" checked>
-              <label class="check" for="Nao_Recebe">Não_Recebe</label>
-            </div>
-          </fieldset>
+              <div class="adicional">
+                <input class="check" type="radio" name="adicional" value="Nao_Recebe" id="Nao_Recebe" checked>
+                <label class="check" for="Nao_Recebe">Não_Recebe</label>
+              </div>
+            </fieldset>
+          </div>
         </div>
-      </div>
 
-      <div class="form_titulo">
-        <div class="proventos">
-          <h1>DESCONTOS</h1>
-          <label class="proventos" for="faltas">Faltas</label>
-          <input class="proventos_texto" type="text" id="faltas" nome="faltas" value="0">
-          <label class="proventos" for="atrasos">Atrasos</label>
-          <input class="proventos_texto" type="text" id="atrasos" nome="atrasos" value="0">
-          <label class="proventos" for="convenio_medico">Convênio Médico</label>
-          <input class="proventos_texto" type="text" id="convenio_medico" nome="convenio_medico" value="0">
-          <label class="proventos" for="convenio_odonto">Convênio Odontológico</label>
-          <input class="proventos_texto" type="text" id="convenio_odonto" nome="convenio_odonto" value="0">
-          <label class="proventos" for="sindicato">Contr. Sindicais</label>
-          <input class="proventos_texto" type="text" id="sindicato" nome="sindicato" value="0">
+        <div class="form_titulo">
+          <div class="proventos">
+            <h1>DESCONTOS</h1>
+            <label class="proventos" for="faltas">Faltas</label>
+            <input class="proventos_texto" type="text" id="faltas" nome="faltas" value="0">
+            <label class="proventos" for="atrasos">Atrasos</label>
+            <input class="proventos_texto" type="text" id="atrasos" nome="atrasos" value="0">
+            <label class="proventos" for="convenio_medico">Convênio Médico</label>
+            <input class="proventos_texto" type="text" id="convenio_medico" nome="convenio_medico" value="0">
+            <label class="proventos" for="convenio_odonto">Convênio Odontológico</label>
+            <input class="proventos_texto" type="text" id="convenio_odonto" nome="convenio_odonto" value="0">
+            <label class="proventos" for="sindicato">Contr. Sindicais</label>
+            <input class="proventos_texto" type="text" id="sindicato" nome="sindicato" value="0">
+            <label class="proventos" for="vt_não_utilizado">VT Não Utilizado</label>
+            <input class="proventos_texto" type="text" id="vt_não_utilizado" nome="vt_não_utilizado" value="0">
+            <label class="proventos" for="va_não_utilizado">VA/VR Não Utilizado</label>
+            <input class="proventos_texto" type="text" id="va_não_utilizado" nome="va_não_utilizado" value="0">
 
-
-          <label class="proventos" for="vt_não_utilizado">VT Não Utilizado</label>
-          <input class="proventos_texto" type="text" id="vt_não_utilizado" nome="vt_não_utilizado" value="0">
-          <label class="proventos" for="va_não_utilizado">VA/VR Não Utilizado</label>
-          <input class="proventos_texto" type="text" id="va_não_utilizado" nome="va_não_utilizado" value="0">
-          <label class="proventos" for="depir">Quant. Dep. de IR</label>
-          <input class="proventos_texto" type="text" id="depir" nome="depir" value="0">
-          <label class="proventos" for="pensao">Valor das Pensões</label>
-          <input class="proventos_texto" type="text" id="pensao" nome="pensao" value="0">
+          </div>
         </div>
-      </div>
     </DIV>
 
 
-        <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
-        <div>
-          <h1>BASES</h1>
-          <fieldset>
-            <legend>Valores bases</legend>
-            <div class="form_titulo">
-              <div class="dias">
-                <p id='rescisao'></p>
-                <p id='diasRes'></p>
-                <p id='valorDia'></p>
-                <p id='baseCalculo'></p>
-                <p id='tipoAdicional'></p>
-                <p id='avisoProjetado'></p>
+    <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
+    <div>
+      <h1>BASES</h1>
+      <fieldset class="bases">
+        <legend>Valores bases</legend>
+        <div class="form_titulo">
+          <div class="dias">
 
-              </div>
+            <p id='rescisao'></p>
+            <p id='diasRes'></p>
+            <p id='valorDia'></p>
+            <p id='baseCalculo'></p>
+            <p id='tipoAdicional'></p>
+            <p id='avisoProjetado'></p>
 
-              <div class="dias">
+          </div>
 
-                <p>.....</p>
-                <p>.....</p>
-                <p>.....</p>
-                <p>.....</p>
-                <p>.....</p>
+          <div class="dias">
+
+            <p>.....</p>
+            <p>.....</p>
+            <p>.....</p>
+            <p>.....</p>
+            <p>.....</p>
 
 
 
 
-              </div>
+          </div>
 
-              <div class="dias">
+          <div class="dias">
 
-                <p id='feriasVencidas'></p>
-                <p id='feriasProp'></p>
-                <p id='valorFeriasProp'></p>
-                <p id='avoDecimo'></p>
-                <p id='valorDecimo'></p>
-              </div>
-            </div>
-          </fieldset>
+            <p id='feriasVencidas'></p>
+            <p id='feriasProp'></p>
+            <p id='valorFeriasProp'></p>
+            <p id='avoDecimo'></p>
+            <p id='valorDecimo'></p>
+          </div>
+        </div>
+      </fieldset>
 
-          <h1>VALORES</h1>
-          <fieldset>
-            <legend>Valores da Rescisão</legend>
-            <div class="form_titulo">
-              <div class="dias">
-                <p id='inssBase'></p>
-                <p id='inssValor'></p>
-                <p id='irrfBase'></p>
-                <p id='irrfValor'></p>
+      <h1>VALORES</h1>
+      <fieldset class="bases">
+        <legend>Valores da Rescisão</legend>
+        <div class="form_titulo">
+          <div class="dias">
+            <p id='inssBase'></p>
+            <p id='inssValor'></p>
+            <p id='irrfBase'></p>
+            <p id='irrfValor'></p>
 
-              </div>
-            </div>
-
+          </div>
         </div>
 
-        <fieldset>
-          <div>
-            <script src="/calculoRescisao.js"> </script>
-          </div>
+    </div>
+
+    <fieldset>
+      <div>
+    </fieldset>
+    <script src="/calculoRescisao.js"> </script>
+  </div>
 </body>
 
 <footer class="rodape">
