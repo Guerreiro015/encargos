@@ -12,8 +12,21 @@ body{
 }
 
 h1{
-    color: white;
+    color: rgb(8, 6, 116);
+    }  
+    
+
+
+p{
+    color: aqua;
+    width: 200;   
+    border-radius: 5px;
 }
+
+p:nth-child(even) {
+    color: rgb(0, 153, 255);
+   
+  }
 
 .entradas{
     width: 900px;
@@ -56,6 +69,7 @@ column-gap: 40px;
     
 }
 .bases{   
+    background-color: #b80544;
     width: 900px;    
     color: #eaf155;
     display: flex;   
