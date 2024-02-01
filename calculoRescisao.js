@@ -130,7 +130,7 @@ function calcularEncargos() {
   let valDia = salCalculo / 30
   let valor_meses_prop = (salCalculo / 12) * meses_prop
   let valor_decimo = (salCalculo / 12) * decimo
-
+  let sal_trabalhado=dia2*valDia
 
   if (feria_vencida == "SIM") {
     valor_ferias_vencidas = salCalculo
@@ -198,7 +198,7 @@ function calcularEncargos() {
 
 
   document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-  document.getElementById("diasRes").innerHTML = "Dias p/ Cálculos....: " + dia2;
+  document.getElementById("diasRes").innerHTML = "Dias Sálario.:_" + dia2+"__R$: "+sal_trabalhado.toFixed(2);
   document.getElementById("tipoAdicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
   document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
   document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
