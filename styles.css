@@ -101,7 +101,7 @@ width: 50px;
     display: flex;   
     flex-direction: column;    
     justify-content: top;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
    
 }
@@ -231,5 +231,9 @@ width: 50px;
 .tipocheckBalao{
     height: 20px;
     width: 30px;
+}
+
+.teste{
+    display: flex;
 }
 

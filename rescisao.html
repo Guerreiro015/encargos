@@ -29,11 +29,11 @@
       <div class="parametros">
         <fieldset>
           <legend>Admissão/Demissão</legend>
-        <label for="text1">Data Admissão</label>
-        <input class="Balao_texto" type="date" name="text1" id="text1">
-        <label for="text2">Data Demissão</label>
-        <input class="Balao_texto" type="date" name="text2" id="text2">
-      </fieldset>
+          <label for="text1">Data Admissão</label>
+          <input class="Balao_texto" type="date" name="text1" id="text1">
+          <label for="text2">Data Demissão</label>
+          <input class="Balao_texto" type="date" name="text2" id="text2">
+        </fieldset>
       </div>
 
       <div class="parametros">
@@ -48,7 +48,7 @@
         </fieldset>
         <fieldset class="base_pensao">
           <label class="proventos" for="pensao">Desconto de Pensão %</label>
-          <input class="base_pensao_balao" type="number" id="pensao" nome="pensao" value="0">         
+          <input class="base_pensao_balao" type="number" id="pensao" nome="pensao" value="0">
         </fieldset>
       </div>
 
@@ -64,7 +64,7 @@
             <label class="check" for="nao">Não</label>
           </div>
         </fieldset>
-        <fieldset class="base_pensao">          
+        <fieldset class="base_pensao">
           <label class="proventos" for="depir">Quant. Dep. de IR</label>
           <input class="base_pensao_balao" type="number" id="depir" nome="depir" value="0">
         </fieldset>
@@ -135,24 +135,29 @@
 
           </div>
         </div>
-    </DIV>
+    </div>
 
 
     <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
     <div>
       <h1>BASES</h1>
-      <fieldset class="bases">
+      <fieldset class="entradas">
         <legend>Valores bases</legend>
         <div class="form_titulo">
           <div class="dias">
 
             <p id='rescisao'></p>
             <p id='baseCalculo'></p>
-            <p id='diasRes'></p>
+
             <p id='valorDia'></p>
             <p id='tipoAdicional'></p>
             <p id='avisoProjetado'></p>
             <p id='aviso'></p>
+
+            <p id='inssBase'></p>
+            <p id='inssValor'></p>
+            <p id='irrfBase'></p>
+            <p id='irrfValor'></p>
 
           </div>
 
@@ -163,9 +168,6 @@
             <p>.....</p>
             <p>.....</p>
             <p>.....</p>
-
-
-
 
           </div>
 
@@ -185,21 +187,48 @@
         <legend>Valores da Rescisão</legend>
         <div class="form_titulo">
           <div class="dias">
-            <p id='inssBase'></p>
-            <p id='inssValor'></p>
-            <p id='irrfBase'></p>
-            <p id='irrfValor'></p>
-
+            <p id='diasRes'></p>
+            <p id='decimoTerceiro'></p>
+            <p id='avisoDecimo'></p>
+            <p id='aviso'></p>
+            <p id='avisoProjetado'></p>
+            <p id='ferias'></p>
+            <p id='feriasTerco'></p>
+            <p id='feriasPropor'></p>
+            <p id='feriasProporTerco'></p>
+            <p id='feriasAviso'></p>
+            <p id='feriasAvisoTerco'></p>
           </div>
         </div>
+      </fieldset>
 
+
+      <fieldset class="bases">
+        <div class="form_titulo">
+          <legend>Valores da Rescisão</legend>
+          <div class="form_titulo">
+            <div class="dias">
+              <p id='diasRes'></p>
+              <p id='decimoTerceiro'></p>
+              <p id='avisoDecimo'></p>
+              <p id='aviso'></p>
+              <p id='avisoProjetado'></p>
+              <p id='ferias'></p>
+              <p id='feriasTerco'></p>
+              <p id='feriasPropor'></p>
+              <p id='feriasProporTerco'></p>
+              <p id='feriasAviso'></p>
+              <p id='feriasAvisoTerco'></p>
+            </div>
+          </div>
+
+        </div>
+
+        <fieldset>
+          <div>
+        </fieldset>
+        <script src="/calculoRescisao.js"> </script>
     </div>
-
-    <fieldset>
-      <div>
-    </fieldset>
-    <script src="/calculoRescisao.js"> </script>
-  </div>
 </body>
 
 <footer class="rodape">

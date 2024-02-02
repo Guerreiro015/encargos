@@ -198,7 +198,7 @@ function calcularEncargos() {
 
 
   document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-  document.getElementById("diasRes").innerHTML = "Dias Sálario.:_" + dia2+"__R$: "+sal_trabalhado.toFixed(2);
+  document.getElementById("diasRes").innerHTML = "Dias Sálario.: <-> " + dia2+" <-> R$: "+sal_trabalhado.toFixed(2);
   document.getElementById("tipoAdicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
   document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
   document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
