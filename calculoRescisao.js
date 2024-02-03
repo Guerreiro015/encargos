@@ -131,6 +131,15 @@ function calcularEncargos() {
   let valor_meses_prop = (salCalculo / 12) * meses_prop
   let valor_decimo = (salCalculo / 12) * decimo
   let sal_trabalhado=dia2*valDia
+  let aviso_previo=salCalculo
+  valor_avo_aviso=aviso_previo/12
+  if (avos_avisoProjetado==0){
+    avisoProjetado_valor=0
+  }
+  else{
+    avisoProjetado_valor=avos_avisoProjetado*valor_avo_aviso
+  }
+ 
 
   if (feria_vencida == "SIM") {
     valor_ferias_vencidas = salCalculo
@@ -197,8 +206,20 @@ function calcularEncargos() {
   }
 
 
+  document.getElementById("diasDireito").innerHTML = dia2;
+  document.getElementById("valorDireito").innerHTML =  sal_trabalhado.toFixed(2);
+  document.getElementById("insal").innerHTML = adicional_recebido;
+  document.getElementById("insalV").innerHTML = valor_do_adicional.toFixed(2);
+  document.getElementById("notuV").innerHTML =  valNot.toFixed(2);
+  document.getElementById("heV").innerHTML =  valHe.toFixed(2);
+  document.getElementById("avisoV").innerHTML =  salCalculo.toFixed(2);
+  document.getElementById("projetadoA").innerHTML =  avos_avisoProjetado.toFixed(2);
+  document.getElementById("projetadoV").innerHTML =  avisoProjetado_valor.toFixed(2);
+
+
+
   document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-  document.getElementById("diasRes").innerHTML = "Dias Sálario.: <-> " + dia2+" <-> R$: "+sal_trabalhado.toFixed(2);
+  document.getElementById("diasRes").innerHTML = "Dias Sálario.: - " + dia2+" - R$: "+sal_trabalhado.toFixed(2);
   document.getElementById("tipoAdicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
   document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
   document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);

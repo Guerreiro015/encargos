@@ -80,11 +80,11 @@
           <div class="proventos">
             <h1>PROVENTOS</h1>
             <label class="proventos" for="val_sal">Salário R$:</label>
-            <input class="proventos_texto" type="text" id="val_sal" nome="val_sal" value="0">
+            <input class="proventos_texto" type="text" id="val_sal" nome="val_sal" value="1676.37">
             <label class="proventos" for="val_not">Adic. Noturno R$:</label>
-            <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="0">
+            <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="10">
             <label class="proventos" for="val_he">Horas Extras R$:</label>
-            <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="0">
+            <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="15">
 
 
             <fieldset>
@@ -139,10 +139,113 @@
 
 
     <button class="botao" onclick="calcularEncargos()">CALCULAR</button>
+
     <div>
-      <h1>BASES</h1>
+      
+
+    <div class="form_titulo">
+      <fieldset class="saidas">
+        <legend>Vencimentos</legend>
+        <div class="dias">
+          <div class="diasPaga">
+            <P>Dias Trabalhados. :</P>
+            <p id="diasDireito"></p>
+            <p id="valorDireito"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Insal/Peric. :</P>
+            <p id="insal"></p>
+            <p id="insalV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Adic. Noturno. :</P>
+            <p>Valor</p>
+            <p id="notuV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Horas Extras :</P>
+            <p>Valor</p>
+            <p id="heV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Aviso Prévio :</P>
+            <p>Valor</p>
+            <p id="avisoV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Aviso Projetado :</P>
+            <p id="projetadoA"></p>
+            <p id="projetadoV"></p>
+          </div>
+          <div class="diasPaga">
+            <P> 13º Decimo Terceiro :</P>
+            <p id="decimoTerceiroA"></p>
+            <p id="decimoTerceiroV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>13º - Sobre Aviso :</P>
+            <p id="avisoA"></p>
+            <p id="a"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Férias Vencidas :</P>
+            <P> 0 :</P>
+            <p id="feriasV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Férias Vencidas 1/3 :</P>
+            <P> 0 :</P>
+            <p id="feriasTerco"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Férias Proporc. :</P>
+            <P id="feriasPropA"></P>
+            <p id="feriasPropV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Férias Proporc. 1/3:</P>
+            <P>0</P>
+            <p id="feriasPropTercoV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Férias S/ Aviso</P>
+            <p id="feriasAvisoA"></p>
+            <p id="feriasAvisoV"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Férias S/ Aviso. 1/3:</P>
+            <P>0</P>
+            <p id="feriasAvisoTercoV"></p>
+          </div>
+
+        </div>
+      </fieldset>
+      <fieldset class="saidas">
+        <legend>Descontos</legend>
+        <div class="dias">
+          <div class="diasPaga">
+            <P>Dias Trabalhados. :</P>
+            <p id="diasDireito"></p>
+            <p id="valorDireito"></p>
+          </div>
+          <p id='diasRes'></p>
+          <p id='decimoTerceiro'></p>
+          <p id='avisoDecimo'></p>
+          <p id='aviso'></p>
+          <p id='avisoProjetado'></p>
+          <p id='ferias'></p>
+          <p id='feriasTerco'></p>
+          <p id='feriasPropor'></p>
+          <p id='feriasProporTerco'></p>
+          <p id='feriasAviso'></p>
+          <p id='feriasAvisoTerco'></p>
+        </div>
+      </fieldset>
+    </div>
+
+    <div>
       <fieldset class="entradas">
-        <legend>Valores bases</legend>
+        <legend>BASES</legend>
         <div class="form_titulo">
           <div class="dias">
 
@@ -181,43 +284,11 @@
           </div>
         </div>
       </fieldset>
-
-      <h1>VALORES</h1>
-      <fieldset class="entradas">
-        <legend>Valores da Rescisão</legend>
-        <div class="form_titulo">
-          <div class="dias">
-            <p id='diasRes'></p>
-            <p id='decimoTerceiro'></p>
-            <p id='avisoDecimo'></p>
-            <p id='aviso'></p>
-            <p id='avisoProjetado'></p>
-            <p id='ferias'></p>
-            <p id='feriasTerco'></p>
-            <p id='feriasPropor'></p>
-            <p id='feriasProporTerco'></p>
-            <p id='feriasAviso'></p>
-            <p id='feriasAvisoTerco'></p>
-          </div>
-        </div>
-
-        <div class="form_titulo">
-          <div class="dias">
-            <p id='feriasVencidas'></p>
-            <p id='feriasProp'></p>
-            <p id='valorFeriasProp'></p>
-            <p id='avoDecimo'></p>
-            <p id='valorDecimo'></p>
-          </div>
-        </div>
-
-      </fieldset>
+    </div>
 
 
-      <div>
-
-        <script src="/calculoRescisao.js"> </script>
-      </div>
+      <script src="/calculoRescisao.js"> </script>
+    </div>
 </body>
 
 <footer class="rodape">
