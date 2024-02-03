@@ -72,8 +72,19 @@ function calcularEncargos() {
     }
   }
 
-  // Cálculo dos avos das Decimo Terceiro proporcinais 13º
 
+  let valSal = parseFloat(document.getElementById("val_sal").value)
+  let valNot = parseFloat(document.getElementById("val_not").value)
+  let valHe = parseFloat(document.getElementById("val_he").value)
+
+  let quant_faltas = parseFloat(document.getElementById("faltas").value)
+  let valor_pensao = parseFloat(document.getElementById("pensao").value)
+  let dep_ir = parseFloat(document.getElementById("depir").value)
+
+
+
+  // Cálculo dos avos das Decimo Terceiro proporcinais 13º
+  decimo = 0
   if (dia2 >= 15) {
     decimo = mes2
   }
@@ -87,6 +98,7 @@ function calcularEncargos() {
 
 
   // Cálculo dos avos do aviso pojetado
+
   avos_avisoProjetado = ano2 - ano1
 
   if (mes2 < mes1) { avos_avisoProjetado -= 1 }
@@ -98,19 +110,16 @@ function calcularEncargos() {
 
   avos_avisoProjetado = avos_avisoProjetado * 3
 
+
+
   //-------------------------------------------
 
-  let valSal = parseFloat(document.getElementById("val_sal").value)
-  let valNot = parseFloat(document.getElementById("val_not").value)
-  let valHe = parseFloat(document.getElementById("val_he").value)
-
-  let quant_faltas = parseFloat(document.getElementById("faltas").value)
-  let valor_pensao = parseFloat(document.getElementById("pensao").value)
-  let dep_ir = parseFloat(document.getElementById("depir").value)
 
 
 
   valor_dep_ir = dep_ir * 189.59
+
+  // Cálculo do insaluvridade e periculosidade//
 
   for (i = 0; i <= adc.length; i++) {
     if (adicional_recebido == adc[i]) {
@@ -123,23 +132,25 @@ function calcularEncargos() {
   }
 
 
-   // Cálculo do INSS//
+
+  // Cálculo do INSS//
 
   let proventos = valSal + valNot + valHe + valor_do_adicional
   let salCalculo = valSal + valor_do_adicional
   let valDia = salCalculo / 30
-  let valor_meses_prop = (salCalculo / 12) * meses_prop
+  let valAvo = salCalculo / 12
+  let valor_meses_prop = valAvo * meses_prop
   let valor_decimo = (salCalculo / 12) * decimo
-  let sal_trabalhado=dia2*valDia
-  let aviso_previo=salCalculo
-  valor_avo_aviso=aviso_previo/12
-  if (avos_avisoProjetado==0){
-    avisoProjetado_valor=0
+  let sal_trabalhado = dia2 * valDia
+  let aviso_previo = salCalculo
+  valor_avo_aviso = aviso_previo / 12
+  if (avos_avisoProjetado == 0) {
+    avisoProjetado_valor = 0
   }
-  else{
-    avisoProjetado_valor=avos_avisoProjetado*valor_avo_aviso
+  else {
+    avisoProjetado_valor = avos_avisoProjetado * valDia
   }
- 
+
 
   if (feria_vencida == "SIM") {
     valor_ferias_vencidas = salCalculo
@@ -205,21 +216,32 @@ function calcularEncargos() {
     valor_IR = (baseIR * 27.5 / 100) - 884.96
   }
 
+  if (tipo_de_rescisao != "Sem Justa Causa") {
+    aviso_previo = 0
+  }
+  if (aviso_previo > 0) {
+    decimo_aviso=valAvo
+  }
+
 
   document.getElementById("diasDireito").innerHTML = dia2;
-  document.getElementById("valorDireito").innerHTML =  sal_trabalhado.toFixed(2);
+  document.getElementById("valorDireito").innerHTML = sal_trabalhado.toFixed(2);
   document.getElementById("insal").innerHTML = adicional_recebido;
   document.getElementById("insalV").innerHTML = valor_do_adicional.toFixed(2);
-  document.getElementById("notuV").innerHTML =  valNot.toFixed(2);
-  document.getElementById("heV").innerHTML =  valHe.toFixed(2);
-  document.getElementById("avisoV").innerHTML =  salCalculo.toFixed(2);
-  document.getElementById("projetadoA").innerHTML =  avos_avisoProjetado.toFixed(2);
-  document.getElementById("projetadoV").innerHTML =  avisoProjetado_valor.toFixed(2);
+  document.getElementById("notuV").innerHTML = valNot.toFixed(2);
+  document.getElementById("heV").innerHTML = valHe.toFixed(2);
+  document.getElementById("avisoV").innerHTML = aviso_previo.toFixed(2);
+  document.getElementById("projetadoA").innerHTML = avos_avisoProjetado.toFixed(2);
+  document.getElementById("projetadoV").innerHTML = avisoProjetado_valor.toFixed(2);
+  document.getElementById("decimoTerceA").innerHTML = decimo
+  document.getElementById("decimoTerceV").innerHTML = valor_decimo.toFixed(2);
+  document.getElementById("decimoAvisoV").innerHTML = decimo_aviso.toFixed(2)
+  
 
 
 
   document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-  document.getElementById("diasRes").innerHTML = "Dias Sálario.: - " + dia2+" - R$: "+sal_trabalhado.toFixed(2);
+  document.getElementById("diasRes").innerHTML = "Dias Sálario.: - " + dia2 + " - R$: " + sal_trabalhado.toFixed(2);
   document.getElementById("tipoAdicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
   document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
   document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
