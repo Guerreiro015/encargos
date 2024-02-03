@@ -37,30 +37,30 @@ function calcularEncargos() {
 
 
   // Cálculo dos avos das férias proporcinais//
-  if (ano1 < ano2 && mes1 == mes2 && dia1 <= dia2) { meses_prop = 0 }
+  if (ano1 < ano2 && mes1 == mes2 && dia1 <= dia2) { ferias_propor = 0 }
   else {
-    if (ano1 < ano2 && mes1 == mes2 && dia1 > dia2) { meses_prop = 11 }
+    if (ano1 < ano2 && mes1 == mes2 && dia1 > dia2) { ferias_propor = 11 }
     else {
 
-      if (ano1 < ano2 && mes1 < mes2 && dia1 <= dia2) { meses_prop = mes2 - mes1 }
+      if (ano1 < ano2 && mes1 < mes2 && dia1 <= dia2) { ferias_propor = mes2 - mes1 }
       else {
-        if (ano1 < ano2 && mes1 < mes2 && dia1 > dia2) { meses_prop = mes2 - mes1 - 1 }
+        if (ano1 < ano2 && mes1 < mes2 && dia1 > dia2) { ferias_propor = mes2 - mes1 - 1 }
         else {
 
-          if (ano1 < ano2 && mes1 > mes2 && dia1 <= dia2) { meses_prop = (12 - mes1) + mes2 }
+          if (ano1 < ano2 && mes1 > mes2 && dia1 <= dia2) { ferias_propor = (12 - mes1) + mes2 }
           else {
-            if (ano1 < ano2 && mes1 > mes2 && dia1 > dia2) { meses_prop = (12 - mes1) + mes2 - 1 }
+            if (ano1 < ano2 && mes1 > mes2 && dia1 > dia2) { ferias_propor = (12 - mes1) + mes2 - 1 }
             else {
 
 
-              if (ano1 == ano2 && mes1 < mes2 && dia1 <= dia2) { meses_prop = mes2 - mes1 }
+              if (ano1 == ano2 && mes1 < mes2 && dia1 <= dia2) { ferias_propor = mes2 - mes1 }
               else {
-                if (ano1 == ano2 && mes1 < mes2 && dia1 > dia2) { meses_prop = mes2 - mes1 - 1 }
+                if (ano1 == ano2 && mes1 < mes2 && dia1 > dia2) { ferias_propor = mes2 - mes1 - 1 }
                 else {
 
-                  if (ano1 == ano2 && mes1 > mes2) { meses_prop = 0 }
+                  if (ano1 == ano2 && mes1 > mes2) { ferias_propor = 0 }
                   else {
-                    meses_prop = 0
+                    ferias_propor = 0
                   }
 
                 }
@@ -139,7 +139,6 @@ function calcularEncargos() {
   let salCalculo = valSal + valor_do_adicional
   let valDia = salCalculo / 30
   let valAvo = salCalculo / 12
-  let valor_meses_prop = valAvo * meses_prop
   let valor_decimo = (salCalculo / 12) * decimo
   let sal_trabalhado = dia2 * valDia
   let aviso_previo = salCalculo
@@ -151,13 +150,25 @@ function calcularEncargos() {
     avisoProjetado_valor = avos_avisoProjetado * valDia
   }
 
-
+  //  // Cálculo do Férias//
   if (feria_vencida == "SIM") {
     valor_ferias_vencidas = salCalculo
+    ferias_vencidas_terco = valor_ferias_vencidas / 3
   }
   else {
     valor_ferias_vencidas = 0
+    ferias_vencidas_terco = 0
   }
+
+  if (ferias_propor > 0) {
+    valor_ferias_propor = valAvo * ferias_propor
+    ferias_propor_terco = valor_ferias_propor / 3
+  }
+  else {
+    let valor_ferias_propor = valAvo * ferias_propor
+    let ferias_propor_terco = valor_ferias_propor / 3
+  }
+
 
   baseInss = proventos - quant_faltas
 
@@ -219,10 +230,14 @@ function calcularEncargos() {
   if (tipo_de_rescisao != "Sem Justa Causa") {
     aviso_previo = 0
   }
-  if (aviso_previo > 0) {
-    decimo_aviso=valAvo
-  }
+  //-------------------------------------------------------
+  //-------------------------------------------------------
 
+  if (aviso_previo > 0) {
+    decimo_aviso = valAvo
+  }
+  //---------------------------------------------------------
+  //---------------------------------------------------------
 
   document.getElementById("diasDireito").innerHTML = dia2;
   document.getElementById("valorDireito").innerHTML = sal_trabalhado.toFixed(2);
@@ -231,26 +246,22 @@ function calcularEncargos() {
   document.getElementById("notuV").innerHTML = valNot.toFixed(2);
   document.getElementById("heV").innerHTML = valHe.toFixed(2);
   document.getElementById("avisoV").innerHTML = aviso_previo.toFixed(2);
-  document.getElementById("projetadoA").innerHTML = avos_avisoProjetado.toFixed(2);
+  document.getElementById("projetadoA").innerHTML = avos_avisoProjetado;
   document.getElementById("projetadoV").innerHTML = avisoProjetado_valor.toFixed(2);
   document.getElementById("decimoTerceA").innerHTML = decimo
   document.getElementById("decimoTerceV").innerHTML = valor_decimo.toFixed(2);
   document.getElementById("decimoAvisoV").innerHTML = decimo_aviso.toFixed(2)
-  
+  document.getElementById("feriasV").innerHTML = valor_ferias_vencidas.toFixed(2)
+  document.getElementById("feriasTercoV").innerHTML = ferias_vencidas_terco.toFixed(2)
+  document.getElementById("feriasPropA").innerHTML = ferias_propor
+  document.getElementById("feriasPropV").innerHTML = valor_ferias_propor.toFixed(2)
+  document.getElementById("feriasPropA").innerHTML = ferias_propor
+  document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toFixed(2)
 
 
 
-  document.getElementById("rescisao").innerHTML = "Rescisão: " + tipo_de_rescisao;
-  document.getElementById("diasRes").innerHTML = "Dias Sálario.: - " + dia2 + " - R$: " + sal_trabalhado.toFixed(2);
-  document.getElementById("tipoAdicional").innerHTML = adicional_recebido + ":  R$: " + valor_do_adicional.toFixed(2);
-  document.getElementById("baseCalculo").innerHTML = "Salário p/ Cálculo..: " + salCalculo.toFixed(2);
-  document.getElementById("valorDia").innerHTML = "Valor Diario.....: R$: " + valDia.toFixed(2);
-  document.getElementById("avisoProjetado").innerHTML = "Aviso Projetado......: " + avos_avisoProjetado + " dias";
-  document.getElementById("feriasVencidas").innerHTML = "Férias Vencidas..: R$: " + valor_ferias_vencidas.toFixed(2);
-  document.getElementById("feriasProp").innerHTML = "Férias Propor. ...:__" + meses_prop + "__Avos"
-  document.getElementById("valorFeriasProp").innerHTML = "Férias Propor. ...R$: " + valor_meses_prop.toFixed(2)
-  document.getElementById("avoDecimo").innerHTML = "13º Propor. ...:__" + decimo + "__Avos"
-  document.getElementById("valorDecimo").innerHTML = "13º Propor. ...: R$: " + valor_decimo.toFixed(2)
+
+
 
   document.getElementById("inssBase").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
   document.getElementById("inssValor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);
