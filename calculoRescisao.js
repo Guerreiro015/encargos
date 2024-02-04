@@ -77,12 +77,12 @@ function calcularEncargos() {
   let valNot = parseFloat(document.getElementById("val_not").value)
   let valHe = parseFloat(document.getElementById("val_he").value)
 
-  let quant_faltas = parseFloat(document.getElementById("faltas").value)
   let valor_pensao = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
 
-  let faltas_res = parseFloat(document.getElementById("faltas").value)
-  let drs_res = parseFloat(document.getElementById("dsr").value)
+
+  let quant_faltas_res = parseFloat(document.getElementById("faltas_rescisao").value)
+  let quant_drs_res = parseFloat(document.getElementById("dsr").value)
   let atrasos_res = parseFloat(document.getElementById("atrasos").value)
   let medico_res = parseFloat(document.getElementById("convenio_medico").value)
   let odonto_res = parseFloat(document.getElementById("convenio_odonto").value)
@@ -90,9 +90,9 @@ function calcularEncargos() {
   let vt_res = parseFloat(document.getElementById("vt_nao").value)
   let va_res = parseFloat(document.getElementById("va_nao").value)
 
-  valor_faltas = faltas_res
-  valor_atrasos = atrasos_res
-  valor_dsr = drs_res
+  quant_faltas = quant_faltas_res
+  quant_dsr = quant_drs_res
+  quant_atrasos = atrasos_res
   valor_medico = medico_res
   valor_odonto = odonto_res
   valor_sindicato = sindical_res
@@ -156,7 +156,9 @@ function calcularEncargos() {
   let proventos = valSal + valNot + valHe + valor_do_adicional
   let salCalculo = valSal + valor_do_adicional
   let valDia = salCalculo / 30
+  let valHora = salCalculo / 220
   let valAvo = salCalculo / 12
+
   let valor_decimo = (salCalculo / 12) * decimo
   if (mes2 = 2 && dia2 >= 28) {
     sal_trabalhado = 30 * valDia
@@ -179,6 +181,11 @@ function calcularEncargos() {
   }
 
 
+  // calculo do faltas/dsr e atrasos //
+
+  valor_faltas = quant_faltas * valDia
+  valor_dsr = quant_dsr * valDia
+  valor_atrasos = quant_atrasos * valHora
 
 
   // calculo do Aviso prévio //
@@ -226,7 +233,7 @@ function calcularEncargos() {
   }
 
 
-  baseInss = proventos - quant_faltas
+  baseInss = proventos - valor_faltas
 
   if (baseInss < 1412) {
     valorInss = baseInss * 7.5 / 100
@@ -314,15 +321,17 @@ function calcularEncargos() {
   document.getElementById("feriasPropA").innerHTML = ferias_propor
   document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toFixed(2)
 
-
-  Document.getElementById(valorFaltas).innerHTML = valor_faltas.toFixed(2)
-  Document.getElementById(valorDsr).innerHTML = valor_dsr.toFixed(2)
-  Document.getElementById(valorAtrasos).innerHTML = valor_atrasos.toFixed(2)
-  Document.getElementById(valorMedico).innerHTML = valor_medico.toFixed(2)
-  Document.getElementById(valorOdonto).innerHTML = valor_odonto.toFixed(2)
-  Document.getElementById(valorSindicato).innerHTML = valor_sindicato.toFixed(2)
-  Document.getElementById(valorVT).innerHTML = valor_VT.toFixed(2)
-  Document.getElementById(valorVA).innerHTML = valor_VA.toFixed(2)
+  document.getElementById("faltasQ").innerHTML = quant_faltas
+  document.getElementById("faltasV").innerHTML = valor_faltas.toFixed(2)
+  document.getElementById("dsrQ").innerHTML = quant_dsr
+  document.getElementById("dsrV").innerHTML = valor_dsr.toFixed(2)
+  document.getElementById("atrasosQ").innerHTML = quant_atrasos
+  document.getElementById("atrasosV").innerHTML = valor_atrasos.toFixed(2)
+  document.getElementById("valorMedico").innerHTML = valor_medico.toFixed(2)
+  document.getElementById("valorOdonto").innerHTML = valor_odonto.toFixed(2)
+  document.getElementById("valorSindicato").innerHTML = valor_sindicato.toFixed(2)
+  document.getElementById("valorVT").innerHTML = valor_VT.toFixed(2)
+  document.getElementById("valorVA").innerHTML = valor_VA.toFixed(2)
 
 
 
