@@ -140,9 +140,47 @@ function calcularEncargos() {
   let valDia = salCalculo / 30
   let valAvo = salCalculo / 12
   let valor_decimo = (salCalculo / 12) * decimo
-  let sal_trabalhado = dia2 * valDia
-  let aviso_previo = salCalculo
-  valor_avo_aviso = aviso_previo / 12
+  if (mes2 = 2 && dia2 >= 28) {
+    sal_trabalhado = 30 * valDia
+  }
+  else {
+    if (dia2 > 30) {
+      dia2=30
+      sal_trabalhado = 30 * valDia
+    }
+    else {
+      if (dia2 > 30) {
+        dia2=30
+        sal_trabalhado = 30 * valDia
+      }
+      else {
+        sal_trabalhado = dia2 * valDia
+      }
+
+    }
+  }
+
+
+
+
+  // calculo do Aviso prévio //
+
+  if (ano2 > ano1) {
+    aviso_previo = salCalculo
+    valor_avo_aviso = aviso_previo / 12
+  }
+  else {
+
+    if (mes2 >= mes1 + 3 && dia2 >= dia1) {
+      aviso_previo = salCalculo
+      valor_avo_aviso = aviso_previo / 12
+    }
+    else {
+      aviso_previo = 0
+      valor_avo_aviso = 0
+
+    }
+  }
   if (avos_avisoProjetado == 0) {
     avisoProjetado_valor = 0
   }
@@ -234,7 +272,7 @@ function calcularEncargos() {
   //-------------------------------------------------------
 
   if (aviso_previo > 0) {
-    decimo_aviso = valAvo
+    decimo_aviso = valor_avo_aviso
   }
   //---------------------------------------------------------
   //---------------------------------------------------------
