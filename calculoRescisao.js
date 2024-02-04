@@ -81,6 +81,24 @@ function calcularEncargos() {
   let valor_pensao = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
 
+  let faltas_res = parseFloat(document.getElementById("faltas").value)
+  let drs_res = parseFloat(document.getElementById("dsr").value)
+  let atrasos_res = parseFloat(document.getElementById("atrasos").value)
+  let medico_res = parseFloat(document.getElementById("convenio_medico").value)
+  let odonto_res = parseFloat(document.getElementById("convenio_odonto").value)
+  let sindical_res = parseFloat(document.getElementById("sindicato").value)
+  let vt_res = parseFloat(document.getElementById("vt_nao").value)
+  let va_res = parseFloat(document.getElementById("va_nao").value)
+
+  valor_faltas = faltas_res
+  valor_atrasos = atrasos_res
+  valor_dsr = drs_res
+  valor_medico = medico_res
+  valor_odonto = odonto_res
+  valor_sindicato = sindical_res
+  valor_VT = vt_res
+  valor_VA = va_res
+
 
 
   // Cálculo dos avos das Decimo Terceiro proporcinais 13º
@@ -145,12 +163,12 @@ function calcularEncargos() {
   }
   else {
     if (dia2 > 30) {
-      dia2=30
+      dia2 = 30
       sal_trabalhado = 30 * valDia
     }
     else {
       if (dia2 > 30) {
-        dia2=30
+        dia2 = 30
         sal_trabalhado = 30 * valDia
       }
       else {
@@ -297,6 +315,14 @@ function calcularEncargos() {
   document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toFixed(2)
 
 
+  Document.getElementById(valorFaltas).innerHTML = valor_faltas.toFixed(2)
+  Document.getElementById(valorDsr).innerHTML = valor_dsr.toFixed(2)
+  Document.getElementById(valorAtrasos).innerHTML = valor_atrasos.toFixed(2)
+  Document.getElementById(valorMedico).innerHTML = valor_medico.toFixed(2)
+  Document.getElementById(valorOdonto).innerHTML = valor_odonto.toFixed(2)
+  Document.getElementById(valorSindicato).innerHTML = valor_sindicato.toFixed(2)
+  Document.getElementById(valorVT).innerHTML = valor_VT.toFixed(2)
+  Document.getElementById(valorVA).innerHTML = valor_VA.toFixed(2)
 
 
 

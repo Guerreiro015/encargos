@@ -85,7 +85,9 @@
             <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="10">
             <label class="proventos" for="val_he">Horas Extras R$:</label>
             <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="15">
-
+            <br>
+            <br>
+            <br>
 
             <fieldset>
               <legend>Adicionais</legend>
@@ -119,19 +121,21 @@
           <div class="proventos">
             <h1>DESCONTOS</h1>
             <label class="proventos" for="faltas">Faltas</label>
-            <input class="proventos_texto" type="text" id="faltas" nome="faltas" value="0">
+            <input class="proventos_texto" type="text" id="faltas" nome="faltas" value="12">
+            <label class="proventos" for="faltas">DSR</label>
+            <input class="proventos_texto" type="text" id="dsr" nome="dsr" value="12">
             <label class="proventos" for="atrasos">Atrasos</label>
-            <input class="proventos_texto" type="text" id="atrasos" nome="atrasos" value="0">
+            <input class="proventos_texto" type="text" id="atrasos" nome="atrasos" value="5">
             <label class="proventos" for="convenio_medico">Convênio Médico</label>
-            <input class="proventos_texto" type="text" id="convenio_medico" nome="convenio_medico" value="0">
+            <input class="proventos_texto" type="text" id="convenio_medico" nome="convenio_medico" value="3">
             <label class="proventos" for="convenio_odonto">Convênio Odontológico</label>
-            <input class="proventos_texto" type="text" id="convenio_odonto" nome="convenio_odonto" value="0">
+            <input class="proventos_texto" type="text" id="convenio_odonto" nome="convenio_odonto" value="2">
             <label class="proventos" for="sindicato">Contr. Sindicais</label>
-            <input class="proventos_texto" type="text" id="sindicato" nome="sindicato" value="0">
+            <input class="proventos_texto" type="text" id="sindicato" nome="sindicato" value="20">
             <label class="proventos" for="vt_não_utilizado">VT Não Utilizado</label>
-            <input class="proventos_texto" type="text" id="vt_não_utilizado" nome="vt_não_utilizado" value="0">
+            <input class="proventos_texto" type="text" id="vt_nao" nome="vt_nao" value="16">
             <label class="proventos" for="va_não_utilizado">VA/VR Não Utilizado</label>
-            <input class="proventos_texto" type="text" id="va_não_utilizado" nome="va_não_utilizado" value="0">
+            <input class="proventos_texto" type="text" id="va_nao" nome="va_nao" value="45">
 
           </div>
         </div>
@@ -159,17 +163,17 @@
           </div>
           <div class="diasPaga">
             <P>Adic. Noturno. :</P>
-            <p>Valor</p>
+           <p>--</p>
             <p id="notuV"></p>
           </div>
           <div class="diasPaga">
             <P>Horas Extras :</P>
-            <p>Valor</p>
+           <p>--</p>
             <p id="heV"></p>
           </div>
           <div class="diasPaga">
             <P>Aviso Prévio :</P>
-            <p>Valor</p>
+           <p>--</p>
             <p id="avisoV"></p>
           </div>
           <div class="diasPaga">
@@ -224,21 +228,61 @@
         <legend>Descontos</legend>
         <div class="dias">
           <div class="diasPaga">
-            <P>Dias Trabalhados. :</P>
-            <p id="diasDireito"></p>
-            <p id="valorDireito"></p>
+            <P>Faltas. :</P>
+            <p>--</p>
+            <p id="valorFalta"></p>
           </div>
-          <p id='diasRes'></p>
-          <p id='decimoTerceiro'></p>
-          <p id='avisoDecimo'></p>
-          <p id='aviso'></p>
-          <p id='avisoProjetado'></p>
-          <p id='ferias'></p>
-          <p id='feriasTerco'></p>
-          <p id='feriasPropor'></p>
-          <p id='feriasProporTerco'></p>
-          <p id='feriasAviso'></p>
-          <p id='feriasAvisoTerco'></p>
+          <div class="diasPaga">
+            <P>DSR. :</P>
+            <p>--</p>
+            <p id="valorDsr"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Atrasos :</P>
+            <p>--</p>
+            <p id="valorAtrasos"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Convênio Médico. :</P>
+            <p>--</p>
+            <p id="valorMedico"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Convênio Odonto. :</P>
+            <p>--</p>
+            <p id="valorOdonto"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Contrib. Sindicais:</P>
+            <p>--</p>
+            <p id="valorSindicato"></p>
+          </div>
+          <div class="diasPaga">
+            <P>VT Não Utilizado:</P>
+            <p>--</p>
+            <p id="valorVT"></p>
+          </div>
+          <div class="diasPaga">
+            <P>VA/VR Não Utilizado::</P>
+            <p>--</p>
+            <p id="valorVA"></p>
+          </div>
+          <div class="diasPaga">
+            <P>INSS 13º:</P>
+            <p>--</p>
+            <p id="inssValor"></p>
+          </div>
+          <div class="diasPaga">
+            <P>INSS Normal:</P>
+            <p>--</p>
+            <p id="inssValor"></p>
+          </div>
+          <div class="diasPaga">
+            <P>Imposto de Renda:</P>
+            <p>--</p>
+            <p id="irrfValor"></p>
+          </div>
+          
         </div>
       </fieldset>
     </div>
