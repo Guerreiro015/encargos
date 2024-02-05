@@ -153,7 +153,7 @@ function calcularEncargos() {
 
   // Cálculo do INSS//
 
-  let proventos = valSal + valNot + valHe + valor_do_adicional
+  
   let salCalculo = valSal + valor_do_adicional
   let valDia = salCalculo / 30
   let valHora = salCalculo / 220
@@ -232,7 +232,7 @@ function calcularEncargos() {
     let ferias_propor_terco = valor_ferias_propor / 3
   }
 
-
+  proventos = valSal + valNot + valHe + valor_do_adicional + valor_decimo
   baseInss = proventos - valor_faltas
 
   if (baseInss < 1412) {
@@ -336,9 +336,9 @@ function calcularEncargos() {
 
 
 
-  document.getElementById("inssBase").innerHTML = 'BASE do Inss      R$: ' + baseInss.toFixed(2);
-  document.getElementById("inssValor").innerHTML = 'Valor do Inss      R$: ' + valorInss.toFixed(2);
-  document.getElementById("irrfBase").innerHTML = 'BASE do IR      R$: ' + baseIR.toFixed(2);
-  document.getElementById("irrfValor").innerHTML = 'Valor do IR      R$: ' + valor_IR.toFixed(2);
+  document.getElementById("inssBase").innerHTML =  baseInss.toFixed(2);
+  document.getElementById("inssValor").innerHTML =  valorInss.toFixed(2);
+  document.getElementById("irrfBase").innerHTML = baseIR.toFixed(2);
+  document.getElementById("irrfValor").innerHTML =  valor_IR.toFixed(2);
 
 }
