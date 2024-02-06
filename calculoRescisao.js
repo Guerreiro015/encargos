@@ -1,3 +1,4 @@
+
 dias_avos = 0
 alert = 'deseja receber avisos deste site'
 function calcularEncargos() {
@@ -303,43 +304,45 @@ function calcularEncargos() {
   //---------------------------------------------------------
 
   document.getElementById("diasDireito").innerHTML = dia2;
-  document.getElementById("valorDireito").innerHTML = sal_trabalhado.toFixed(2);
+  document.getElementById("valorDireito").innerHTML = sal_trabalhado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("insal").innerHTML = adicional_recebido;
-  document.getElementById("insalV").innerHTML = valor_do_adicional.toFixed(2);
-  document.getElementById("notuV").innerHTML = valNot.toFixed(2);
-  document.getElementById("heV").innerHTML = valHe.toFixed(2);
-  document.getElementById("avisoV").innerHTML = aviso_previo.toFixed(2);
+  document.getElementById("insalV").innerHTML = valor_do_adicional.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("notuV").innerHTML = valNot.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("heV").innerHTML = valHe.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("avisoV").innerHTML = aviso_previo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("projetadoA").innerHTML = avos_avisoProjetado;
-  document.getElementById("projetadoV").innerHTML = avisoProjetado_valor.toFixed(2);
+  document.getElementById("projetadoV").innerHTML = avisoProjetado_valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("decimoTerceA").innerHTML = decimo
-  document.getElementById("decimoTerceV").innerHTML = valor_decimo.toFixed(2);
-  document.getElementById("decimoAvisoV").innerHTML = decimo_aviso.toFixed(2)
-  document.getElementById("feriasV").innerHTML = valor_ferias_vencidas.toFixed(2)
-  document.getElementById("feriasTercoV").innerHTML = ferias_vencidas_terco.toFixed(2)
+  document.getElementById("decimoTerceV").innerHTML = valor_decimo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("decimoAvisoV").innerHTML = decimo_aviso.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("feriasV").innerHTML = valor_ferias_vencidas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("feriasTercoV").innerHTML = ferias_vencidas_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasPropA").innerHTML = ferias_propor
-  document.getElementById("feriasPropV").innerHTML = valor_ferias_propor.toFixed(2)
+  document.getElementById("feriasPropV").innerHTML = valor_ferias_propor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasPropA").innerHTML = ferias_propor
-  document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toFixed(2)
+  document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   document.getElementById("faltasQ").innerHTML = quant_faltas
-  document.getElementById("faltasV").innerHTML = valor_faltas.toFixed(2)
+  document.getElementById("faltasV").innerHTML = valor_faltas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("dsrQ").innerHTML = quant_dsr
-  document.getElementById("dsrV").innerHTML = valor_dsr.toFixed(2)
+  document.getElementById("dsrV").innerHTML = valor_dsr.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("atrasosQ").innerHTML = quant_atrasos
-  document.getElementById("atrasosV").innerHTML = valor_atrasos.toFixed(2)
-  document.getElementById("valorMedico").innerHTML = valor_medico.toFixed(2)
-  document.getElementById("valorOdonto").innerHTML = valor_odonto.toFixed(2)
-  document.getElementById("valorSindicato").innerHTML = valor_sindicato.toFixed(2)
-  document.getElementById("valorVT").innerHTML = valor_VT.toFixed(2)
-  document.getElementById("valorVA").innerHTML = valor_VA.toFixed(2)
+  document.getElementById("atrasosV").innerHTML = valor_atrasos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("valorMedico").innerHTML = valor_medico.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("valorOdonto").innerHTML = valor_odonto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("valorSindicato").innerHTML = valor_sindicato.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("valorVT").innerHTML = valor_VT.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("valorVA").innerHTML = valor_VA.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
 
 
-  document.getElementById("inssBase").innerHTML =  baseInss.toFixed(2);
-  document.getElementById("inssValor").innerHTML =  valorInss.toFixed(2);
-  document.getElementById("irrfBase").innerHTML = baseIR.toFixed(2);
-  document.getElementById("irrfValor").innerHTML =  valor_IR.toFixed(2);
-  document.getElementById("totalRes").innerHTML =  proventos.toFixed(2);
+  document.getElementById("inssBase").innerHTML =  baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("inssValor").innerHTML =  valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("irrfBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("irrfValor").innerHTML =  valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("totalRes").innerHTML =  proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  
+  
 
 }

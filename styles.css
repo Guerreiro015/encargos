@@ -60,10 +60,12 @@ p:nth-child(even) {
 
 }
 .total_resFont{  
-    width: 800px;
+    display: flex;
+    width: 1000px;
     color: rgb(244, 247, 241);
     font-size: 40px;
     font-weight: bold;
+    column-gap: 40px;
 
 }
 
