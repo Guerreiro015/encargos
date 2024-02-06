@@ -24,7 +24,7 @@
 
 <body>
   <div class="formulario">
-    <h1>PARÂMETROS</h1>
+    <h1 class="inicio">PARÂMETROS</h1>
     <div class="form_titulo">
       <div class="parametros">
         <fieldset>
@@ -47,7 +47,7 @@
           </select>
         </fieldset>
         <fieldset class="base_pensao">
-          <label class="parametros for="pensao">Desconto de Pensão %</label>
+          <label class="parametros" for="pensao">Desconto de Pensão %</label>
           <input class="base_pensao_balao" type="number" id="pensao" nome="pensao" value="0">
         </fieldset>
       </div>
@@ -75,7 +75,7 @@
 
     <div class="entradas">
       <fieldset class="entradas">
-        <legend class="parametros">ENTRADAS</legend>
+        <legend class="sim_nao">ENTRADAS</legend>
         <div class="form_titulo">
           <div class="proventos">
             <h1>PROVENTOS</h1>
@@ -90,7 +90,7 @@
             <br>
 
             <fieldset>
-              <legend>Adicionais</legend>
+              <legend class="adicional_legenda">Adicionais</legend>
               <div class="adicional">
                 <input class="check" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
                 <label class="check_text" for="Periculodidade">Periculosidade</label>
@@ -148,8 +148,8 @@
 
 
       <div class="form_titulo">
-        <fieldset class="saidas">
-          <legend>Vencimentos</legend>
+        <fieldset class="saidas">         
+          <h1 class="inicio">Vencimentos</h1>
           <div class="dias">
             <div class="diasPaga">
               <P>Dias Trabalhados. :</P>
@@ -225,7 +225,7 @@
           </div>
         </fieldset>
         <fieldset class="saidas">
-          <legend>Descontos</legend>
+          <h1 class="inicio">Descontos</h1>
           <div class="dias">
             <div class="diasPaga">
               <P>Faltas. :</P>
@@ -288,10 +288,10 @@
       </div>
       <div class="form_titulo">
         <fieldset class="total_saidas">
-          <legend>Total de Vencimentos</legend>
+          <legend class="inicio">Total de Vencimentos</legend>
           <div class="dias">
-            <div class="diasPaga">
-              <P>Dias Trabalhados. :</P>
+            <div class="final">
+              <P class="final_prov">Dias Trabalhados. :</P>
               <p id="diasDireito"></p>
               <p id="valorDireito"></p>
             </div>
@@ -299,10 +299,10 @@
           </div>
         </fieldset>
         <fieldset class="total_saidas">
-          <legend>Total de Descontos</legend>
+          <legend class="inicio">Total de Descontos</legend>
           <div class="dias">
-            <div class="diasPaga">
-              <P>Faltas. :</P>
+            <div class="inicio">
+              <P class="final_desc">Faltas. :</P>
               <p id="faltasQ"></p>
               <p id="faltasV"></p>
             </div>
@@ -312,11 +312,11 @@
       </div>
       <div class="form_titulo">
         <fieldset class="total_res">
-          <legend>Total da Rescisão</legend>
+          <legend class="inicio">Total da Rescisão</legend>
           <div class="dias">
             <div class="total_resFont">
-              <P>Valor da Rescisão. :</P>
-              <p id="totalRes"></p>
+              <P class="final_res">Valor da Rescisão. :</P>
+              <p class="final_res" id="totalRes"></p>
               
             </div>
 
@@ -326,19 +326,11 @@
 
 
       <div>
-        <fieldset class="entradas">
+        <fieldset class="base">
           <legend>BASES</legend>
-          <div class="form_titulo">
-            <div class="dias">
-
-              <p id='rescisao'></p>
-              <p id='baseCalculo'></p>
-
-              <p id='valorDia'></p>
-              <p id='tipoAdicional'></p>
-              <p id='avisoProjetado'></p>
-              <p id='aviso'></p>
-
+          <div class="base">
+            <div class="bases">
+              
               <p id='inssBase'></p>
               <p id='inssValor'></p>
               <p id='irrfBase'></p>
@@ -346,7 +338,7 @@
 
             </div>
 
-            <div class="dias">
+            <div class="bases">
 
               <p>.....</p>
               <p>.....</p>
@@ -356,7 +348,7 @@
 
             </div>
 
-            <div class="dias">
+            <div class="bases">
 
               <p id='feriasVencidas'></p>
               <p id='feriasProp'></p>
