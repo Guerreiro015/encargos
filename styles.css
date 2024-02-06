@@ -1,18 +1,30 @@
 body{
     margin-top: 60px;
-    background-color: rgb(169, 199, 241);
+    background-color: rgb(147, 170, 169);
     display: flex;
     justify-content: space-around;
     align-items: center;
     justify-content: center;
     gap: 5px;
     font-size: 15px;
-    color: rgb(237, 237, 29);
+    color: rgb(32, 29, 237);
     
 }
 
+
+.formulario{   
+    width: 70vw;
+    background-color: rgb(8, 202, 176);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+   
+}
+
 h1{
-    color: rgb(234, 234, 243);
+    color: rgb(13, 187, 187);
     }  
     
 
@@ -29,6 +41,8 @@ p:nth-child(even) {
   }
 
 .entradas{
+    background-color: #cfe3e6;    
+    color: #0a18e7;
     width: 900px;
     display: flex;
     flex-direction: row;
@@ -38,15 +52,15 @@ p:nth-child(even) {
 }
 
 .saidas{
-
+background-color: #89b2be;
     width: 400px;
-    color: floralwhite;
+    color: rgb(13, 187, 187);
     font-size: 30px;
 
 }
 .total_saidas{    
     width: 400px;
-    color: rgb(10, 195, 78);
+    color: rgb(229, 240, 234);
     font-size: 30px;
     font-weight: bold;
 
@@ -54,14 +68,14 @@ p:nth-child(even) {
 .total_res{
     
     width: 900px;
-    color: rgb(147, 218, 81);
+    color: rgb(228, 233, 223);
     font-size: 30px;
     font-weight: bold;
 
 }
 .total_resFont{  
     display: flex;
-    width: 1000px;
+    width: 850px;
     color: rgb(244, 247, 241);
     font-size: 40px;
     font-weight: bold;
@@ -70,16 +84,7 @@ p:nth-child(even) {
 }
 
 
-.formulario{   
-    width: 70vw;
-    background-color: #911440;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-   
-}
+
 
 
 
@@ -93,7 +98,7 @@ column-gap: 40px;
 
 
 .parametros{       
-    color: #eaf155;
+    color: #eaf0ed;
     display: flex;   
     flex-direction: column;
     align-items: center;
@@ -102,10 +107,20 @@ column-gap: 40px;
     row-gap: 20px;  
     
 }
+
+.sim_nao{  
+    width: 115px; 
+    display: flex;    
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
 .bases{   
     background-color: #b80544;
     width: 900px;    
-    color: #eaf155;
+    color: #0a18e7;
     display: flex;   
     flex-direction: column;
     align-items: center;
@@ -141,7 +156,7 @@ width: 50px;
 }
 
 .proventos{       
-    color: #eaf155;
+    color: rgb(13, 187, 187);
     display: flex;   
     flex-direction: column;
     justify-content: left;
@@ -150,7 +165,7 @@ width: 50px;
 }
 
 .proventos_texto{     
-    background-color: #077051;  
+    background-color: #89b2be;  
     color: #eff1f2;
     display: flex;   
     flex-direction: column;
@@ -253,7 +268,7 @@ width: 50px;
 }
 
 .adicional{
-    color: rgb(245, 240, 237);
+    color: rgb(4, 100, 92);
     width: 220px;
     display: flex;
     align-items: center;

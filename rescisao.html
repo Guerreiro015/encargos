@@ -37,7 +37,7 @@
       </div>
 
       <div class="parametros">
-        <fieldset>
+        <fieldset class="sim_nao">
           <legend class="parametros">Tipo de Rescisão</legend>
           <select class="Balao_texto" name="tipo_rescisao" id="tipo_rescisao">
             <option value="Sem Justa Causa">Sem Justa Causa</option>
@@ -47,25 +47,25 @@
           </select>
         </fieldset>
         <fieldset class="base_pensao">
-          <label class="proventos" for="pensao">Desconto de Pensão %</label>
+          <label class="parametros for="pensao">Desconto de Pensão %</label>
           <input class="base_pensao_balao" type="number" id="pensao" nome="pensao" value="0">
         </fieldset>
       </div>
 
       <div class="parametros">
-        <fieldset>
-          <legend class="parametros">Férias Vencidas</legend>
-          <div class="adicional">
+        <fieldset class="sim_nao">
+          <legend >Férias Vencidas</legend>
+          <div class="sim_nao">
             <input class="check" type="radio" name="ferias" value="SIM" id="sim">
             <label class="check" for="sim">Sim</label>
           </div>
-          <div class="adicional">
+          <div class="sim_nao">
             <input class="check" type="radio" name="ferias" value="NAO" id="nao" checked>
             <label class="check" for="nao">Não</label>
           </div>
         </fieldset>
         <fieldset class="base_pensao">
-          <label class="proventos" for="depir">Quant. Dep. de IR</label>
+          <label class="parametros" for="depir">Quant. Dep. de IR</label>
           <input class="base_pensao_balao" type="number" id="depir" nome="depir" value="0">
         </fieldset>
 
