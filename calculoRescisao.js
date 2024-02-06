@@ -340,5 +340,6 @@ function calcularEncargos() {
   document.getElementById("inssValor").innerHTML =  valorInss.toFixed(2);
   document.getElementById("irrfBase").innerHTML = baseIR.toFixed(2);
   document.getElementById("irrfValor").innerHTML =  valor_IR.toFixed(2);
+  document.getElementById("totalRes").innerHTML =  proventos.toFixed(2);
 
 }
