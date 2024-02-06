@@ -44,6 +44,19 @@ p:nth-child(even) {
     font-size: 30px;
 
 }
+.total_saidas{
+    background-color: #70e2f1;
+    width: 400px;
+    color: rgb(21, 31, 226);
+    font-size: 30px;
+
+}
+.total_res{
+    width: 900px;
+    color: rgb(147, 218, 81);
+    font-size: 30px;
+
+}
 
 
 .formulario{   
