@@ -306,7 +306,7 @@ function calcularEncargos() {
   //calculo INSS 13º decimo terceiro
 
   proventos13 = valor_decimo + valor_medias_13 + decimo_aviso
-  baseInss13 = proventos
+  baseInss13 = proventos13
 
   if (baseInss13 < 1412) {
     valorInss13 = baseInss13 * 7.5 / 100
@@ -332,11 +332,11 @@ function calcularEncargos() {
 
   deducao13 = valorInss13
 
-  if (deducao <= 528) {
-    deducao = 528
+  if (deducao13 <= 528) {
+    deducao13 = 528
   }
 
-  baseIR13 = baseInss13 - deducao
+  baseIR13 = baseInss13 - deducao13
 
 
   if (baseIR13 < 0) {
