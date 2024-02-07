@@ -77,8 +77,8 @@ function calcularEncargos() {
   let valSal = parseFloat(document.getElementById("val_sal").value)
   let valNot = parseFloat(document.getElementById("val_not").value)
   let valHe = parseFloat(document.getElementById("val_he").value)
-  let valmedia13 = parseFloat(document.getElementById("val_he").value)
-  let valmediaferias = parseFloat(document.getElementById("val_he").value)
+  let valmedia13 = parseFloat(document.getElementById("media_13").value)
+  let valmediaferias = parseFloat(document.getElementById("media_ferias").value)
 
   let valor_pensao = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
@@ -101,9 +101,9 @@ function calcularEncargos() {
   valor_sindicato = sindical_res
   valor_VT = vt_res
   valor_VA = va_res
-  valor_media_13 = valmedia13
-  valor_media_ferias = valmediaferias
-  valor_media_terco = valor_media_ferias/3
+  valor_medias_13 = valmedia13
+  valor_medias_ferias = valmediaferias
+  valor_medias_terco = valor_medias_ferias / 3
 
 
 
@@ -164,6 +164,8 @@ function calcularEncargos() {
   let valDia = salCalculo / 30
   let valHora = salCalculo / 220
   let valAvo = salCalculo / 12
+  valNot = valNot * valHora * 0.2
+  valHe = valHe * valHora * 1.5
 
   let valor_decimo = (salCalculo / 12) * decimo
   if (mes2 = 2 && dia2 >= 28) {
@@ -238,8 +240,10 @@ function calcularEncargos() {
     let ferias_propor_terco = valor_ferias_propor / 3
   }
 
-  proventos = valSal + valNot + valHe + valor_do_adicional + valor_decimo
-  baseInss = proventos - valor_faltas
+  //calculo inss normal
+
+  proventos = valSal + valNot + valHe + valor_do_adicional
+  baseInss = proventos - valor_faltas - valor_atrasos - valor_dsr
 
   if (baseInss < 1412) {
     valorInss = baseInss * 7.5 / 100
@@ -294,7 +298,72 @@ function calcularEncargos() {
 
   else if (baseIR > 4664.68) {
     valor_IR = (baseIR * 27.5 / 100) - 884.96
+
   }
+
+  //------------------------------------------------------------------------//
+
+  //calculo INSS 13º decimo terceiro
+
+  proventos13 = valor_decimo + valor_medias_13 + decimo_aviso
+  baseInss13 = proventos
+
+  if (baseInss13 < 1412) {
+    valorInss13 = baseInss13 * 7.5 / 100
+
+  }
+  else if (baseInss13 < 2666.68) {
+    valorInss13 = (baseInss13 * 9 / 100) - 21.18
+  }
+
+  else if (baseInss13 < 4000.03) {
+    valorInss13 = (baseInss13 * 12 / 100) - 101.18
+  }
+
+  else if (baseInss13 < 7786.02) {
+    valorInss13 = (baseInss13 * 14 / 100) - 181.18
+  }
+
+  else if (baseInss13 > 7786.02) {
+    valorInss13 = 908.85
+  }
+
+  // Cálculo do Imposto de Renda 13º decimo//
+
+  deducao13 = valorInss13
+
+  if (deducao <= 528) {
+    deducao = 528
+  }
+
+  baseIR13 = baseInss13 - deducao
+
+
+  if (baseIR13 < 0) {
+    baseIR13 = 0
+  }
+
+  if (baseIR13 < 2112) {
+    valor_IR13 = 0
+
+  }
+  else if (baseIR13 < 2826.66) {
+    valor_IR13 = (baseIR13 * 7.5 / 100) - 158.4
+  }
+
+  else if (baseIR13 < 3751.06) {
+    valor_IR13 = (baseIR13 * 15 / 100) - 370.40
+  }
+
+  else if (baseIR13 < 4664.69) {
+    valor_IR13 = (baseIR13 * 22.5 / 100) - 651.73
+  }
+
+  else if (baseIR13 > 4664.68) {
+    valor_IR13 = (baseIR13 * 27.5 / 100) - 884.96
+  }
+
+  //--------------------------------------------------------------
 
   if (tipo_de_rescisao != "Sem Justa Causa") {
     aviso_previo = 0
@@ -307,7 +376,7 @@ function calcularEncargos() {
   }
   //---------------------------------------------------------
   total_proventos = sal_trabalhado + valor_do_adicional + valNot + valHe + aviso_previo + avisoProjetado_valor + valor_decimo + valor_ferias_vencidas + valor_ferias_propor + ferias_propor_terco + ferias_vencidas_terco + decimo_aviso
-  total_descontos = valor_faltas + valor_atrasos + valor_dsr + valor_medico + valor_odonto + valor_sindicato + valor_VA + valor_VT + valor_IR + valorInss
+  total_descontos = valor_faltas + valor_atrasos + valor_dsr + valor_medico + valor_odonto + valor_sindicato + valor_VA + valor_VT + valor_IR + valor_IR13 + valorInss + valorInss13
 
   valor_rescisao = total_proventos - total_descontos
   //---------------------------------------------------------
@@ -330,10 +399,9 @@ function calcularEncargos() {
   document.getElementById("feriasPropV").innerHTML = valor_ferias_propor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasPropA").innerHTML = ferias_propor
   document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-  document.getElementById("decimoMedia").innerHTML = valor_media_13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("mediaFerias").innerHTML = ferias_propor_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("mediaFerias13").innerHTML = ferias_propor_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("decimoMedias").innerHTML = valor_medias_13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("feriasMedias").innerHTML = valor_medias_ferias.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("feriasMediasTerco").innerHTML = valor_medias_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
 
@@ -348,8 +416,12 @@ function calcularEncargos() {
   document.getElementById("valorSindicato").innerHTML = valor_sindicato.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("valorVT").innerHTML = valor_VT.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("valorVA").innerHTML = valor_VA.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
   document.getElementById("inssValor").innerHTML = valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("inssValor13").innerHTML = valorInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor").innerHTML = valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("irrfValor13").innerHTML = valor_IR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+
 
   document.getElementById("totalProv").innerHTML = total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("totalDesc").innerHTML = total_descontos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
