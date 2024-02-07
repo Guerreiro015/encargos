@@ -301,6 +301,10 @@ function calcularEncargos() {
     decimo_aviso = valor_avo_aviso
   }
   //---------------------------------------------------------
+  total_proventos=sal_trabalhado+valor_do_adicional+valNot+valHe+aviso_previo+avisoProjetado_valor+valor_decimo+valor_ferias_vencidas+valor_ferias_propor+ferias_propor_terco+ferias_vencidas_terco
+  total_descontos=valor_faltas+valor_atrasos+valor_dsr+valor_medico+valor_odonto+valor_sindicato+valor_VA+valor_VT+valor_IR+valorInss
+
+  valor_rescisao=total_proventos-total_descontos
   //---------------------------------------------------------
 
   document.getElementById("diasDireito").innerHTML = dia2;
@@ -333,15 +337,17 @@ function calcularEncargos() {
   document.getElementById("valorSindicato").innerHTML = valor_sindicato.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("valorVT").innerHTML = valor_VT.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("valorVA").innerHTML = valor_VA.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("inssValor").innerHTML =  valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("irrfValor").innerHTML =  valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("totalProv").innerHTML =  total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("totalDesc").innerHTML =  total_descontos_descontos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("totalRes").innerHTML =  valor_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
 
 
   document.getElementById("inssBase").innerHTML =  baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  document.getElementById("inssValor").innerHTML =  valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  document.getElementById("irrfValor").innerHTML =  valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  document.getElementById("totalRes").innerHTML =  proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   
   
 
