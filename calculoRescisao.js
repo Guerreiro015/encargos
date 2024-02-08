@@ -303,7 +303,7 @@ function calcularEncargos() {
 
   //------------------------------------------------------------------------//
 
-  //calculo INSS 13º decimo terceiro
+  calculo INSS 13º decimo terceiro
 
   proventos13 = valor_decimo + valor_medias_13 + decimo_aviso
   baseInss13 = proventos13
@@ -419,9 +419,9 @@ function calcularEncargos() {
   document.getElementById("valorVA").innerHTML = valor_VA.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   document.getElementById("inssValor").innerHTML = valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  // document.getElementById("inssValor13").innerHTML = valorInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("inssValor13").innerHTML = valorInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor").innerHTML = valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  // document.getElementById("irrfValor13").innerHTML = valor_IR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("irrfValor13").innerHTML = valor_IR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
 
   document.getElementById("totalProv").innerHTML = total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -431,8 +431,8 @@ function calcularEncargos() {
 
 
 
-  // document.getElementById("inssBase").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  // document.getElementById("irrfBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("inssBase").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("irrfBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
 
 
