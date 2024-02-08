@@ -54,7 +54,7 @@
 
       <div class="parametros">
         <fieldset class="sim_nao">
-          <legend >Férias Vencidas</legend>
+          <legend>Férias Vencidas</legend>
           <div class="sim_nao">
             <input class="check" type="radio" name="ferias" value="SIM" id="sim">
             <label class="check" for="sim">Sim</label>
@@ -84,12 +84,9 @@
             <label class="proventos" for="val_not">Adic. Noturno R$:</label>
             <input class="proventos_texto" type="text" id="val_not" nome="val_not" value="10">
             <label class="proventos" for="val_he">Horas Extras R$:</label>
-            <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="15">     
+            <input class="proventos_texto" type="text" id="val_he" nome="val_he" value="15">
 
-            <label class="proventos" for="media_13">Médias 13º R$:</label>
-            <input class="proventos_texto" type="text" id="media_13" nome="media_13" value="6.2">
-            <label class="proventos" for="media_ferias">Médias Férias R$:</label>
-            <input class="proventos_texto" type="text" id="media_ferias" nome="media_ferias" value="9.4">
+
             <br>
             <br>
             <br>
@@ -137,9 +134,9 @@
             <input class="proventos_texto" type="text" id="convenio_odonto" nome="convenio_odonto" value="2">
             <label class="proventos" for="sindicato">Contr. Sindicais</label>
             <input class="proventos_texto" type="text" id="sindicato" nome="sindicato" value="20">
-            <label class="proventos" for="vt_não_utilizado">VT Não Utilizado</label>
+            <label class="proventos" for="vt_nao">VT Não Utilizado</label>
             <input class="proventos_texto" type="text" id="vt_nao" nome="vt_nao" value="16">
-            <label class="proventos" for="va_não_utilizado">VA/VR Não Utilizado</label>
+            <label class="proventos" for="va_nao">VA/VR Não Utilizado</label>
             <input class="proventos_texto" type="text" id="va_nao" nome="va_nao" value="45">
 
           </div>
@@ -153,7 +150,7 @@
 
 
       <div class="form_titulo">
-        <fieldset class="saidas">         
+        <fieldset class="saidas">
           <h1 class="inicio">Vencimentos</h1>
           <div class="dias">
             <div class="diasPaga">
@@ -197,11 +194,7 @@
               <p id="decimoAvisoV"></p>
             </div>
 
-            <div class="diasPaga">
-              <P>Médias 13º :</P>
-              <p>--</p>
-              <p id="decimoMedias"></p>
-            </div>
+
 
             <div class="diasPaga">
               <P>Férias Vencidas :</P>
@@ -233,18 +226,8 @@
               <P>1/3</P>
               <p id="feriasAvisoTercoV"></p>
             </div>
-           
-            <div class="diasPaga">
-              <P>Médias Férias:</P>
-              <P>--</P>
-              <p id="feriasMedias"></p>
-            </div>
 
-            <div class="diasPaga">
-              <P>Médias Férias. 1/3:</P>
-              <P>1/3</P>
-              <p id="feriasMediasTerco"></p>
-            </div>
+
 
           </div>
         </fieldset>
@@ -297,22 +280,11 @@
               <p>--</p>
               <p id="inssValor"></p>
             </div>
-            
-            <div class="diasPaga">
-              <P>INSS 13º:</P>
-              <p>--</p>
-              <p id="inssValor13"></p>
-            </div>
 
             <div class="diasPaga">
               <P>IRRF Normal:</P>
               <p>--</p>
               <p id="irrfValor"></p>
-            </div>
-            <div class="diasPaga">
-              <P>IRRF Normal 13º :</P>
-              <p>--</p>
-              <p id="irrfValor13"></p>
             </div>
 
           </div>
@@ -323,9 +295,9 @@
           <legend class="inicio">Total de Vencimentos</legend>
           <div class="dias">
             <div class="final">
-             
+
               <p class="final_res" id="totalProv"></p>
-              
+
             </div>
 
           </div>
@@ -347,7 +319,7 @@
             <div class="total_resFont">
               <P class="final_res">Valor da Rescisão. :</P>
               <p class="final_res" id="totalRes"></p>
-              
+
             </div>
 
           </div>
@@ -360,11 +332,11 @@
           <legend>BASES</legend>
           <div class="base">
             <div class="bases">
-              
+              <!--               
               <p id='inssBase'></p>
               <p id='inssValor'></p>
               <p id='irrfBase'></p>
-              <p id='irrfValor'></p>
+              <p id='irrfValor'></p> -->
 
             </div>
 
