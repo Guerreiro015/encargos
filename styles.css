@@ -320,3 +320,31 @@ width: 50px;
 .teste{
     display: flex;
 }
+
+.form_fgts{   
+    display: flex;
+    align-items: top;
+   
+       
+}
+
+.total_fgts{
+    display: flex;
+    column-gap:55px;
+    font-weight: bold;
+    
+}
+
+
+.fgts_tit{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(37, 6, 175);
+}
+
+.fgts_res{
+    background-color: rgb(243, 247, 248);
+    font-size: 25px;
+    font-weight: bold;   
+    
+}

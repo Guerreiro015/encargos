@@ -79,7 +79,7 @@ function calcularEncargos() {
   let valHe = parseFloat(document.getElementById("val_he").value)
   let valmed13 = parseFloat(document.getElementById("medias_13").value)
   let valmedfer = parseFloat(document.getElementById("medias_ferias").value)
-
+  let valfgts = parseFloat(document.getElementById("fgts").value)
 
   let valor_pensao = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
@@ -105,6 +105,7 @@ function calcularEncargos() {
   valor_medias13 = valmed13
   valor_medias_ferias = valmedfer
   valor_medias_ferias_terco = valmedfer / 3
+  valor_extrato_ftgs = valfgts
 
 
 
@@ -409,6 +410,7 @@ function calcularEncargos() {
   document.getElementById("medias13").innerHTML = valor_medias13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("mediasFerias").innerHTML = valor_medias_ferias.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("mediasFeriasTerco").innerHTML = valor_medias_ferias_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("fgtsExtrato").innerHTML = valor_extrato_ftgs.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
 
