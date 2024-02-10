@@ -334,39 +334,39 @@ function calcularEncargos() {
   
   // // Cálculo do Imposto de Renda 13º//
 
-  // deducao13 = valorInss13
+  deducao13 = valorinss13
 
-  // if (deducao13 <= 528) {
-  //   deducao13= 528
-  // }
+  if (deducao13 <= 528) {
+    deducao13= 528
+  }
 
-  // baseIR13 = baseInss13 - deducao13
+  baseIR13 = baseInss13 - deducao13
 
 
-  // if (baseIR13 < 0) {
-  //   baseIR13 = 0
-  // }
+  if (baseIR13 < 0) {
+    baseIR13 = 0
+  }
 
-  // if (baseIR13 < 2112) {
-  //   valor_IR13 = 0
+  if (baseIR13 < 2112) {
+    valor_IR13 = 0
 
-  // }
-  // else if (baseIR13 < 2826.66) {
-  //   valor_IR13 = (baseIR13 * 7.5 / 100) - 158.4
-  // }
+  }
+  else if (baseIR13 < 2826.66) {
+    valor_IR13 = (baseIR13 * 7.5 / 100) - 158.4
+  }
 
-  // else if (baseIR13 < 3751.06) {
-  //   valor_IR13 = (baseIR13 * 15 / 100) - 370.40
-  // }
+  else if (baseIR13 < 3751.06) {
+    valor_IR13 = (baseIR13 * 15 / 100) - 370.40
+  }
 
-  // else if (baseIR13 < 4664.69) {
-  //   valor_IR13 = (baseIR13 * 22.5 / 100) - 651.73
-  // }
+  else if (baseIR13 < 4664.69) {
+    valor_IR13 = (baseIR13 * 22.5 / 100) - 651.73
+  }
 
-  // else if (baseIR13 > 4664.68) {
-  //   valor_IR13 = (baseIR13 * 27.5 / 100) - 884.96
+  else if (baseIR13 > 4664.68) {
+    valor_IR13 = (baseIR13 * 27.5 / 100) - 884.96
 
-  // }
+  }
   
   //-------------------------------------------------------//
   //-------------------------------------------------------//
@@ -383,7 +383,7 @@ function calcularEncargos() {
   //---------------------------------------------------------
 
   total_proventos = sal_trabalhado + valor_do_adicional + valNot + valHe + aviso_previo + avisoProjetado_valor + valor_decimo + valor_ferias_vencidas + valor_ferias_propor + ferias_propor_terco + ferias_vencidas_terco + decimo_aviso + valor_medias13 + valor_medias_ferias + valor_medias_ferias_terco
-  total_descontos = valor_faltas + valor_atrasos + valor_dsr + valor_medico + valor_odonto + valor_sindicato + valor_VA + valor_VT + valor_IR + valorInss+valorinss13
+  total_descontos = valor_faltas + valor_atrasos + valor_dsr + valor_medico + valor_odonto + valor_sindicato + valor_VA + valor_VT + valor_IR + valor_IR13 + valorInss+valorinss13
 
   valor_rescisao = total_proventos - total_descontos
   //---------------------------------------------------------
@@ -428,6 +428,7 @@ function calcularEncargos() {
   document.getElementById("inssValor").innerHTML = valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("inssValor13").innerHTML = valorinss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor").innerHTML = valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("irrfValor13").innerHTML = valor_IR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
 
   document.getElementById("totalProv").innerHTML = total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
