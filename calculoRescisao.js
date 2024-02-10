@@ -79,7 +79,7 @@ function calcularEncargos() {
   let valHe = parseFloat(document.getElementById("val_he").value)
   let valmed13 = parseFloat(document.getElementById("medias_13").value)
   let valmedfer = parseFloat(document.getElementById("medias_ferias").value)
-  
+
 
   let valor_pensao = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
@@ -102,10 +102,10 @@ function calcularEncargos() {
   valor_sindicato = sindical_res
   valor_VT = vt_res
   valor_VA = va_res
-  valor_medias13=valmed13
-  valor_medias_ferias=valmedfer
-  valor_medias_ferias_terco=valmedfer/3
- 
+  valor_medias13 = valmed13
+  valor_medias_ferias = valmedfer
+  valor_medias_ferias_terco = valmedfer / 3
+
 
 
 
@@ -305,19 +305,84 @@ function calcularEncargos() {
 
   //------------------------------------------------------------------------//
 
-  //--------------------------------------------------------------
+  //calculo inss normal 13º//
 
+  proventos13 = valor_decimo + valor_medias13
+  baseInss13 = proventos13
+
+  if (baseInss13 < 1412) {
+    valorinss13 = baseInss13 * 7.5 / 100
+
+  }
+  else if (baseInss < 2666.68) {
+    valorinss13 = (baseInss13 * 9 / 100) - 21.18
+  }
+
+  else if (baseInss13 < 4000.03) {
+    valorinss13 = (baseInss13 * 12 / 100) - 101.18
+  }
+
+  else if (baseInss13 < 7786.02) {
+    valorinss13 = (baseInss13 * 14 / 100) - 181.18
+  }
+
+  else if (baseInss13 > 7786.02) {
+    valorinss13 = 908.85
+  }
+
+  //--------------------------------------------------------------//
+  
+  // // Cálculo do Imposto de Renda 13º//
+
+  // deducao13 = valorInss13
+
+  // if (deducao13 <= 528) {
+  //   deducao13= 528
+  // }
+
+  // baseIR13 = baseInss13 - deducao13
+
+
+  // if (baseIR13 < 0) {
+  //   baseIR13 = 0
+  // }
+
+  // if (baseIR13 < 2112) {
+  //   valor_IR13 = 0
+
+  // }
+  // else if (baseIR13 < 2826.66) {
+  //   valor_IR13 = (baseIR13 * 7.5 / 100) - 158.4
+  // }
+
+  // else if (baseIR13 < 3751.06) {
+  //   valor_IR13 = (baseIR13 * 15 / 100) - 370.40
+  // }
+
+  // else if (baseIR13 < 4664.69) {
+  //   valor_IR13 = (baseIR13 * 22.5 / 100) - 651.73
+  // }
+
+  // else if (baseIR13 > 4664.68) {
+  //   valor_IR13 = (baseIR13 * 27.5 / 100) - 884.96
+
+  // }
+  
+  //-------------------------------------------------------//
+  //-------------------------------------------------------//
+  
   if (tipo_de_rescisao != "Sem Justa Causa") {
     aviso_previo = 0
   }
-  //-------------------------------------------------------
-  //-------------------------------------------------------
-
+  
   if (aviso_previo > 0) {
     decimo_aviso = valor_avo_aviso
   }
+
+  //-------------------------------------------------------
   //---------------------------------------------------------
-  total_proventos = sal_trabalhado + valor_do_adicional + valNot + valHe + aviso_previo + avisoProjetado_valor + valor_decimo + valor_ferias_vencidas + valor_ferias_propor + ferias_propor_terco + ferias_vencidas_terco + decimo_aviso+valor_medias13+valor_medias_ferias+valor_medias_ferias_terco
+
+  total_proventos = sal_trabalhado + valor_do_adicional + valNot + valHe + aviso_previo + avisoProjetado_valor + valor_decimo + valor_ferias_vencidas + valor_ferias_propor + ferias_propor_terco + ferias_vencidas_terco + decimo_aviso + valor_medias13 + valor_medias_ferias + valor_medias_ferias_terco
   total_descontos = valor_faltas + valor_atrasos + valor_dsr + valor_medico + valor_odonto + valor_sindicato + valor_VA + valor_VT + valor_IR + valorInss
 
   valor_rescisao = total_proventos - total_descontos
@@ -345,7 +410,7 @@ function calcularEncargos() {
   document.getElementById("mediasFerias").innerHTML = valor_medias_ferias.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("mediasFeriasTerco").innerHTML = valor_medias_ferias_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-  
+
 
 
   document.getElementById("faltasQ").innerHTML = quant_faltas
@@ -360,9 +425,10 @@ function calcularEncargos() {
   document.getElementById("valorVT").innerHTML = valor_VT.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("valorVA").innerHTML = valor_VA.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-  document.getElementById("inssValor").innerHTML = valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });; 
+  document.getElementById("inssValor").innerHTML = valorInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("inssValor13").innerHTML = valorinss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor").innerHTML = valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  
+
 
   document.getElementById("totalProv").innerHTML = total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("totalDesc").innerHTML = total_descontos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -371,7 +437,7 @@ function calcularEncargos() {
 
 
 
-  
+
 
 
 }
