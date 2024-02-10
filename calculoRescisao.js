@@ -77,6 +77,8 @@ function calcularEncargos() {
   let valSal = parseFloat(document.getElementById("val_sal").value)
   let valNot = parseFloat(document.getElementById("val_not").value)
   let valHe = parseFloat(document.getElementById("val_he").value)
+  let valmed13 = parseFloat(document.getElementById("medias_13").value)
+  let valmedfer = parseFloat(document.getElementById("medias_ferias").value)
   
 
   let valor_pensao = parseFloat(document.getElementById("pensao").value)
@@ -100,6 +102,8 @@ function calcularEncargos() {
   valor_sindicato = sindical_res
   valor_VT = vt_res
   valor_VA = va_res
+  valor_medias13=valmed13
+  valor_medias_ferias=valmedfer
  
 
 
@@ -336,6 +340,7 @@ function calcularEncargos() {
   document.getElementById("feriasPropV").innerHTML = valor_ferias_propor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasPropA").innerHTML = ferias_propor
   document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("medias13").innerHTML = valor_medias13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   
 
