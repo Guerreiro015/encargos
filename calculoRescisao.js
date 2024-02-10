@@ -317,7 +317,7 @@ function calcularEncargos() {
     decimo_aviso = valor_avo_aviso
   }
   //---------------------------------------------------------
-  total_proventos = sal_trabalhado + valor_do_adicional + valNot + valHe + aviso_previo + avisoProjetado_valor + valor_decimo + valor_ferias_vencidas + valor_ferias_propor + ferias_propor_terco + ferias_vencidas_terco + decimo_aviso
+  total_proventos = sal_trabalhado + valor_do_adicional + valNot + valHe + aviso_previo + avisoProjetado_valor + valor_decimo + valor_ferias_vencidas + valor_ferias_propor + ferias_propor_terco + ferias_vencidas_terco + decimo_aviso+valor_medias13+valor_medias_ferias+valor_medias_ferias_terco
   total_descontos = valor_faltas + valor_atrasos + valor_dsr + valor_medico + valor_odonto + valor_sindicato + valor_VA + valor_VT + valor_IR + valorInss
 
   valor_rescisao = total_proventos - total_descontos
