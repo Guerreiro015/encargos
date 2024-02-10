@@ -104,6 +104,7 @@ function calcularEncargos() {
   valor_VA = va_res
   valor_medias13=valmed13
   valor_medias_ferias=valmedfer
+  valor_medias_ferias_terco=valmedfer/3
  
 
 
@@ -341,6 +342,8 @@ function calcularEncargos() {
   document.getElementById("feriasPropA").innerHTML = ferias_propor
   document.getElementById("feriasPropTercoV").innerHTML = ferias_propor_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("medias13").innerHTML = valor_medias13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("mediasFerias").innerHTML = valor_medias_ferias.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("mediasFeriasTerco").innerHTML = valor_medias_ferias_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   
 
