@@ -85,7 +85,7 @@ background-color: rgb(14, 7, 145);
 
 }
 
-.final_res{
+.final_res{    
     background-color: azure;
     font-size: 40px;
     color: rgb(9, 12, 185);
@@ -328,9 +328,16 @@ width: 50px;
        
 }
 
+.fgts{
+    width: 307px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1px;
+    justify-content: space-around;
+}
 .total_fgts{
     display: flex;
-    column-gap:55px;
+    justify-content: space-around;
     font-weight: bold;
     
 }
