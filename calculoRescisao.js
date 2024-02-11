@@ -447,10 +447,17 @@ function calcularEncargos() {
   document.getElementById("totalProv").innerHTML = total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("totalDesc").innerHTML = total_descontos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("totalRes").innerHTML = valor_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-
-
-
+  
+  
+  document.getElementById("baseSInss").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("baseSInss13").innerHTML = baseInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  
+  document.getElementById("baseSIrrf").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("baseSIrrf13").innerHTML = baseIR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  
+  document.getElementById("baseHora").innerHTML = valHora.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("baseDia").innerHTML = valDia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("baseAvo").innerHTML = valAvo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
 

@@ -28,6 +28,9 @@ h1{
     }  
     
 .inicio{
+    
+    display: flex;
+    justify-content: center;
     color: #eaf0ed;
     font-size: 40px;
 }
@@ -44,7 +47,7 @@ p:nth-child(even) {
   }
 
 .entradas{
-    background-color: #5c8bae;    
+    background-color: gray;    
     color: #0a18e7;
     width: 900px;
     display: flex;
@@ -52,6 +55,7 @@ p:nth-child(even) {
     justify-content: space-evenly;
     column-gap: 100px;
     font-size: 30px;
+    border-radius: 10px;
 }
 
 .saidas{
@@ -352,6 +356,12 @@ width: 50px;
 .fgts_res{
     background-color: rgb(243, 247, 248);
     font-size: 25px;
-    font-weight: bold;   
-    
+    font-weight: bold;       
 }
+
+fieldset {
+    border: 2px #e5ebee solid;
+    border-radius: 10px;
+    border-width: 5px;
+    
+  }
