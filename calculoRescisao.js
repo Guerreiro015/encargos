@@ -378,6 +378,14 @@ function calcularEncargos() {
 
   if (aviso_previo > 0) {
     decimo_aviso = valor_avo_aviso
+    ferias_aviso=valor_avo_aviso
+    ferias_aviso_terco=ferias_aviso/3
+  }
+  else{
+    decimo_aviso = 0
+    ferias_aviso=0
+    ferias_aviso_terco=0
+
   }
 
   //-------------------------------------------------------
@@ -391,7 +399,7 @@ function calcularEncargos() {
   valor_fgts_rescisao = total_proventos * 0.08
   valor_fgts_multa = (valor_extrato_fgts + valor_fgts_rescisao) * 0.40
   valor_fgts_total = valor_fgts_rescisao + valor_fgts_multa + valor_extrato_fgts
-
+  valor_fgts_base = total_proventos
 
   //---------------------------------------------------------//
   //---------------------------------------------------------//
@@ -417,8 +425,11 @@ function calcularEncargos() {
   document.getElementById("medias13").innerHTML = valor_medias13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("mediasFerias").innerHTML = valor_medias_ferias.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("mediasFeriasTerco").innerHTML = valor_medias_ferias_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("fgtsExtrato").innerHTML = valor_extrato_fgts.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+ 
+  document.getElementById("feriasAviso").innerHTML = ferias_aviso.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("feriasAvisoTerco").innerHTML = ferias_aviso_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   
+  document.getElementById("fgtsExtrato").innerHTML = valor_extrato_fgts.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("fgtsRescisao").innerHTML = valor_fgts_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("fgtsMulta").innerHTML = valor_fgts_multa.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("fgtsTotal").innerHTML = valor_fgts_total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -449,16 +460,17 @@ function calcularEncargos() {
   document.getElementById("totalRes").innerHTML = valor_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   
   
-  document.getElementById("baseSInss").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("baseSInss13").innerHTML = baseInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("inssBase").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("inssBase13").innerHTML = baseInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   
-  document.getElementById("baseSIrrf").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("baseSIrrf13").innerHTML = baseIR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("irBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("irBase13").innerHTML = baseIR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   
   document.getElementById("baseHora").innerHTML = valHora.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("baseDia").innerHTML = valDia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("baseAvo").innerHTML = valAvo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
+  
+  document.getElementById("baseFgts").innerHTML = valor_fgts_base.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
 }
