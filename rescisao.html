@@ -28,7 +28,7 @@
     <div class="form_titulo">
       <div class="parametros">
         <fieldset>
-          <legend>Admissão/Demissão</legend>
+          <legend class="fill">Admissão/Demissão</legend>
           <label for="text1">Data Admissão</label>
           <input class="Balao_texto" type="date" name="text1" id="text1">
           <label for="text2">Data Demissão</label>
@@ -38,7 +38,7 @@
 
       <div class="parametros">
         <fieldset class="sim_nao">
-          <legend class="parametros">Tipo de Rescisão</legend>
+          <legend class="fill">Tipo de Rescisão</legend>
           <select class="Balao_texto" name="tipo_rescisao" id="tipo_rescisao">
             <option value="Sem Justa Causa">Sem Justa Causa</option>
             <option value="Justa Causa">Justa Causa</option>
@@ -54,7 +54,7 @@
 
       <div class="parametros">
         <fieldset class="sim_nao">
-          <legend>Férias Vencidas</legend>
+          <legend class="fill">Férias Vencidas</legend>
           <div class="sim_nao">
             <input class="check" type="radio" name="ferias" value="SIM" id="sim">
             <label class="check" for="sim">Sim</label>
@@ -403,7 +403,7 @@
 
     <div>
       <fieldset class="valores_base">
-        <legend class="total_res">BASES</legend>
+        <legend class="legend_base">BASES</legend>
         <div class="total_bases">
           <div class="diasPaga">
             <p>Valor base do INSS Normal</p>
@@ -447,11 +447,15 @@
 
   </div>
   </fieldset>
+  <br>
+  <br>
+  <br>
   </div>
 
 
   <script src="/calculoRescisao.js"> </script>
   </div>
+
 </body>
 
 <footer class="rodape">

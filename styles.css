@@ -1,5 +1,6 @@
 body{
     margin-top: 60px;
+    margin-bottom: 40px;
     background-color: rgb(147, 170, 169);
     display: flex;
     justify-content: space-around;
@@ -368,12 +369,12 @@ fieldset {
 
   
   .valores_base{
-      
+      width: 950px;
       display: flex;
       align-items: center;
       background-color: black;
       justify-content: space-around;
-      
+      column-gap: 70px;
     }
 
 
@@ -384,4 +385,20 @@ fieldset {
       font-size: 20px;
       font-weight: bold;
       color: white;
+      column-gap: 20px;
+  }
+
+  .legend_base{
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(66, 66, 191);
+    background-color: #e5ebee;
+    border-radius: 10px;
+
+  }
+
+  .fill{
+color: rgb(57, 74, 189);
+font-size: 20px;
+font-weight: bold;
   }
