@@ -451,3 +451,43 @@ fieldset {
     background-color: #08a197;
 }
 
+.ferias_faltas{
+    background-color: #89b2be;
+    font-size: 35px;
+    color: #f7f9fa;
+}
+.ferias_faltas:nth-child(even){
+    font-size:35px;
+    background-color: #046d8d;
+    color: #fafa65;
+}
+
+.ferias_input{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.titulo{
+
+    font-size: 35px;
+}
+
+.botao_ferias {
+    background-color: rgb(230, 230, 238);
+    color: rgb(9, 45, 225);
+    padding: 5px;
+    margin: 10px 0 0 80px;
+    width: 300px;
+    border-radius: 15px;
+    border-color: rgb(117, 180, 235);
+    font-size: 40px;
+
+}
+.botao_ferias:hover {
+    background-color: rgb(5, 160, 85);
+    color: rgb(238, 239, 244);
+   
+}
+
