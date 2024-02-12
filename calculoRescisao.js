@@ -81,7 +81,7 @@ function calcularEncargos() {
   let valmedfer = parseFloat(document.getElementById("medias_ferias").value)
   let valfgts = parseFloat(document.getElementById("fgts").value)
 
-  let valor_pensao = parseFloat(document.getElementById("pensao").value)
+  let percentualpensao = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
 
 
@@ -106,6 +106,8 @@ function calcularEncargos() {
   valor_medias_ferias = valmedfer
   valor_medias_ferias_terco = valmedfer / 3
   valor_extrato_fgts = valfgts
+  percentual_pensao = percentualpensao
+
 
 
 
@@ -378,13 +380,13 @@ function calcularEncargos() {
 
   if (aviso_previo > 0) {
     decimo_aviso = valor_avo_aviso
-    ferias_aviso=valor_avo_aviso
-    ferias_aviso_terco=ferias_aviso/3
+    ferias_aviso = valor_avo_aviso
+    ferias_aviso_terco = ferias_aviso / 3
   }
-  else{
+  else {
     decimo_aviso = 0
-    ferias_aviso=0
-    ferias_aviso_terco=0
+    ferias_aviso = 0
+    ferias_aviso_terco = 0
 
   }
 
@@ -400,6 +402,13 @@ function calcularEncargos() {
   valor_fgts_multa = (valor_extrato_fgts + valor_fgts_rescisao) * 0.40
   valor_fgts_total = valor_fgts_rescisao + valor_fgts_multa + valor_extrato_fgts
   valor_fgts_base = total_proventos
+
+  //------------Cálculo da Pensao---------------------------------------------//
+  proventos_pensao = total_proventos
+  descontos_pensao = valor_faltas + valor_atrasos + valor_dsr + valor_IR + valor_IR13 + valorInss + valorinss13
+  bruto_pensao = proventos_pensao-descontos_pensao
+  valor_pensao = bruto_pensao*percentual_pensao/100
+
 
   //---------------------------------------------------------//
   //---------------------------------------------------------//
@@ -425,10 +434,10 @@ function calcularEncargos() {
   document.getElementById("medias13").innerHTML = valor_medias13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("mediasFerias").innerHTML = valor_medias_ferias.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("mediasFeriasTerco").innerHTML = valor_medias_ferias_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
- 
+
   document.getElementById("feriasAviso").innerHTML = ferias_aviso.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasAvisoTerco").innerHTML = ferias_aviso_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  
+
   document.getElementById("fgtsExtrato").innerHTML = valor_extrato_fgts.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("fgtsRescisao").innerHTML = valor_fgts_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("fgtsMulta").innerHTML = valor_fgts_multa.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -453,23 +462,26 @@ function calcularEncargos() {
   document.getElementById("inssValor13").innerHTML = valorinss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor").innerHTML = valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor13").innerHTML = valor_IR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+ 
+  document.getElementById("perPensao").innerHTML = percentual_pensao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("valorPensao").innerHTML = valor_pensao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
 
   document.getElementById("totalProv").innerHTML = total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("totalDesc").innerHTML = total_descontos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("totalRes").innerHTML = valor_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  
-  
+
+
   document.getElementById("inssBase").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("inssBase13").innerHTML = baseInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  
+
   document.getElementById("irBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("irBase13").innerHTML = baseIR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  
+
   document.getElementById("baseHora").innerHTML = valHora.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("baseDia").innerHTML = valDia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("baseAvo").innerHTML = valAvo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  
+
   document.getElementById("baseFgts").innerHTML = valor_fgts_base.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
