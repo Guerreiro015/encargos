@@ -1,4 +1,4 @@
-body{
+body {
     margin-top: 60px;
     margin-bottom: 40px;
     background-color: rgb(147, 170, 169);
@@ -9,11 +9,11 @@ body{
     gap: 5px;
     font-size: 15px;
     color: rgb(32, 29, 237);
-    
+
 }
 
 
-.formulario{   
+.formulario {
     width: 70vw;
     background-color: rgb(8, 202, 176);
     border-radius: 10px;
@@ -21,34 +21,34 @@ body{
     flex-direction: column;
     gap: 20px;
     align-items: center;
-   
+
 }
 
-h1{
+h1 {
     color: rgb(11, 229, 229);
-    }  
-    
-.inicio{
-    
+}
+
+.inicio {
+
     display: flex;
     justify-content: center;
     color: #eaf0ed;
     font-size: 40px;
 }
 
-p{
+p {
     color: aqua;
-    width: 200;   
+    width: 200;
     border-radius: 5px;
 }
 
 p:nth-child(even) {
     color: rgb(0, 153, 255);
-   
-  }
 
-.entradas{
-    background-color: gray;    
+}
+
+.entradas {
+    background-color: gray;
     color: #0a18e7;
     width: 900px;
     display: flex;
@@ -59,102 +59,108 @@ p:nth-child(even) {
     border-radius: 10px;
 }
 
-.saidas{
-background-color: rgb(14, 7, 145);
+.saidas {
+    background-color: rgb(14, 7, 145);
     width: 400px;
     color: rgb(6, 112, 112);
     font-size: 30px;
 
 }
-.total_saidas{    
+
+.total_saidas {
     width: 400px;
     color: rgb(39, 19, 187);
     font-size: 30px;
     font-weight: bold;
 
 }
-.total_res{
-    
+
+.total_res {
+
     width: 900px;
     color: rgb(228, 233, 223);
     font-size: 30px;
     font-weight: bold;
 
 }
-.total_resFont{  
+
+.total_resFont {
     display: flex;
-    width: 850px;    
+    width: 850px;
     font-size: 40px;
     font-weight: bold;
     column-gap: 40px;
 
 }
 
-.final_res{    
+.final_res {
     background-color: azure;
     font-size: 40px;
     color: rgb(9, 12, 185);
 }
-.final_prov{
+
+.final_prov {
     font-size: 40px;
     color: rgb(248, 244, 12);
 }
-.final_desc{
+
+.final_desc {
     font-size: 40px;
     color: rgb(230, 59, 87);
 }
 
-.form_titulo{
+.form_titulo {
     display: flex;
     align-items: top;
-    column-gap: 40px;   
-    
-    }
-    
-    
-.parametros{       
+    column-gap: 40px;
+
+}
+
+
+.parametros {
     color: #eaf0ed;
-    display: flex;   
+    display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
-    row-gap: 20px;  
-    
+    row-gap: 20px;
+
 }
 
-.sim_nao{  
-    width: 115px; 
-    display: flex;    
+.sim_nao {
+    width: 115px;
+    display: flex;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
-    
+
 }
 
-.base{   
-    width: 920px;    
+.base {
+    width: 920px;
     background-color: #3e474f;
     color: #eeeff5;
-    display: flex;   
+    display: flex;
     align-items: center;
     font-size: 40px;
     font-weight: bold;
-    row-gap: 20px;      
+    row-gap: 20px;
 }
-.bases{   
-    width: 250px;    
+
+.bases {
+    width: 250px;
     color: #ebebf1;
-    display: flex;   
+    display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
-    row-gap: 20px;      
+    row-gap: 20px;
 }
 
 
-.base_pensao{
+.base_pensao {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -162,24 +168,24 @@ background-color: rgb(14, 7, 145);
 
 }
 
-.base_pensao_balao{
-height: 30px;
-width: 50px;
+.base_pensao_balao {
+    height: 30px;
+    width: 50px;
 
 }
 
-.dias{       
+.dias {
     color: #32b4d4;
-    display: flex;   
-    flex-direction: column;    
+    display: flex;
+    flex-direction: column;
     justify-content: top;
     font-size: 20px;
     font-weight: bold;
-   
+
 }
 
 
-.diasPaga{
+.diasPaga {
     color: bisque;
     width: 400px;
     display: flex;
@@ -188,64 +194,64 @@ width: 50px;
 }
 
 
-.proventos{       
+.proventos {
     color: rgb(242, 246, 246);
-    display: flex;   
+    display: flex;
     flex-direction: column;
     justify-content: left;
-    font-size: 20px;    
-    row-gap: 5px;     
+    font-size: 20px;
+    row-gap: 5px;
 }
 
-.proventos_texto{     
-    background-color: #89b2be;  
+.proventos_texto {
+    background-color: #89b2be;
     color: #eff1f2;
-    display: flex;   
+    display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 20px;
-    row-gap: 5px;  
+    row-gap: 5px;
 }
 
-.botao{
+.botao {
     background-color: rgb(230, 230, 238);
-    color: rgb(9, 45, 225);    
+    color: rgb(9, 45, 225);
     padding: 5px;
     margin-top: 10px;
-    width: 300px;    
+    width: 300px;
     border-radius: 15px;
-    border-color: rgb(117, 180, 235);    
-    font-size: 40px;   
-    
+    border-color: rgb(117, 180, 235);
+    font-size: 40px;
+
 }
 
-.botao:hover{
+.botao:hover {
     background-color: rgb(238, 63, 104);
     color: white;
     transform: scale(1.2)
 }
 
-.codigo{
+.codigo {
     display: flex;
     background-color: cornflowerblue;
     font-size: 20px;
     color: rgb(208, 22, 22);
 }
 
-.imagem{
+.imagem {
 
     width: 500px;
     height: 600px;
 }
 
-.imagem2{
+.imagem2 {
 
     width: 600px;
     height: 700px;
 }
 
 
-.divisa{
+.divisa {
 
     display: flex;
     flex-direction: column;
@@ -255,7 +261,7 @@ width: 50px;
 
 }
 
-.tipo{
+.tipo {
     height: 60px;
     font-size: 20px;
     color: chocolate;
@@ -267,138 +273,181 @@ width: 50px;
 }
 
 
-.Balao{
+.Balao {
     height: 30px;
     font-size: 20px;
     color: rgb(50, 69, 62);
     display: flex;
-       
+
 }
 
-.Balao_texto{
-    
+.Balao_texto {
+
     height: 30px;
     font-size: 20px;
     color: rgb(50, 69, 62);
     display: flex;
-       
+
 }
 
-.check{    
+.check {
     height: 20px;
     width: 20px;
     padding-top: 2px;
     font-size: 20px;
-    
+
 }
 
-.check_text{    
+.check_text {
     height: 20px;
     width: 20px;
     padding-top: 2px;
     font-size: 20px;
-    
+
 }
 
-.adicional{
+.adicional {
     color: rgb(75, 238, 224);
     width: 220px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding-top: 5px;
-    
+
 }
 
-.adicional_legenda{
+.adicional_legenda {
     color: #0a18e7;
     font-size: 25px;
     font-weight: bold;
 
 }
 
-.tipocheckBalao{
+.tipocheckBalao {
     height: 20px;
     width: 30px;
 }
 
-.teste{
+.teste {
     display: flex;
 }
 
-.form_fgts{   
+.form_fgts {
     display: flex;
     align-items: top;
-   
-       
+
+
 }
 
-.fgts{
+.fgts {
     width: 307px;
     display: flex;
     flex-direction: column;
     row-gap: 1px;
     justify-content: space-around;
 }
-.total_fgts{
+
+.total_fgts {
     display: flex;
     justify-content: space-around;
     font-weight: bold;
-    
+
 }
 
 
-.fgts_tit{
+.fgts_tit {
     font-size: 25px;
     font-weight: bold;
     color: rgb(37, 6, 175);
 }
 
-.fgts_res{
+.fgts_res {
     background-color: rgb(243, 247, 248);
     font-size: 25px;
-    font-weight: bold;       
+    font-weight: bold;
 }
 
 fieldset {
     border: 2px #e5ebee solid;
     border-radius: 10px;
     border-width: 5px;
-    
-  }
 
-  
-  .valores_base{
-      width: 950px;
-      display: flex;
-      align-items: center;
-      background-color: black;
-      justify-content: space-around;
-      column-gap: 70px;
-    }
+}
 
 
-    .total_bases{         
-      display: flex;   
-      flex-direction: column;
-      align-items: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-      column-gap: 20px;
-  }
+.valores_base {
+    width: 950px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: space-around;
+    column-gap: 70px;
+}
 
-  .legend_base{
+
+.total_bases {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    column-gap: 20px;
+}
+
+.legend_base {
     font-size: 30px;
     font-weight: bolder;
     color: rgb(66, 66, 191);
     background-color: #e5ebee;
     border-radius: 10px;
 
-  }
+}
 
-  .fill{
-color: rgb(57, 74, 189);
-font-size: 20px;
-font-weight: bold;
-  }
+.fill {
+    color: rgb(57, 74, 189);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.menu_texto {
+    color: rgb(250, 245, 100);
+    font-weight: bold;
+    padding: 10px;
+    height: 20px;
+    font-size: 25px;
+   
+}
+.menu_input {
+    color: rgb(47, 48, 54);    
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+
+.menu_botao {
+    margin-top: 20px;
+    display: flex;
+    width: 340px;
+    height: 50px;
+    background-color: rgb(6, 140, 95);
+    color: #e5ebee;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.menu_botao:hover{
+    background-color: #08a197;
+}
+
