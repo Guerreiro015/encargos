@@ -81,7 +81,7 @@ function calcularEncargos() {
   let valmedfer = parseFloat(document.getElementById("medias_ferias").value)
   let valfgts = parseFloat(document.getElementById("fgts").value)
 
-  let pensaoporcento = parseFloat(document.getElementById("pensao").value)
+  let pensaopercentual = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
 
 
@@ -106,7 +106,8 @@ function calcularEncargos() {
   valor_medias_ferias = valmedfer
   valor_medias_ferias_terco = valmedfer / 3
   valor_extrato_fgts = valfgts
-  porcento_pensao = pensaoporcento
+  quant_dep_IR = dep_ir
+  percentual_pensao = pensaopercentual
 
 
 
@@ -408,7 +409,7 @@ function calcularEncargos() {
   proventos_pensao = total_proventos
   descontos_pensao = valor_faltas + valor_atrasos + valor_dsr + valor_IR + valor_IR13 + valorInss + valorinss13
   bruto_pensao = proventos_pensao - descontos_pensao
-  valor_total_pensao = bruto_pensao * porcento_pensao
+  valor_total_pensao = bruto_pensao * percentual_pensao / 100
 
   //---------------------------------------------------------//
   //---------------------------------------------------------//
@@ -463,7 +464,7 @@ function calcularEncargos() {
   document.getElementById("irrfValor").innerHTML = valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor13").innerHTML = valor_IR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
-  document.getElementById("perPensao").innerHTML = percentual_pensao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("perPensao").innerHTML = percentual_pensao + "%"
   document.getElementById("valorPensao").innerHTML = valor_total_pensao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
 
@@ -472,11 +473,6 @@ function calcularEncargos() {
   document.getElementById("totalRes").innerHTML = valor_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
-  document.getElementById("inssBase").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("inssBase13").innerHTML = baseInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-  document.getElementById("irBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("irBase13").innerHTML = baseIR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   document.getElementById("baseHora").innerHTML = valHora.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("baseDia").innerHTML = valDia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -484,5 +480,12 @@ function calcularEncargos() {
 
   document.getElementById("baseFgts").innerHTML = valor_fgts_base.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
+  document.getElementById("inssBase").innerHTML = baseInss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("inssBase13").innerHTML = baseInss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+  document.getElementById("irBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("irBase13").innerHTML = baseIR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("quantIR").innerHTML = "0"+quant_dep_IR + " Dependentes"
+  document.getElementById("dependenteIR").innerHTML = valor_dep_ir.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 }
