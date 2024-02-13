@@ -171,6 +171,7 @@ p:nth-child(even) {
 .base_pensao_balao {
     height: 30px;
     width: 50px;
+    font-size: 20px;
 
 }
 
@@ -491,3 +492,7 @@ fieldset {
    
 }
 
+
+.pensao_balao{
+
+}

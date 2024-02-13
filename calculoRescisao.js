@@ -220,12 +220,17 @@ function calcularEncargos() {
 
     }
   }
+
+  // Valor do aviso projetado//
+
   if (avos_avisoProjetado == 0) {
     avisoProjetado_valor = 0
   }
   else {
     avisoProjetado_valor = avos_avisoProjetado * valDia
   }
+
+
 
   //  // Cálculo do Férias//
   if (feria_vencida == "SIM") {
@@ -379,26 +384,29 @@ function calcularEncargos() {
   if (tipo_de_rescisao != "Sem Justa Causa") {
     aviso_previo = 0
   }
-  avo_13=0
+
+  // calculo do avo do 13 sobre aviso//
+
+  avo_13 = 0
   if (aviso_previo > 0) {
     if (dia2 <= 15 && (dia2 + avos_avisoProjetado) >= 15) {
-      avo_13=2
+      avo_13 = 2
       decimo_aviso = valor_avo_aviso * avo_13
     }
     else {
-      avo_13=1
+      avo_13 = 1
       ddecimo_aviso = valor_avo_aviso * avo_13
     }
   }
-  else{
+  else {
     decimo_aviso = 0
     ferias_aviso = 0
     ferias_aviso_terco = 0
-    
+
   }
-  ferias_aviso = valor_avo_aviso
-  ferias_aviso_terco = ferias_aviso / 3
-  
+  // ferias_aviso = valor_avo_aviso
+  // ferias_aviso_terco = ferias_aviso / 3
+
 
   //-------------------------------------------------------
   //---------------------------------------------------------
@@ -433,7 +441,7 @@ function calcularEncargos() {
   document.getElementById("projetadoV").innerHTML = avisoProjetado_valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("decimoTerceA").innerHTML = decimo
   document.getElementById("decimoTerceV").innerHTML = valor_decimo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  
+
   document.getElementById("avo13Aviso").innerHTML = avo_13
   document.getElementById("decimoAvisoV").innerHTML = decimo_aviso.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasV").innerHTML = valor_ferias_vencidas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
