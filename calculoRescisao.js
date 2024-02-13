@@ -379,18 +379,26 @@ function calcularEncargos() {
   if (tipo_de_rescisao != "Sem Justa Causa") {
     aviso_previo = 0
   }
-
+  avo_13=0
   if (aviso_previo > 0) {
-    decimo_aviso = valor_avo_aviso
-    ferias_aviso = valor_avo_aviso
-    ferias_aviso_terco = ferias_aviso / 3
+    if (dia2 <= 15 && (dia2 + avos_avisoProjetado) >= 15) {
+      avo_13=2
+      decimo_aviso = valor_avo_aviso * avo_13
+    }
+    else {
+      avo_13=1
+      ddecimo_aviso = valor_avo_aviso * avo_13
+    }
   }
-  else {
+  else{
     decimo_aviso = 0
     ferias_aviso = 0
     ferias_aviso_terco = 0
-
+    
   }
+  ferias_aviso = valor_avo_aviso
+  ferias_aviso_terco = ferias_aviso / 3
+  
 
   //-------------------------------------------------------
   //---------------------------------------------------------
@@ -425,6 +433,8 @@ function calcularEncargos() {
   document.getElementById("projetadoV").innerHTML = avisoProjetado_valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("decimoTerceA").innerHTML = decimo
   document.getElementById("decimoTerceV").innerHTML = valor_decimo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  
+  document.getElementById("avo13Aviso").innerHTML = avo_13
   document.getElementById("decimoAvisoV").innerHTML = decimo_aviso.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasV").innerHTML = valor_ferias_vencidas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasTercoV").innerHTML = ferias_vencidas_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -485,7 +495,7 @@ function calcularEncargos() {
 
   document.getElementById("irBase").innerHTML = baseIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("irBase13").innerHTML = baseIR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById("quantIR").innerHTML = "0"+quant_dep_IR + " Dependentes"
+  document.getElementById("quantIR").innerHTML = "0" + quant_dep_IR + " Dependentes"
   document.getElementById("dependenteIR").innerHTML = valor_dep_ir.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 }
