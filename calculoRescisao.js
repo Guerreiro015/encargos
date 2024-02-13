@@ -81,7 +81,7 @@ function calcularEncargos() {
   let valmedfer = parseFloat(document.getElementById("medias_ferias").value)
   let valfgts = parseFloat(document.getElementById("fgts").value)
 
-  let percentualpensao = parseFloat(document.getElementById("pensao").value)
+  let pensaoporcento = parseFloat(document.getElementById("pensao").value)
   let dep_ir = parseFloat(document.getElementById("depir").value)
 
 
@@ -106,7 +106,7 @@ function calcularEncargos() {
   valor_medias_ferias = valmedfer
   valor_medias_ferias_terco = valmedfer / 3
   valor_extrato_fgts = valfgts
-  percentual_pensao = percentualpensao
+  porcento_pensao = pensaoporcento
 
 
 
@@ -271,6 +271,7 @@ function calcularEncargos() {
   }
 
   // Cálculo do Imposto de Renda//
+  valor_pensao = 0
 
   deducao = valorInss + valor_pensao + valor_dep_ir
 
@@ -406,9 +407,8 @@ function calcularEncargos() {
   //------------Cálculo da Pensao---------------------------------------------//
   proventos_pensao = total_proventos
   descontos_pensao = valor_faltas + valor_atrasos + valor_dsr + valor_IR + valor_IR13 + valorInss + valorinss13
-  bruto_pensao = proventos_pensao-descontos_pensao
-  valor_pensao = bruto_pensao*percentual_pensao/100
-
+  bruto_pensao = proventos_pensao - descontos_pensao
+  valor_total_pensao = bruto_pensao * porcento_pensao
 
   //---------------------------------------------------------//
   //---------------------------------------------------------//
@@ -462,9 +462,9 @@ function calcularEncargos() {
   document.getElementById("inssValor13").innerHTML = valorinss13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor").innerHTML = valor_IR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("irrfValor13").innerHTML = valor_IR13.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
- 
+
   document.getElementById("perPensao").innerHTML = percentual_pensao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
-  document.getElementById("valorPensao").innerHTML = valor_pensao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("valorPensao").innerHTML = valor_total_pensao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
 
   document.getElementById("totalProv").innerHTML = total_proventos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
