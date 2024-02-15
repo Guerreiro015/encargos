@@ -166,8 +166,10 @@ function calcularEncargos() {
   // Cálculo do INSS//
 
 
+  let valDia = valSal / 30
+  let valDia_adici = valor_do_adicional / 30
   let salCalculo = valSal + valor_do_adicional
-  let valDia = salCalculo / 30
+  let valorDiario = salCalculo / 30
   let valHora = salCalculo / 220
   let valAvo = salCalculo / 12
   valNot = valNot * valHora * 0.2
@@ -176,19 +178,23 @@ function calcularEncargos() {
   let valor_decimo = (salCalculo / 12) * decimo
   if (mes2 = 2 && dia2 >= 28) {
     sal_trabalhado = 30 * valDia
+    adici_trabalhado = 30 * valDia_adici
   }
   else {
     if (dia2 > 30) {
       dia2 = 30
       sal_trabalhado = 30 * valDia
+      adici_trabalhado = 30 * valDia_adici
     }
     else {
       if (dia2 > 30) {
         dia2 = 30
         sal_trabalhado = 30 * valDia
+        adici_trabalhado = 30 * valDia_adici
       }
       else {
         sal_trabalhado = dia2 * valDia
+        adici_trabalhado = dia2 * valDia_adici
       }
 
     }
@@ -433,7 +439,7 @@ function calcularEncargos() {
   document.getElementById("diasDireito").innerHTML = dia2;
   document.getElementById("valorDireito").innerHTML = sal_trabalhado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("insal").innerHTML = adicional_recebido;
-  document.getElementById("insalV").innerHTML = valor_do_adicional.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
+  document.getElementById("insalV").innerHTML = adici_trabalhado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("notuV").innerHTML = valNot.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("heV").innerHTML = valHe.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
   document.getElementById("avisoV").innerHTML = aviso_previo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
