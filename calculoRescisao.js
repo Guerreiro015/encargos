@@ -203,8 +203,8 @@ function calcularEncargos() {
 
   // calculo do faltas/dsr e atrasos //
 
-  valor_faltas = quant_faltas * valDia
-  valor_dsr = quant_dsr * valDia
+  valor_faltas = quant_faltas * valorDiario
+  valor_dsr = quant_dsr * valorDiario
   valor_atrasos = quant_atrasos * valHora
 
 
