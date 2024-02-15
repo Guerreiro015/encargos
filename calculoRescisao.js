@@ -233,7 +233,7 @@ function calcularEncargos() {
     avisoProjetado_valor = 0
   }
   else {
-    avisoProjetado_valor = avos_avisoProjetado * valDia
+    avisoProjetado_valor = avos_avisoProjetado * valorDiario
   }
 
 
