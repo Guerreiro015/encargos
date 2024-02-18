@@ -129,13 +129,32 @@ p:nth-child(even) {
 }
 
 .sim_nao {
-    width: 115px;
+    width: 80px;
     display: flex;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
 
 }
+
+.direitos{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    
+}
+
+.direitos_nomes{    
+    width: 150px;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
 
 .base {
     width: 920px;
@@ -161,6 +180,7 @@ p:nth-child(even) {
 
 
 .base_pensao {
+    width: 280px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -291,9 +311,9 @@ p:nth-child(even) {
 
 }
 
-.check {
+.check {    
     height: 20px;
-    width: 20px;
+    width: 30px;
     padding-top: 2px;
     font-size: 20px;
 
@@ -493,6 +513,3 @@ fieldset {
 }
 
 
-.pensao_balao{
-
-}
