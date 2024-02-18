@@ -64,7 +64,7 @@
         <fieldset class="direitos_nomes">
           <legend class="fill">Direitos</legend>
           <div class="direitos">
-            <div class="direitos_nomes">
+            <div class="direitos_lista">
               <div class="direitos_nomes">
                 <label class="direitos_nomes">Férias Vencidas</label>
               </div>
@@ -77,9 +77,9 @@
                 <label class="check" for="nao">Não</label>
               </div>
             </div>
-            <div class="direitos_nomes">
+            <div class="direitos_lista">
               <div class="direitos_nomes">
-                <label class="direitos_nomes">Auxilio Creche</label>
+                <label class="direitos_nomes">Auxílio Creche</label>
               </div>
               <div class="direitos_nomes">
                 <input class="check" type="radio" name="creche" value="SIM" id="sim">
@@ -124,26 +124,26 @@
             <fieldset>
               <legend class="adicional_legenda">Adicionais</legend>
               <div class="adicional">
-                <input class="check" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
-                <label class="check_text" for="Periculodidade">Periculosidade</label>
+                <input class="check_balao" type="radio" name="adicional" value="Periculodidade" id="Periculodidade">
+                <label class="check_texto" for="Periculodidade">Periculosidade</label>
               </div>
 
               <div class="adicional">
-                <input class="check" type="radio" name="adicional" value="Insal._Min_10%" id="Insalubridade_Min_10%">
-                <label class="check" for="Insalubridade_Min_10%">Insalubridade_Min_10%</label>
+                <input class="check_balao" type="radio" name="adicional" value="Insalubridade_10%" id="Insalubridade_Min_10%">
+                <label class="check_texto" for="Insalubridade_Min_10%">Insalubridade_Min_10% SM</label>
               </div>
               <div class="adicional">
-                <input class="check" type="radio" name="adicional" value="Insal._Med_20%" id="Insalubridade_Med_20%">
-                <label class="check" for="Insalubridade_Med_20%">Insalubridade_Med_20%</label>
+                <input class="check_balao" type="radio" name="adicional" value="Insalubridade_20%" id="Insalubridade_Med_20%">
+                <label class="check_texto" for="Insalubridade_Med_20%">Insalubridade_Med_20% SM</label>
               </div>
               <div class="adicional">
-                <input class="check" type="radio" name="adicional" value="Insal._Max_40%" id="Insalubridade_Max_40%">
-                <label class="check" for="Insalubridade_Max_40%">Insalubridade_Max_40%</label>
+                <input class="check_balao" type="radio" name="adicional" value="Insalubridade_40%" id="Insalubridade_Max_40%">
+                <label class="check_texto" for="Insalubridade_Max_40%">Insalubridade_Max_40% SM</label>
               </div>
 
               <div class="adicional">
-                <input class="check" type="radio" name="adicional" value="Nao_Recebe" id="Nao_Recebe" checked>
-                <label class="check" for="Nao_Recebe">Não_Recebe</label>
+                <input class="check_balao" type="radio" name="adicional" value="Nao_Recebe" id="Nao_Recebe" checked>
+                <label class="check_texto" for="Nao_Recebe">Não_Recebe</label>
               </div>
             </fieldset>
           </div>
@@ -270,6 +270,12 @@
               <P>Férias Médias 1/3:</P>
               <P>1/3</P>
               <p id="mediasFeriasTerco"></p>
+            </div>
+
+            <div class="diasPaga">
+              <P>Auxílio Creche:</P>
+              <P>20% Sálario Base</P>
+              <p id="auxilioCreche"></p>
             </div>
 
 

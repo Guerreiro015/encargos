@@ -11,15 +11,24 @@ function calcularEncargos() {
 
   tem_feria_vencida = document.querySelector('input[name="ferias"]:checked').value;
   feria_vencida = tem_feria_vencida;
+  
+  tem_auxilio_creche = document.querySelector('input[name="creche"]:checked').value;
+  auxilio_creche = tem_auxilio_creche;
 
-  adicionais = document.querySelector('input[name="adicional"]:checked').value;
-  adicional_recebido = adicionais
+   // Cálculo do insaluvridade e periculosidade//
+   // Cálculo do insaluvridade e periculosidade//
 
-  adc = ['Insal._Min_10%', 'Insal._Med_20%', 'Insal._Max_40%', 'Nao_Recebe'];
+  tipo_adicional = document.querySelector('input[name="adicional"]:checked').value;
+  adicional_recebido = tipo_adicional
+
+  adc = ['Insalubridade_10%', 'Insalubridade_20%', 'Insalubridade_40%', 'Nao_Recebe'];
   percentual = [0.1, 0.2, 0.4, 0.0];
 
   salario_minimo = 1412.00
-  valor_do_adicional = 0
+  valor_do_adicional = 0 
+
+ 
+//------------------------------------------------------------------------
 
 
   dia1 = Number(data1.slice(8, 10))
@@ -142,14 +151,7 @@ function calcularEncargos() {
 
 
 
-  //-------------------------------------------
-
-
-
-
-  valor_dep_ir = dep_ir * 189.59
-
-  // Cálculo do insaluvridade e periculosidade//
+  //----adicionais---------------------------------------
 
   for (i = 0; i <= adc.length; i++) {
     if (adicional_recebido == adc[i]) {
@@ -161,19 +163,32 @@ function calcularEncargos() {
     }
   }
 
+  valDia_adici=valor_do_adicional/30
+
+//------------------------------------------------------------------------
+
+
+
+  valor_dep_ir = dep_ir * 189.59
 
 
   // Cálculo do INSS//
 
 
-  let valDia = valSal / 30
-  let valDia_adici = valor_do_adicional / 30
+  let valDia = valSal / 30  
   let salCalculo = valSal + valor_do_adicional
   let valorDiario = salCalculo / 30
   let valHora = salCalculo / 220
   let valAvo = salCalculo / 12
   valNot = valNot * valHora * 0.2
   valHe = valHe * valHora * 1.5
+
+  if(auxilio_creche=='SIM'){
+    valor_auxilio_creche=valSal*0.2
+  }
+  else{
+    valor_auxilio_creche=0
+  }
 
   let valor_decimo = (salCalculo / 12) * decimo
   if (mes2 = 2 && dia2 >= 28) {
@@ -462,6 +477,8 @@ function calcularEncargos() {
 
   document.getElementById("feriasAviso").innerHTML = ferias_aviso.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("feriasAvisoTerco").innerHTML = ferias_aviso_terco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+ 
+  document.getElementById("auxilioCreche").innerHTML = valor_auxilio_creche.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   document.getElementById("fgtsExtrato").innerHTML = valor_extrato_fgts.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("fgtsRescisao").innerHTML = valor_fgts_rescisao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
