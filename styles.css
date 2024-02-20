@@ -1,7 +1,7 @@
 body {
     margin-top: 60px;
     margin-bottom: 40px;
-    background-color: rgb(147, 170, 169);
+    background-color: rgb(153, 3, 128);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -29,9 +29,23 @@ h1 {
 }
 
 .inicio {
-
+    width: 400px;
     display: flex;
     justify-content: center;
+    background-color: rgb(237, 140, 56);
+    border-radius: 5px;
+    color: #eaf0ed;
+    font-size: 40px;
+}
+.titulo {
+    margin-top: 0%;
+    width: 70vw;
+    height: 100px;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+    background-color: rgb(237, 140, 56);
+    border-radius: 10px;
     color: #eaf0ed;
     font-size: 40px;
 }
@@ -48,7 +62,7 @@ p:nth-child(even) {
 }
 
 .entradas {
-    background-color: gray;
+    background-color: rgb(5, 129, 127);
     color: #0a18e7;
     width: 900px;
     display: flex;
@@ -81,7 +95,7 @@ p:nth-child(even) {
     color: rgb(228, 233, 223);
     font-size: 30px;
     font-weight: bold;
-
+   
 }
 
 .total_resFont {
@@ -112,8 +126,9 @@ p:nth-child(even) {
 .form_titulo {
     display: flex;
     align-items: top;
+    justify-content: space-around;
     column-gap: 40px;
-
+    
 }
 
 
@@ -248,7 +263,6 @@ p:nth-child(even) {
     background-color: rgb(230, 230, 238);
     color: rgb(9, 45, 225);
     padding: 5px;
-    margin-top: 10px;
     width: 300px;
     border-radius: 15px;
     border-color: rgb(117, 180, 235);
