@@ -313,24 +313,24 @@ function calcularEncargos() {
     baseIR = 0
   }
 
-  if (baseIR < 2112) {
+  if (baseIR < 2259.20) {
     valor_IR = 0
 
   }
-  else if (baseIR < 2826.66) {
-    valor_IR = (baseIR * 7.5 / 100) - 158.4
+  else if (baseIR < 2828.66) {
+    valor_IR = (baseIR * 7.5 / 100) - 169.44
   }
 
   else if (baseIR < 3751.06) {
-    valor_IR = (baseIR * 15 / 100) - 370.40
+    valor_IR = (baseIR * 15 / 100) - 381.44
   }
 
   else if (baseIR < 4664.69) {
-    valor_IR = (baseIR * 22.5 / 100) - 651.73
+    valor_IR = (baseIR * 22.5 / 100) - 662.77
   }
 
   else if (baseIR > 4664.68) {
-    valor_IR = (baseIR * 27.5 / 100) - 884.96
+    valor_IR = (baseIR * 27.5 / 100) - 896
 
   }
 
