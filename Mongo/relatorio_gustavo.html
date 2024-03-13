@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <link href="/cabecalho.css" rel="stylesheet">
+
+    <header class="cabecalho">
+        <a class="cabecalho_texto" href="/index.html"> Login </a>
+        <a class="cabecalho_texto" href="/relatorio_gerencia.html"> Gerencias </a>
+        <a class="cabecalho_texto" href="/relatorio_geral.html"> Total Geral </a>
+        <a class="cabecalho_texto" href="/relatorio_gustavo.html"> Gustavo </a>
+        <a class="cabecalho_texto" href="/relatorio_joao.html"> Joao Sales </a>        
+    </header>
+    
+    <title>Absenteismo</title>
+</head>
+
+<body>
+    <div class="separa">
+        <div class="escolha">           
+                      
+        </div>
+
+        <div mostrando>
+            <div class="dados">
+
+                <div class="eventos">
+                    <p class="evento_texto">TOTAIS GERAIS GUSTAVO:</p>                   
+                </div>
+                <div class="eventos">
+                    <p class="evento_texto">Périodo: 2023</p>
+                    <p id="ano"></p>
+                </div>
+
+            </div>
+
+
+            <div class="dados">
+
+                <div class="eventos">
+                    <p class="evento_texto">Horas Extra Excedentes:</p>
+                    <p id="hext"></p>
+                </div>
+                <div class="eventos">
+                    <p class="evento_texto">Interjornadas:</p>
+                    <p id="inte"></p>
+                </div>
+                <div class="eventos">
+                    <p class="evento_texto">Dias Trabalhados sem Folga:</p>
+                    <p id="sfol"></p>
+                </div>
+            </div>
+
+            <div class="tabelas">           
+            <div>
+                <img class="imagem" src="/relatorio Gustavo.png" alt="Resumo">
+                <img class="imagem" src="/gustavo 2022.png" alt="Resumo">
+                <img class="imagem" src="/gustavo 2023 1.png" alt="Resumo">
+                <img class="imagem" src="/gustavo 2023 2.png" alt="Resumo">
+                <img class="imagem" src="/gustavo 2023 3.png" alt="Resumo">
+                <img class="imagem" src="/gustavo 2023 4.png" alt="Resumo">
+                <img class="imagem" src="/gustavo 2023 5.png" alt="Resumo">
+                <img class="imagem" src="/gustavo 2024.png" alt="Resumo">
+                
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function relatorio() {
+            var setor = "todos"
+            mostrar(setor)
+             }
+       
+        
+
+        //==============================================================================    
+        function loadJSON(url, callback) {
+            let xobj = new XMLHttpRequest();
+            xobj.overrideMimeType('application/json');
+            xobj.open('GET', url, true);
+            xobj.onreadystatechange = () => {
+                if (xobj.readyState === 4 && xobj.status === 200) {
+                    callback(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        }
+
+        function mostrar(elementos) {
+
+            loadJSON('banco.json', (responseText) => {
+                const Dados = JSON.parse(responseText);
+
+                //=================================================================================
+                var totaldsf = 0
+                var totalhex = 0
+                var totalint = 0
+
+
+                var total_dsf1 = 0,
+                    total_dsf2 = 0,
+                    total_dsf3 = 0,
+                    total_dsf4 = 0,
+                    total_dsf5 = 0,
+                    total_dsf6 = 0,
+                    total_dsf7 = 0,
+                    total_dsf8 = 0,
+                    total_dsf9 = 0,
+                    total_dsf10 = 0,
+                    total_dsf11 = 0,
+                    total_dsf12 = 0
+                total_dsf = 0
+
+                var totDSF = [total_dsf1 = 0,
+                total_dsf2 = 0,
+                total_dsf3 = 0,
+                total_dsf4 = 0,
+                total_dsf5 = 0,
+                total_dsf6 = 0,
+                total_dsf7 = 0,
+                total_dsf8 = 0,
+                total_dsf9 = 0,
+                total_dsf10 = 0,
+                total_dsf11 = 0,
+                total_dsf12 = 0]
+
+                var total_he1 = 0,
+                    total_he2 = 0,
+                    total_he3 = 0,
+                    total_he4 = 0,
+                    total_he5 = 0,
+                    total_he6 = 0,
+                    total_he7 = 0,
+                    total_he8 = 0,
+                    total_he9 = 0,
+                    total_he10 = 0,
+                    total_he11 = 0,
+                    total_he12 = 0
+                total_he = 0
+
+                var totHE = [total_dsf1 = 0,
+                total_he2 = 0,
+                total_he3 = 0,
+                total_he4 = 0,
+                total_he5 = 0,
+                total_he6 = 0,
+                total_he7 = 0,
+                total_he8 = 0,
+                total_he9 = 0,
+                total_he10 = 0,
+                total_he11 = 0,
+                total_he12 = 0]
+
+                var total_in1 = 0,
+                    total_in2 = 0,
+                    total_in3 = 0,
+                    total_in4 = 0,
+                    total_in5 = 0,
+                    total_in6 = 0,
+                    total_in7 = 0,
+                    total_in8 = 0,
+                    total_in9 = 0,
+                    total_in10 = 0,
+                    total_in11 = 0,
+                    total_in12 = 0
+                total_in = 0
+
+                var totin = [total_dsf1 = 0,
+                total_in2 = 0,
+                total_in3 = 0,
+                total_in4 = 0,
+                total_in5 = 0,
+                total_in6 = 0,
+                total_in7 = 0,
+                total_in8 = 0,
+                total_in9 = 0,
+                total_in10 = 0,
+                total_in11 = 0,
+                total_in12 = 0]
+
+                for (i = 0; i <= Dados.length; i++) {
+                    // Aqui você pode manipular os dados do arquivo JSON
+
+                   
+
+                        for (x = 0; x <= totDSF.length + 1; x++) {
+                            if ((Dados[i].Evento == "DIAS SEM FOLGAS") && (Dados[i].MÊS == x + 1)) {
+                                totDSF[x]++
+                            }
+                        }
+
+                        for (x = 0; x <= totHE.length + 1; x++) {
+                            if ((Dados[i].Evento == "HE-EXCEDENTES") && (Dados[i].MÊS == x + 1)) {
+                                totHE[x]++
+                            }
+
+
+                        }
+
+                        for (x = 0; x <= totin.length + 1; x++) {
+                            if ((Dados[i].Evento == "INTERJORNADAS") && (Dados[i].MÊS == x + 1)) {
+                                totin[x]++
+                            }
+
+
+                        }
+
+
+
+                        if (Dados[i].Evento == "DIAS SEM FOLGAS") {
+                            totaldsf++
+                        }
+
+                        if (Dados[i].Evento == "HE-EXCEDENTES") {
+                            totalhex++
+                        }
+
+                        if (Dados[i].Evento == "INTERJORNADAS") {
+                            totalint++
+                        }
+                        //=======================================================================================================================
+
+                    
+                    
+                    
+                    document.getElementById("hext").innerHTML = totalhex
+                    document.getElementById("inte").innerHTML = totalint
+                    document.getElementById("sfol").innerHTML = totaldsf
+                    
+                    document.getElementById("total_hex").innerHTML = totalhex
+                    document.getElementById("total_int").innerHTML = totalint
+                    document.getElementById("total_dsf").innerHTML = totaldsf
+
+                    document.getElementById("dsf_1").innerHTML = totDSF[0]
+                    document.getElementById("dsf_2").innerHTML = totDSF[1]
+                    document.getElementById("dsf_3").innerHTML = totDSF[2]
+                    document.getElementById("dsf_4").innerHTML = totDSF[3]
+                    document.getElementById("dsf_5").innerHTML = totDSF[4]
+                    document.getElementById("dsf_6").innerHTML = totDSF[5]
+                    document.getElementById("dsf_7").innerHTML = totDSF[6]
+                    document.getElementById("dsf_8").innerHTML = totDSF[7]
+                    document.getElementById("dsf_9").innerHTML = totDSF[8]
+                    document.getElementById("dsf_10").innerHTML = totDSF[9]
+                    document.getElementById("dsf_11").innerHTML = totDSF[10]
+                    document.getElementById("dsf_12").innerHTML = totDSF[11]
+
+                    document.getElementById("he_1").innerHTML = totHE[0]
+                    document.getElementById("he_2").innerHTML = totHE[1]
+                    document.getElementById("he_3").innerHTML = totHE[2]
+                    document.getElementById("he_4").innerHTML = totHE[3]
+                    document.getElementById("he_5").innerHTML = totHE[4]
+                    document.getElementById("he_6").innerHTML = totHE[5]
+                    document.getElementById("he_7").innerHTML = totHE[6]
+                    document.getElementById("he_8").innerHTML = totHE[7]
+                    document.getElementById("he_9").innerHTML = totHE[8]
+                    document.getElementById("he_10").innerHTML = totHE[9]
+                    document.getElementById("he_11").innerHTML = totHE[10]
+                    document.getElementById("he_12").innerHTML = totHE[11]
+
+                    document.getElementById("in_1").innerHTML = totin[0]
+                    document.getElementById("in_2").innerHTML = totin[1]
+                    document.getElementById("in_3").innerHTML = totin[2]
+                    document.getElementById("in_4").innerHTML = totin[3]
+                    document.getElementById("in_5").innerHTML = totin[4]
+                    document.getElementById("in_6").innerHTML = totin[5]
+                    document.getElementById("in_7").innerHTML = totin[6]
+                    document.getElementById("in_8").innerHTML = totin[7]
+                    document.getElementById("in_9").innerHTML = totin[8]
+                    document.getElementById("in_10").innerHTML = totin[9]
+                    document.getElementById("in_11").innerHTML = totin[10]
+                    document.getElementById("in_12").innerHTML = totin[11]
+
+
+                }
+
+            })
+        }
+
+        
+
+
+    </script>
+
+
+
+</body>
+
+</html>

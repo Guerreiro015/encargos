@@ -1,0 +1,52 @@
+.cabecalho{
+    background-color: rgb(2, 74, 74);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+    
+}
+
+
+.cabecalho_texto{
+    color: white;
+    text-decoration: none;
+        
+    }
+.cabecalho_texto:hover{
+    color: rgb(37, 8, 141);
+    text-decoration: none;
+        
+    }
+  
+    .rodape{
+        display: flex;
+        position: fixed;
+        bottom: 0;   
+        left: 0; 
+        width: 100%;
+        height: 1.5rem;  
+        background-color: dimgrey;
+        justify-content: flex-end;
+        align-items: center;
+        
+    }
+    
+    .rodape_texto{   
+        display: flex;
+        color: white;
+        padding-right: 2rem;
+        font-size: .8rem;
+        
+        
+            
+    }
+
+    .bbbb{
+        font-size: 20px;
+    }

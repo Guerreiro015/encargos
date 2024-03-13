@@ -1,0 +1,158 @@
+body {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    background-color: rgb(243, 238, 242);
+
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 15px;
+
+
+}
+
+
+.formulario {
+    width: 70vw;
+    background-color: rgb(8, 202, 176);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+}
+
+h1 {
+    color: rgb(84, 11, 229);
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+   
+    padding: 5px 5px 5px 0px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+ul:nth-child(even) {
+    background-color: rgb(247, 251, 251);
+}
+
+
+li {   
+    list-style-type: none;
+    padding-bottom: 20px;      
+}
+
+.texto{
+color:brown;
+font-weight: bolder;
+width: 120px;
+}
+
+.ano{
+    color:coral;
+    font-style:italic;
+    font-weight: bold;
+    
+}
+
+
+.tabelas {
+    display: flex;
+    align-items: flex-start;
+    font-size: 15px;    
+    
+}
+
+
+
+
+.tabela {
+    display: flex;
+    width: 80vh;
+    color: rgb(216, 218, 230);
+    justify-content: space-around;
+    
+}
+
+
+.tabela:nth-child(even) {
+    background-color: #f6f8f8;
+}
+
+.dados {
+    display: flex;
+    color: rgb(10, 118, 226);
+    font-size: 10px;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+    border-style: double;
+    border-color: rgb(14, 52, 192);
+    background-color: aqua;
+
+
+}
+
+.dado {
+    display: flex;
+    flex-direction: column;
+    color: rgb(39, 40, 41);
+    font-size: 10px;
+    column-gap: 20px;
+    align-items: left;
+    justify-content: center;
+    background-color: rgb(250, 253, 252);
+    list-style-type: none;
+
+}
+
+.escolha {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(136, 150, 154);
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    color: rgb(20, 10, 193);
+    ;
+
+}
+
+.separa {
+    display: flex;
+    column-gap: 20px;
+}
+
+.eventos {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.evento_texto {
+    font-size: 15PX;
+
+}
+
+.mostrando {
+    display: flex;
+    flex-direction: column;
+}
+
+.usuarios2 {
+    display: flex;
+    column-gap: 20px;
+}
+
+.imagem{
+    border-radius: 10px;
+    background-color: rgb(13, 173, 160);
+    color: #f6f8f8;
+
+}
