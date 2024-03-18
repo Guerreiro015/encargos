@@ -450,6 +450,8 @@ function calcularEncargos() {
   valor_total_pensao = bruto_pensao * percentual_pensao / 100
 
   //---------------------------------------------------------//
+  total_descontos=total_descontos+valor_total_pensao
+  valor_rescisao=valor_rescisao - total_descontos
   //---------------------------------------------------------//
 
   document.getElementById("diasDireito").innerHTML = dia2;
