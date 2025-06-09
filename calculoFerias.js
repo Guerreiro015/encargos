@@ -24,7 +24,7 @@ function somar() {
   let um_terco = valor_ferias / 3
   let total_ferias = valor_ferias + um_terco
 
-  if(total_ferias < 1412){
+  if(total_ferias < 1518){
     inss=total_ferias*7.5/100
 
   }

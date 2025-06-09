@@ -24,7 +24,7 @@ function calcularEncargos() {
   adc = ['Insalubridade_10%', 'Insalubridade_20%', 'Insalubridade_40%', 'Nao_Recebe'];
   percentual = [0.1, 0.2, 0.4, 0.0];
 
-  salario_minimo = 1412.00
+  salario_minimo = 1518.00
   valor_do_adicional = 0 
 
  
